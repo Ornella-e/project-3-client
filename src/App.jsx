@@ -18,10 +18,10 @@ function App() {
 				<Route element={<PrivateRoute />}>
 					<Route path="/profile" element={<Profile />} />
 				</Route>
-				<Route path="*" element={<Oops />} />
+				<Route path="*" element={<Oops />} /> 
 			</Routes>
 		</div>
-	)
+	)	
 }
 
 export default App

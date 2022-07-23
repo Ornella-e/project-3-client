@@ -8,7 +8,6 @@ const UserWrapper = ({ children }) => {
 		isLoading: true,
 		isLoggedIn: false,
 	})
-
 	const authenticateUser = useCallback(async () => {
 		const storedToken = localStorage.getItem("authToken")
 		if (storedToken) {

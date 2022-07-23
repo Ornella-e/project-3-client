@@ -1,11 +1,12 @@
 import axios from "axios"
 
-// We can create an instance of axios and set it with some base values like the URL to our API.
+// We can create an instance of axios and set it with some base values like the URL to our 
 
-const service = axios.create({
-	baseURL: process.env.REACT_APP_API_URL,
-	withCredentials: true,
-})
+
+	const service = axios.create({
+		baseURL: `${process.env.REACT_APP_API_URL}/api/`,
+	  });
+
 
 /**
  * ! This function configure the axios instance called service
@@ -37,9 +38,10 @@ service.signin = async (user) => {
 	}
 }
 
+
 service.isLoggedIn = async () => {
 	try {
-		const { data } = await service.get("/auth/me")
+		const { data } = await service.get("/auth/myaccount")
 		return data
 	} catch (error) {
 		errorHandler(error)
@@ -48,7 +50,7 @@ service.isLoggedIn = async () => {
 // ? Example of a function created to...  getAllTheCats
 // service.getAllTheCats = () {
 // 	return service
-// 		.get("/api/cats")
+// 		.get("/cats")
 // 		.then((res) => res.data)
 // 		.catch(errorHandler);
 // },

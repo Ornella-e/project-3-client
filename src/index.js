@@ -3,16 +3,18 @@ import ReactDOM from "react-dom"
 import "./styles/reset.css"
 import "./styles/global.css"
 import App from "./App"
-import { BrowserRouter } from "react-router-dom"
+import { BrowserRouter as Router } from "react-router-dom"
 import UserWrapper from "./context/auth/UserWrapper"
+import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root"))
+root.render(
 	<React.StrictMode>
-		<BrowserRouter>
+		<Router>
 			<UserWrapper>
 				<App />
 			</UserWrapper>
-		</BrowserRouter>
-	</React.StrictMode>,
-	document.getElementById("root")
+		</Router>
+	</React.StrictMode>
 )
+reportWebVitals();

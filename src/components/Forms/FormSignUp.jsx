@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import service from "../../services/apiHandler"
 
 const FormSignUp = () => {
-	const [user, setUser] = useState({ name: "", email: "", location:"", country: "" })
+	const [user, setUser] = useState({ username: "", email: "", location:"", couch: "" })
 	const [error, setError] = useState(null)
 	const navigate = useNavigate()
 
@@ -19,18 +19,18 @@ const FormSignUp = () => {
 	}
 	return (
 		<>
-			{error && <h3 className="error">{error.message}</h3>}
+			{error && <h3 classusername="error">{error.message}</h3>}
 			<form onSubmit={handleSubmit}>
 				<h2>Signup</h2>
-				<label htmlFor="name">Name</label>
+				<label htmlFor="username">Username</label>
 				<input
 					onChange={(e) =>
 						setUser({ ...user, [e.target.name]: e.target.value })
 					}
-					value={user.name}
+					value={user.username}
 					type="text"
-					id="name"
-					name="name"
+					id="username"
+					name="username"
 				/>
 				<label htmlFor="email">Email</label>
 				<input
@@ -42,7 +42,7 @@ const FormSignUp = () => {
 					id="email"
 					name="email"
 				/>
-				<label htmlFor="password">Password</label>
+				{/* <label htmlFor="password">Password</label>
 				<input
 					onChange={(e) =>
 						setUser({ ...user, [e.target.name]: e.target.value })
@@ -51,39 +51,39 @@ const FormSignUp = () => {
 					type="password"
 					id="password"
 					name="password"
-				/>
+				/> */}
 				<label htmlFor="location">Location</label>
 				<input
 					onChange={(e) =>
-						setUser({ ...user, [e.target.name]: e.target.value })
+						setUser({ ...user, [e.target.username]: e.target.value })
 					}
 					value={user.location}
 					type="location"
 					id="location"
 					name="location"
 				/>
-					{/* <label htmlFor="city">City</label>
+					<label htmlFor="userImage">userImage</label>
 				<input
 					onChange={(e) =>
 						setUser({ ...user, [e.target.name]: e.target.value })
 					}
-					value={user.city}
-					type="city"
-					id="city"
-					name="city"
-				/> */}
+					value={user.userImage}
+					type="userImage"
+					id="userImage"
+					name="userImage"
+				/> 
 			
 					
-				{/* 	<label htmlFor="country">Country</label>
+				<label htmlFor="couch">couch</label>
 				<input
 					onChange={(e) =>
 						setUser({ ...user, [e.target.name]: e.target.value })
 					}
-					value={user.country}
-					type="country"
-					id="country"
-					name="country"
-				/> */}
+					value={user.couch}
+					type="couch"
+					id="couch"
+					name="couch"
+					/> 
 				<button>Submit</button>
 			</form>
 		</>
