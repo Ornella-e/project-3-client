@@ -7,21 +7,25 @@ const Navbar = () => {
 	return (
 		<nav className="Navbar">
 			<NavLink className="logo" to="/">
-				Home 
+				<img src="" alt=""/>
 			</NavLink>
 			{isLoggedIn && (
 				<>
-				    <NavLink to="/about">About</NavLink>
-					<NavLink to="/profile">{currentUser.email}</NavLink>
+				    <NavLink to="/about" >About</NavLink>
+					<NavLink to="/profile" >{currentUser.email}</NavLink>
 					<button onClick={removeUser}>Log out</button>
 				</>
 			)}
 			{!isLoggedIn && (
 				<>
-					<NavLink to="/signin">Log in</NavLink>
-					<NavLink to="/signup">Sign up</NavLink>
+					<NavLink to="/signin" >Log in</NavLink>
+					<NavLink to="/signup" >Sign up</NavLink>
 				</>
 			)}
+			<div className="search">
+			<input type="text" placeholder="Search..."/>
+			<button>Search</button>
+			</div>
 		</nav>
 	)
 }
