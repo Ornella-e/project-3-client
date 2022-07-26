@@ -3,24 +3,23 @@ import useAuth from "../../context/auth/useAuth"
 import "./Navbar.css"
 
 const Navbar = () => {
-	// We are getting the user and some functions from the context
 	const { isLoggedIn, currentUser, removeUser } = useAuth()
-	// console.log(currentUser)
 	return (
 		<nav className="Navbar">
 			<NavLink className="logo" to="/">
-				CouchApp
+				Home 
 			</NavLink>
 			{isLoggedIn && (
 				<>
+				    <NavLink to="/about">About</NavLink>
 					<NavLink to="/profile">{currentUser.email}</NavLink>
-					<button onClick={removeUser}>Log-Out</button>
+					<button onClick={removeUser}>Log out</button>
 				</>
 			)}
 			{!isLoggedIn && (
 				<>
 					<NavLink to="/signin">Log in</NavLink>
-					<NavLink to="/signup">Sign Up</NavLink>
+					<NavLink to="/signup">Sign up</NavLink>
 				</>
 			)}
 		</nav>
