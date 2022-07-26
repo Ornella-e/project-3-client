@@ -2,10 +2,9 @@ import axios from "axios"
 
 // We can create an instance of axios and set it with some base values like the URL to our 
 
-
-	const service = axios.create({
-		baseURL: `${process.env.REACT_APP_API_URL}/api/`,
-	  });
+const service = axios.create({
+	baseURL: `${process.env.REACT_APP_API_URL}`,
+	}); 
 
 
 /**

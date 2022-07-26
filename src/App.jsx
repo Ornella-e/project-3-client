@@ -6,6 +6,7 @@ import Signup from "./pages/Signup"
 import Profile from "./pages/Profile"
 import Oops from "./pages/Oops"
 import PrivateRoute from "./components/ProtectedRoute/PrivateRoute"
+import Footer from "./components/footer/Footer"
 
 function App() {
 	return (
@@ -20,6 +21,7 @@ function App() {
 				</Route>
 				<Route path="*" element={<Oops />} /> 
 			</Routes>
+			<Footer/>
 		</div>
 	)	
 }
