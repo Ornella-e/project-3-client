@@ -1,4 +1,28 @@
 .Navbar {
+	background-color: #000;
+	height: 80px;
 	display: flex;
 	gap: 0.75em;
+	padding: 0.5rem;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.sign{
+	color: aliceblue;
+	margin-top: 0.7rem;
+}
+.sign:active{
+	color:  #CCF381;
+	margin-top: 0.7rem;
+}
+
+.search{
+	padding: 0.7rem;
+
+	}
+.logoImg{
+	width: 5rem;
+	height: 5rem;
+	
 }
