@@ -42,7 +42,7 @@ const FormSignUp = () => {
 					id="email"
 					name="email"
 				/>
-				{/* <label htmlFor="password">Password</label>
+				 <label htmlFor="password">Password</label>
 				<input
 					onChange={(e) =>
 						setUser({ ...user, [e.target.name]: e.target.value })
@@ -51,7 +51,7 @@ const FormSignUp = () => {
 					type="password"
 					id="password"
 					name="password"
-				/> */}
+				/> 
 				<label htmlFor="location">Location</label>
 				<input
 					onChange={(e) =>
