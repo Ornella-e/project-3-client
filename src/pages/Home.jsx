@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 //import './App.css';
 import CouchItem from '../components/Couch/CouchItem';
-import couchesData from './data'
+import couchesData from '../data'
 
 const Home = () => {
 	const [couches, setCouches] = useState(couchesData);
