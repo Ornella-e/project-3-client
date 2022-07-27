@@ -3,11 +3,6 @@ import axios from "axios"
 // We can create an instance of axios and set it with some base values like the URL to our 
 
 
-	const service = axios.create({
-		baseURL: `${process.env.REACT_APP_API_URL}`,
-	  });
-
-
 /**
  * ! This function configure the axios instance called service
  * ! It tries to get the token from the localStorage and put it in the Authorization headers.
