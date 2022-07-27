@@ -15,7 +15,7 @@ const Navbar = () => {
 			{isLoggedIn && (
 				<>
 				    
-					<NavLink to="/profile" >{currentUser.email}</NavLink>
+					<NavLink className="sign" to="/profile" >{currentUser.username}</NavLink>
 					<button onClick={removeUser}>Log out</button>
 				</>
 			)}
