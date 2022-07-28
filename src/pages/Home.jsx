@@ -14,7 +14,7 @@ const Home = () => {
 					key={couch.id}
 					 image={couch.image}
 					 location={couch.location}
-					 evaluations={couch.evaluation.grade}
+					 evaluations={couch.evaluations}
 				  />
 				)
 			  })
