@@ -1,6 +1,9 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import service from "../../services/apiHandler"
+import { Link } from "react-router-dom"
+import Signin from "../../pages/Signin"
+
 
 const FormSignUp = () => {
 	const [user, setUser] = useState({ username: "", email: "", location:"", couch: "" })
@@ -84,7 +87,10 @@ const FormSignUp = () => {
 					id="couch"
 					name="couch"
 					/> 
-				<button>Submit</button>
+				<button>Create Account</button>
+				
+				<p>Do you have already an account?</p>
+				<Link to={"/signin"} className="Sign">Signin</Link>
 			</form>
 		</>
 	)

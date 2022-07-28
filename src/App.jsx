@@ -21,7 +21,7 @@ function App() {
 				</Route>
 				<Route path="*" element={<Oops />} /> 
 			</Routes>
-			/*<Footer/>*/
+			
 		</div>
 	)	
 }
