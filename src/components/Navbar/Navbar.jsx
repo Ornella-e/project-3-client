@@ -16,6 +16,9 @@ const Navbar = () => {
 				<>
 				    
 					<NavLink className="sign" to="/profile" >{currentUser.username}</NavLink>
+					<NavLink className="sign" to="/reservations" >Reservations</NavLink>
+					<NavLink className="sign" to="/favourites" >Favourites</NavLink>
+					<NavLink className="sign" to="/my-couch" >My Couch</NavLink>
 					<button onClick={removeUser}>Log out</button>
 				</>
 			)}
