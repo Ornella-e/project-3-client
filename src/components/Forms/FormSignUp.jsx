@@ -6,17 +6,29 @@ import CountrySelector from "./FormCountrySelector"
 
 
 
+
+
 const FormSignUp = () => {
+
 	const [user, setUser] = useState({ username: "", email: "", location:"country", location:"city"/* , userImage:"",couch: "" */ })
 	const [error, setError] = useState(null)
 	const navigate = useNavigate()
 
 	const handleSubmit = async (e) => {
+
 		e.preventDefault()
-		try {
-			const res = await service.signup(user)
+		const 	data = new FormData();
+				data.append('username', username);
+				data.append('email', email);
+				data.append('password', password);
+				data.append('userImage', fs.createReadStream('/Users/jobcenter/Desktop/Bildschirmfoto 2022-07-23 um 14.35.25.png'));
+				data.append('couch', couch);
+				data.append('location', location);
+			try {
+			const res = await service.signup(data)
 			console.log(res)
 			navigate("/signin")
+
 		} catch (error) {
 			setError(e.message)
 		}
@@ -81,18 +93,19 @@ const FormSignUp = () => {
 					 name="city"
 				 />  
 
-{/* 
+ 
 					<label htmlFor="userImage"><p>userImage</p></label>
 				<input
+					
 					onChange={(e) =>
-						setUser({ ...user, [e.target.name]: e.target.value })
+						setUser({ ...user, [e.target.name]: e.target.files[0] })
 					}
 					value={user.userImage}
-					type="userImage"
+					type="file"
 					id="userImage"
 					name="userImage"
 				/> 
-			 */}
+			 
 					
 			{/* 	<label htmlFor="couch"><p>couch</p></label>
 				<input
