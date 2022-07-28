@@ -1,9 +1,13 @@
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import { useNavigate } from "react-router-dom"
 import service from "../../services/apiHandler"
+import { Link } from "react-router-dom"
+import CountrySelector from "./FormCountrySelector"
+
+
 
 const FormSignUp = () => {
-	const [user, setUser] = useState({ username: "", email: "", location:"", couch: "" })
+	const [user, setUser] = useState({ username: "", email: "", location:"country", location:"city"/* , userImage:"",couch: "" */ })
 	const [error, setError] = useState(null)
 	const navigate = useNavigate()
 
@@ -22,7 +26,7 @@ const FormSignUp = () => {
 			{error && <h3 classusername="error">{error.message}</h3>}
 			<form onSubmit={handleSubmit}>
 				<h2>Signup</h2>
-				<label htmlFor="username">Username</label>
+				<label htmlFor="username"><p>Username</p></label>
 				<input
 					onChange={(e) =>
 						setUser({ ...user, [e.target.name]: e.target.value })
@@ -32,7 +36,7 @@ const FormSignUp = () => {
 					id="username"
 					name="username"
 				/>
-				<label htmlFor="email">Email</label>
+				<label htmlFor="email"><p>Email</p></label>
 				<input
 					onChange={(e) =>
 						setUser({ ...user, [e.target.name]: e.target.value })
@@ -42,7 +46,7 @@ const FormSignUp = () => {
 					id="email"
 					name="email"
 				/>
-				 <label htmlFor="password">Password</label>
+				 <label htmlFor="password"><p>Password</p></label>
 				<input
 					onChange={(e) =>
 						setUser({ ...user, [e.target.name]: e.target.value })
@@ -52,17 +56,33 @@ const FormSignUp = () => {
 					id="password"
 					name="password"
 				/> 
-				<label htmlFor="location">Location</label>
-				<input
+						
+					 {/* <CountrySelector/>  */}
+
+			 	<label htmlFor="country"><p>Country</p> </label>
+				 <input
 					onChange={(e) =>
-						setUser({ ...user, [e.target.username]: e.target.value })
+						setUser({ ...user, [e.target.name]: e.target.value })
 					}
-					value={user.location}
-					type="location"
-					id="location"
-					name="location"
-				/>
-					<label htmlFor="userImage">userImage</label>
+					value={user.location.country}
+					type="country"
+					id="country"
+					name="country"
+				/> 
+
+				 <label htmlFor="city"><p>Select your City</p> </label>
+				 <input
+					 onChange={(e) =>
+						 setUser({ ...user, [e.target.name]: e.target.value })
+					 }
+					 value={user.location.city}
+					 type="city"
+					 id="city"
+					 name="city"
+				 />  
+
+{/* 
+					<label htmlFor="userImage"><p>userImage</p></label>
 				<input
 					onChange={(e) =>
 						setUser({ ...user, [e.target.name]: e.target.value })
@@ -72,9 +92,9 @@ const FormSignUp = () => {
 					id="userImage"
 					name="userImage"
 				/> 
-			
+			 */}
 					
-				<label htmlFor="couch">couch</label>
+			{/* 	<label htmlFor="couch"><p>couch</p></label>
 				<input
 					onChange={(e) =>
 						setUser({ ...user, [e.target.name]: e.target.value })
@@ -83,8 +103,13 @@ const FormSignUp = () => {
 					type="couch"
 					id="couch"
 					name="couch"
-					/> 
-				<button>Submit</button>
+					/>  */}
+					<p>
+				<button>Create Account</button>
+					</p>
+				
+				<p>Do you have already an account?</p>
+				<Link to={"/signin"} className="Sign">Signin</Link>
 			</form>
 		</>
 	)
