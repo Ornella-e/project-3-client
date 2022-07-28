@@ -7,7 +7,7 @@ import CountrySelector from "./FormCountrySelector"
 
 
 const FormSignUp = () => {
-	const [user, setUser] = useState({ username: "", email: "", location:""/* , userImage:"",couch: "" */ })
+	const [user, setUser] = useState({ username: "", email: "", location:"country", location:"city"/* , userImage:"",couch: "" */ })
 	const [error, setError] = useState(null)
 	const navigate = useNavigate()
 
@@ -56,30 +56,30 @@ const FormSignUp = () => {
 					id="password"
 					name="password"
 				/> 
-					
-					{/* <CountrySelector/> */}
+						
+					 {/* <CountrySelector/>  */}
 
-			 	<label htmlFor="location"><p>Country</p> </label>
+			 	<label htmlFor="country"><p>Country</p> </label>
 				 <input
 					onChange={(e) =>
 						setUser({ ...user, [e.target.name]: e.target.value })
 					}
-					value={user.location}
-					type="location"
-					id="location"
-					name="location"
+					value={user.location.country}
+					type="country"
+					id="country"
+					name="country"
 				/> 
 
-				{/* <label htmlFor="location"><p>Select your City</p> </label>
+				 <label htmlFor="city"><p>Select your City</p> </label>
 				 <input
 					 onChange={(e) =>
-						 setUser({ ...user, [e.target.username]: e.target.value })
+						 setUser({ ...user, [e.target.name]: e.target.value })
 					 }
 					 value={user.location.city}
-					 type="location"
-					 id="location"
-					 name="location"
-				 />  */}
+					 type="city"
+					 id="city"
+					 name="city"
+				 />  
 
 {/* 
 					<label htmlFor="userImage"><p>userImage</p></label>
