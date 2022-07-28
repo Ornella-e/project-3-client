@@ -66,7 +66,7 @@ const PostMyCouch = () => {
 					id="country"
 					name="country"
 					value={country}
-					onChange={(e) => setOwner(e.target.value)}
+					onChange={(e) => setCountry(e.target.value)}
 				/>
 			</div>
       <div>
@@ -76,7 +76,7 @@ const PostMyCouch = () => {
 					id="city"
 					name="city"
 					value={city}
-					onChange={(e) => setOwner(e.target.value)}
+					onChange={(e) => setCity(e.target.value)}
 				/>
 			</div>
 
