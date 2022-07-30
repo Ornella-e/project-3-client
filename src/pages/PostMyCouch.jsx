@@ -1,12 +1,11 @@
 import React, { useState }from 'react'
-import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import useAuth from '../context/auth/useAuth'
 import service from '../services/apiHandler'
 
 
 const PostMyCouch = () => {
-	const [owner, setOwner] = useState("")
+	
   const [image, setImage] = useState("")
 	const [description, setDescription] = useState("")
   const [country, setCountry] = useState("")
