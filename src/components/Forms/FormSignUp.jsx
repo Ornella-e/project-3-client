@@ -2,7 +2,7 @@ import { useState, useMemo } from "react"
 import { useNavigate } from "react-router-dom"
 import service from "../../services/apiHandler"
 import { Link } from "react-router-dom"
-import CountrySelector from "./FormCountrySelector"
+/* import CountrySelector from "./FormCountrySelector" */
 
 
 
@@ -10,7 +10,7 @@ import CountrySelector from "./FormCountrySelector"
 
 const FormSignUp = () => {
 
-	const [user, setUser] = useState({ username: "", email: "", location:"country", location:"city"/* , userImage:"",couch: "" */ })
+	const [user, setUser] = useState({ username: "", email: "", location:"country", location:"city" , userImage:""/* ,couch: "" */  })
 	const [error, setError] = useState(null)
 	const navigate = useNavigate()
 
@@ -18,14 +18,17 @@ const FormSignUp = () => {
 
 		e.preventDefault()
 		const 	data = new FormData();
-				data.append('username', username);
-				data.append('email', email);
-				data.append('password', password);
-				data.append('userImage', fs.createReadStream('/Users/jobcenter/Desktop/Bildschirmfoto 2022-07-23 um 14.35.25.png'));
-				data.append('couch', couch);
-				data.append('location', location);
+				data.append('username', user.username);
+				data.append('email', user.email);
+				data.append('password', user.password);
+				data.append("userImage", user.userImage);
+				data.append('couch', user.couch);
+				data.append('location', user.location);
+
+			
+
 			try {
-			const res = await service.signup(data)
+			const res =  await  service.signup(data)
 			console.log(res)
 			navigate("/signin")
 
@@ -100,7 +103,6 @@ const FormSignUp = () => {
 					onChange={(e) =>
 						setUser({ ...user, [e.target.name]: e.target.files[0] })
 					}
-					value={user.userImage}
 					type="file"
 					id="userImage"
 					name="userImage"
