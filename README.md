@@ -1,70 +1,162 @@
-# Getting Started with Create React App
+# IRONHACK MODULE 3 PROJECT
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# A project by Ornella Escalada Corsi, Joao Beyer and Laia Markixa
 
-## Available Scripts
+## Idea
 
-In the project directory, you can run:
+##ShareCouch
 
-### `yarn start`
+Share Couch is a couch exchange app, where couch owners can share their couch with other registered users for free, anywhere in the world.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- A version of the app is visible to non logged users, but with limited options, like search.
+- When users log in, they can access their profile, edit it, and leave ratings and comments, also edit password.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Deployment: ""
+Trello: https://trello.com/b/suDXWMvC
+Presentation slides: ""
 
-### `yarn test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Pages / content
 
-### `yarn build`
+```
+HOME
+│
+└───
+│   │   displays
+│   │
+│   └───SINGLE COUCH
+│          displays single couch
+│          (when logged in: user can create review or favorite others)
+│
+└───SIGNUP
+│      displays signup form (only to logged out)
+│
+└───LOGIN
+│      displays login form (only to logged out)
+│
+└───PROFILE
+    │   shows own couch with option to edit + delete, also adding, editing profile info or deleting it.
+    │
+    └───FAVORITE COUCHES
+        displays favorited couches
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `yarn eject`
+## Models
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 1. User model
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+{
+username: {
+type: String,
+unique: true,
+required: true
+},
+email: {
+type: String,
+unique: true,
+required: true
+},
+password: {
+type: String,
+required: true
+},
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    userImage: {
+      type: String,
+    },
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+couch: [{
+type: Schema.Types.ObjectId,
+ref: "Couch"
+}],
+location: {
+city: String,
+country: String
+},
+},
 
-## Learn More
+### 2. Couch model
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+{
+owner: {
+type : Schema.Types.ObjectId,
+ref: 'User'
+},
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    description:{
+      type:String
+    },
 
-### Code Splitting
+    image:{
+      type:String
+    },
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+location:{
+city :String,
+country: String
+},
+evaluations:{
+type: Schema.Types.ObjectId,
+ref: "Evaluations"
+},
+calendar:{
+type: Schema.Types.ObjectId,
+ref: "Calendar"
+},
+},
 
-### Analyzing the Bundle Size
+### 3. Ranking model
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+({
+user: { type: Schema.Types.ObjectId, ref: "User", required:true},
+evaluation: { type: String, maxLength: 200, required:true},
+grade: {type: Number, required:true},
+couch: { type: Schema.Types.ObjectId, ref: "Couch", required:true},
+});
 
-### Making a Progressive Web App
+### 4. Renting time model
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+({
+    user: { type: Schema.Types.ObjectId, ref: "User", required:true},
+    startingDate: {type: Date, required:true},
+    endingDate: {type: Date, required:true},
+    couch: { type: Schema.Types.ObjectId, ref: "Couch", required:true},
+  });
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Routes
 
-### Deployment
+**INDEX**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+| Route | HTTP Verb | Description    | View  |
+| ----- | --------- | -------------- | ----- |
+| /     | GET       | show home page | index |
 
-### `yarn build` fails to minify
+**AUTH**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| Route        | HTTP Verb | Description                   | View                                   |
+| ------------ | --------- | ----------------------------- | -------------------------------------- |
+| /auth/signup | GET       | show signup form              | auth > signup                          |
+| /auth/signup | POST      | check input, save user to db  | redirect to auth > login if successful |
+| /auth/login  | GET       | show login form               | auth > login                           |
+| /auth/login  | POST      | check credentials, login user | redirect to index if successful        |
+| /auth/logout | POST      | logout user                   | redirect to index                      |
+
+
+**REVIEWS**
+Ingredientreviews > create-review |
+| /reviews/:id/review | POST | save review to db | redirect to recipes-details |
+
+**USERS**
+
+| Route    | HTTP Verb | Description       | View                 |
+| -------- | --------- | ----------------- | -------------------- |
+| /profile | GET       | show user profile | users > user-profile |
+
+© 2022 Ornella & Joao & Laia
