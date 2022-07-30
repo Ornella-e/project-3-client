@@ -4,9 +4,9 @@ const Footer = () => {
   return (
     <>
       <footer>
-        <div class="footer-flex">
-          <div class="footer-left">
-            <div class="legal">
+        <div className="footer-flex">
+          <div className="footer-left">
+            <div className="legal">
               <ul>
                 <li>
                   <a
@@ -42,7 +42,7 @@ const Footer = () => {
             <a href="mailto:hi@sharecouch.com">hi@sharecouch.com</a>
           </address> */}
 
-          <div class="social-media footer-right">
+          <div className="social-media footer-right">
             <h3>Follow us!</h3>
             <ul>
               <li>
@@ -66,8 +66,8 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <p class="copy">&copy; Copyright 2022</p>
-        <p class="copy">
+        <p className="copy">&copy; Copyright 2022</p>
+        <p className="copy">
           Built with &#x2661; by
           <p>Ornella, Joao & Laia</p>
         </p>

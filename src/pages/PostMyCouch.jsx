@@ -13,7 +13,7 @@ const PostMyCouch = () => {
 	const navigate = useNavigate()
 	const {currentUser} = useAuth()
 	//console.log(currentUser)
-
+	
 	const handleSubmit = async (e) => {
 		e.preventDefault()
 	//	const token = localStorage.getItem("authToken")

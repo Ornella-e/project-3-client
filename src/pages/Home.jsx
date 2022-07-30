@@ -31,7 +31,9 @@ const Home = () => {
 									description={couch.description}
 									location={couch.location}
 									evaluations={couch.evaluations}
+									
 								/>
+								
 							)
 						})}
 					</div>
