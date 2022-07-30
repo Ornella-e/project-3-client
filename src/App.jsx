@@ -10,7 +10,7 @@ import About from "./pages/About"
 import MyReservations from "./pages/MyReservations"
 import MyFavourites from "./pages/MyFavourites"
 import PostMyCouch from "./pages/PostMyCouch"
-//import Footer from "./components/footer/Footer"
+import Footer from "./components/Footer/Footer"
 
 function App() {
 	return (
@@ -29,7 +29,7 @@ function App() {
 				<Route path="/about" element={<About />} /> 
 				<Route path="*" element={<Oops />} /> 
 			</Routes>
-			
+			<Footer/>
 		</div>
 	)	
 }
