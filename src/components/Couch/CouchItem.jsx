@@ -8,7 +8,7 @@ export default function CouchItem({ image, id, owner, description, location, eva
         <div className='couch' >
           <img src={image} alt="couchImg" />
           <p>Id: {id}</p>
-          <h3>Owner: {owner}</h3>
+          <h3>Username: {owner.username}</h3>
           <p>Description: {description}</p>
           <p>Country: {location.country}</p>
           <p>City: {location.city}</p>

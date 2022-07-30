@@ -1,6 +1,8 @@
 import React, { useState }from 'react'
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
+import useAuth from '../context/auth/useAuth'
+import service from '../services/apiHandler'
 
 
 const PostMyCouch = () => {
@@ -10,35 +12,33 @@ const PostMyCouch = () => {
   const [country, setCountry] = useState("")
   const [city, setCity] = useState("")
 	const navigate = useNavigate()
+	const {currentUser} = useAuth()
+	//console.log(currentUser)
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
-		const token = localStorage.getItem("authToken")
-		const payload = { owner, image, description, country, city}
+	//	const token = localStorage.getItem("authToken")
+		const payload = { currentUser, image, description, country, city}
 		try {
-			const response = await axios.post(`${process.env.REACT_APP_API_URL}/couch/`, payload, {
-				headers: {
-					Authorization: `Bearer ${token}`,
-				},
-			})
+	//		const response = await axios.post(`${process.env.REACT_APP_API_URL}/couch/`, payload, {
+	//			headers: {
+	//				Authorization: `Bearer ${token}`,
+	//			},
+	//		})
+			await service.post('/couch', payload)
 			navigate("/home")
+			// exemple of functions useing service   await service.createCouch(payload)
 		} catch (error) {
 			console.error(error)
 		}
 	}
 
 	return (
+    
 		<form className="FormCouch" onSubmit={handleSubmit}>
-			<div>
-				<label htmlFor="username">User: </label>
-				<input
-					type="text"
-					id="username"
-					name="username"
-					value={owner.username}
-					onChange={(e) => setOwner(e.target.value)}
-				/>
-			</div>
+       <div>
+       User: {currentUser.username}
+    </div>
       <div >
         <label htmlFor="image">Image:</label>
           <input type="file" 
@@ -82,6 +82,7 @@ const PostMyCouch = () => {
 
 			<button>Create a post</button>
 		</form>
+    
 	)
 }
 
