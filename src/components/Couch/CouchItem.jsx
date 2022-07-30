@@ -1,4 +1,7 @@
-export default function CouchItem({ image, id, owner, description, location, evaluations, calendar, }) {
+
+export default function CouchItem({ image, username,  description, location, evaluations, calendar, }) {
+
+
     if(false){
       return (
         <p>Loading...</p>
@@ -7,8 +10,8 @@ export default function CouchItem({ image, id, owner, description, location, eva
       return (
         <div className='couch' >
           <img src={image} alt="couchImg" />
-          <p>Id: {id}</p>
-          <h3>Username: {owner.username}</h3>
+          <p>user: {username}</p>
+
           <p>Description: {description}</p>
           <p>Country: {location.country}</p>
           <p>City: {location.city}</p>
