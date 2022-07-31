@@ -1,133 +1,37 @@
-import React, { useEffect, useState } from "react"
-import { useParams, useNavigate } from "react-router-dom"
-import axios from "axios"
+import React from 'react'
+import CouchItem from '../components/Couch/CouchItem'
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
+export default function DetailsCouch(props) {
+    const [couch, setCouch] = useState(null);
+	const { id } = useParams();
 
-const DetailsCouch = () => {
-	const [detailCouch, setDetailCouch] = useState({})
-	const [feedback, setFeedback] = useState("")
-	const [editMode, setEditMode] = useState(false)
-	const [editCouch, setEditCouch] = useState({})
-	const { id } = useParams()
-	const navigate = useNavigate()
-	// console.log(id)
+	useEffect(() => {
+		axios
+			.get( `${process.env.REACT_APP_API_URL}/couch/${id}`+ id
+			)
+			.then(({ data }) => {
+				console.log(data);
+				setCouch(data);
+			})
+			.catch((e) => console.log(e));
+	}, [id]);
 
-	const handleDelete = async () => {
-		const { data } = await axios.delete(`${process.env.REACT_APP_API_URL}/couch/${id}`)
-		setFeedback(data.message)
-		setTimeout(() => navigate("/"), 1000)
-	}
-
-	const handleEditCouch = async (e) => {
-		e.preventDefault()
-		console.log(editCouch)
-		const { data } = await axios.put(`${process.env.REACT_APP_API_URL}/couch/${id}`, editCouch)
-		console.log(data)
-		
-		setDetailCouch(data)
-		setEditMode(false)
-	}
-
-	
-	return (
-		<>
-			<div className="DetailsCouch">
-				{feedback && <h2>{feedback}</h2>}
-				<img src={detailCouch.image}/>
-				<p>{detailCouch.description}</p>
-				
-				<button onClick={handleDelete}>Delete the post</button>
-				<button onClick={() => setEditMode(!editMode)}>Edit the post</button>
-			</div>
-
-			{/* This form is conditionally rendered */}
-			{editMode && (
-				<form onSubmit={handleEditCouch}>
-					<div>
-						<label htmlFor="image">Image: </label>
-						<input
-							type="file"
-							id="image"
-							name="image"
-							multiple
-							onChange={(e) =>
-								setEditCouch({
-									...editCouch,
-									[e.target.name]:e.target.files[0],
-								})
-							}
-						/>
-					</div>
-                    <div>
-				<label htmlFor="title">Title: </label>
-				<input
-					type="text"
-					id="title"
-					name="title"
-					value={editCouch.title}
-					onChange={(e) =>
-                        setEditCouch({
-                            ...editCouch,
-                            [e.target.name]: e.target.value,
-                        })
-                    }
-				/>
-			</div>
-					<div>
-						<label htmlFor="description">Description: </label>
-						<textarea
-							type="text"
-							id="description"
-							name="description"
-							value={editCouch.description}
-							rows={4}
-							cols={25}
-							onChange={(e) =>
-								setEditCouch({
-									...editCouch,
-									[e.target.name]: e.target.value,
-								})
-							}></textarea>
-					</div>
-
-                    <div>
-				<label htmlFor="country">Country: </label>
-				<input
-					type="text"
-					id="country"
-					name="country"
-					value={editCouch.country}
-					onChange={(e) =>
-                        setEditCouch({
-                            ...editCouch,
-                            [e.target.name]: e.target.value,
-                        })
-                    }
-				/>
-			</div>
-      <div>
-				<label htmlFor="city">City: </label>
-				<input
-					type="text"
-					id="city"
-					name="city"
-					value={editCouch.city}
-					onChange={(e) =>
-                        setEditCouch({
-                            ...editCouch,
-                            [e.target.name]: e.target.value,
-                        })
-                    }
-				/>
-			</div>					
-
-				
-
-					<button>Edit the post</button>
-				</form>
-			)}
-		</>
-	)
+  return (
+    <div>
+     <div className='couch' >
+    
+          <img src={props.image} alt="couchImg" />
+          <p>user: {props.username}</p>
+          <p>Title: {props.title}</p>
+          <p>Description: {props.description}</p>
+          <p>Country: {props.location}</p>
+          <p>Evaluations: {props.evaluations}</p>
+          <p>Calendar: {props.calendar}</p>
+          
+        </div> 
+    </div>
+  )
 }
-
-export default DetailsCouch

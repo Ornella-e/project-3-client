@@ -1,8 +1,9 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Link} from "react";
 //import './App.css';
 import CouchItem from '../components/Couch/CouchItem';
 import axios from "axios";
+
 
 
 const Home = () => {
@@ -24,16 +25,17 @@ const Home = () => {
 						{couches.map((couch) => {
 							console.log(couch)
 							return (
-								<CouchItem
-									key={couch.id}
-									user={couch.username}
-									image={couch.image}
-									title={couch.title}
-									description={couch.description}
-									location={couch.location}
-									evaluations={couch.evaluations}
-									
-								/>
+								<div className="card" key={couch._id}>
+									<div>
+									<img src={couch.image}  />
+									<h1>{couch.title}</h1>
+									<p>{couch.location.country}</p>
+									<p>{couch.location.city}</p>
+									</div>
+								<button>More Info</button>
+								
+									</div>	
+							
 								
 							)
 						})}
