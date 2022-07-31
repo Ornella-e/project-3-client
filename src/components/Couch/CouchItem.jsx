@@ -11,6 +11,7 @@ export default function CouchItem({ image, username,  description, location, eva
         <div className='couch' >
           <img src={image} alt="couchImg" />
           <p>user: {username}</p>
+          <p>Title: {title}</p>
           <p>Description: {description}</p>
           <p>Country: {location.country}</p>
           <p>City: {location.city}</p>

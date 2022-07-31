@@ -7,6 +7,7 @@ import service from '../services/apiHandler'
 const PostMyCouch = () => {
 	
   const [image, setImage] = useState("")
+  const [title, setTitle] = useState("")
 	const [description, setDescription] = useState("")
   const [country, setCountry] = useState("")
   const [city, setCity] = useState("")
@@ -22,6 +23,7 @@ const PostMyCouch = () => {
 		const fd = new FormData()
 
 		fd.append("image", image)
+		fd.append("title", title)
 		fd.append("description", description)
 		fd.append("country", country)
 		fd.append("city", city)
@@ -55,6 +57,16 @@ const PostMyCouch = () => {
 					onChange={(e) => setImage(e.target.files[0])}
           /> 
       </div>
+	  <div>
+				<label htmlFor="title">Title: </label>
+				<input
+					type="text"
+					id="title"
+					name="title"
+					value={title}
+					onChange={(e) => setTitle(e.target.value)}
+				/>
+			</div>
 			<div>
 				<label htmlFor="description">Description: </label>
 				<textarea
