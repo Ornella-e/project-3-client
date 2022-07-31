@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import axios from "axios"
+import service from "../services/apiHandler"
 
 
 const EditCouch = () => {
-	const [detailCouch, setDetailCouch] = useState({})
+	
 	const [feedback, setFeedback] = useState("")
 	const [editMode, setEditMode] = useState(false)
 	const [editCouch, setEditCouch] = useState({})
@@ -12,8 +13,8 @@ const EditCouch = () => {
 	const navigate = useNavigate()
 	// console.log(id)
 
-	const handleDelete = async () => {
-		const { data } = await axios.delete(`${process.env.REACT_APP_API_URL}/couch/${id}`)
+	const handleDelete = async (user) => {
+		const { data } = await service.delete(`/couch/${id}`, user)
 		setFeedback(data.message)
 		setTimeout(() => navigate("/"), 1000)
 	}
@@ -21,7 +22,7 @@ const EditCouch = () => {
 	const handleEditCouch = async (e) => {
 		e.preventDefault()
 		console.log(editCouch)
-		const { data } = await axios.put(`${process.env.REACT_APP_API_URL}/couch/${id}`, editCouch)
+		const { data } = await service.put(`/couch/${id}`, editCouch)
 		console.log(data)
 		
 		setDetailCouch(data)
@@ -31,10 +32,7 @@ const EditCouch = () => {
 	
 	return (
 		<>
-			<div className="DetailsCouch">
-				{feedback && <h2>{feedback}</h2>}
-				<img src={detailCouch.image}/>
-				<p>{detailCouch.description}</p>
+			<div className="EditDeleteCouch">
 				
 				<button onClick={handleDelete}>Delete the post</button>
 				<button onClick={() => setEditMode(!editMode)}>Edit the post</button>
