@@ -28,6 +28,7 @@ const Home = () => {
 									key={couch.id}
 									user={couch.username}
 									image={couch.image}
+									title={couch.title}
 									description={couch.description}
 									location={couch.location}
 									evaluations={couch.evaluations}

@@ -49,15 +49,30 @@ const DetailsCouch = () => {
 							type="file"
 							id="image"
 							name="image"
-							value={editCouch.image}
+							multiple
 							onChange={(e) =>
 								setEditCouch({
 									...editCouch,
-									[e.target.name]: e.target.value,
+									[e.target.name]:e.target.files[0],
 								})
 							}
 						/>
 					</div>
+                    <div>
+				<label htmlFor="title">Title: </label>
+				<input
+					type="text"
+					id="title"
+					name="title"
+					value={editCouch.title}
+					onChange={(e) =>
+                        setEditCouch({
+                            ...editCouch,
+                            [e.target.name]: e.target.value,
+                        })
+                    }
+				/>
+			</div>
 					<div>
 						<label htmlFor="description">Description: </label>
 						<textarea
