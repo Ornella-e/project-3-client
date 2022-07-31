@@ -1,5 +1,5 @@
 import React from "react"
-import DetailsCouch from "./DetailsCouch"
+import EditCouch from "./EditCouch"
 
 const Profile = () => {
 	return (
@@ -8,7 +8,7 @@ const Profile = () => {
 				This is a protected profile, If you can see this, it means you are
 				logged in
 			</p>
-			<DetailsCouch/>
+			<EditCouch/>
 		</div>
 		
 	)

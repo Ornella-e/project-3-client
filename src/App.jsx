@@ -11,6 +11,7 @@ import MyReservations from "./pages/MyReservations"
 import MyFavourites from "./pages/MyFavourites"
 import PostMyCouch from "./pages/PostMyCouch"
 import Footer from "./components/Footer/Footer"
+import DetailsCouch from "./pages/DetailsCouch"
 
 function App() {
 	return (
@@ -27,6 +28,7 @@ function App() {
 					<Route path="/my-couch" element={<PostMyCouch />} />
 				</Route>
 				<Route path="/about" element={<About />} /> 
+				<Route path="/:id" element={<DetailsCouch />} /> 
 				<Route path="*" element={<Oops />} /> 
 			</Routes>
 			<Footer/>

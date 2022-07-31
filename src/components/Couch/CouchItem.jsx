@@ -1,5 +1,5 @@
 
-export default function CouchItem({ image, username,  description, location, evaluations, calendar, }) {
+export default function CouchItem({ image, username, title, description, location, country, city, evaluations, calendar, }) {
 
 
     if(false){
