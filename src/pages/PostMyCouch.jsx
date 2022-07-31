@@ -16,15 +16,23 @@ const PostMyCouch = () => {
 	
 	const handleSubmit = async (e) => {
 		e.preventDefault()
+
 	//	const token = localStorage.getItem("authToken")
-		const payload = { currentUser, image, description, country, city}
+		//const payload = { currentUser, image, description, country, city}
+		const fd = new FormData()
+
+		fd.append("image", image)
+		fd.append("description", description)
+		fd.append("country", country)
+		fd.append("city", city)
+
 		try {
 	//		const response = await axios.post(`${process.env.REACT_APP_API_URL}/couch/`, payload, {
 	//			headers: {
 	//				Authorization: `Bearer ${token}`,
 	//			},
 	//		})
-			await service.post('/couch', payload)
+			await service.post('/couch', fd)
 			navigate("/home")
 			// exemple of functions useing service   await service.createCouch(payload)
 		} catch (error) {
@@ -43,8 +51,8 @@ const PostMyCouch = () => {
           <input type="file" 
           id="image"
           name="image" 
-          value={image}
-					onChange={(e) => setImage(e.target.value)}
+          multiple
+					onChange={(e) => setImage(e.target.files[0])}
           /> 
       </div>
 			<div>
