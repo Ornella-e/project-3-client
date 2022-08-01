@@ -5,6 +5,7 @@ import { useParams, useNavigate  } from "react-router-dom";
 import axios from "axios";
 import service from '../services/apiHandler';
 import useAuth from '../context/auth/useAuth';
+import Ranking from '../components/Ranking/Ranking';
 
 export default function DetailsCouch() {
     const [couch, setCouch] = useState(null);
@@ -56,6 +57,7 @@ export default function DetailsCouch() {
 	
   return (
     <>
+    <h1>Details of the couch</h1>
     {couch ? (
         <>
       <div className='couch' >
@@ -66,9 +68,10 @@ export default function DetailsCouch() {
  <p>Description: {couch.description}</p>
  <p>Location: {couch.location.country}</p>
  <p>Location: {couch.location.city}</p>
- <p>Evaluations: {couch.evaluations}</p>
+
  <p>Calendar: {couch.calendar}</p>
 </div>
+
 <form className="FormCouch" onSubmit={handleSubmit}>
        <div>
 	   <label htmlFor="username">User: </label>
@@ -110,7 +113,12 @@ export default function DetailsCouch() {
     ) : (
         <p>No couch</p>
     )}
-    
+ <div>
+  <h1>Our guest's opinions</h1>
+  <p>Guest: </p>
+  <p>Grade: </p>
+  <p>Comment:</p>
+</div>   
     
 </>
 

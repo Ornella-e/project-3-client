@@ -1,4 +1,5 @@
 import React from 'react'
+import Ranking from '../components/Ranking/Ranking'
 
 export default function MyReservations(props) {
   return (
@@ -8,6 +9,8 @@ export default function MyReservations(props) {
       <p>Location: {props.location}</p>
       <p> Start-Date: {props.startingDate}</p>
       <p> End-Date: {props.endingDate}</p>
+      <Ranking/>
     </div>
+    
   )
 }
