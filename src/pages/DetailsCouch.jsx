@@ -4,13 +4,13 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-export default function DetailsCouch(props) {
+export default function DetailsCouch() {
     const [couch, setCouch] = useState(null);
 	const { id } = useParams();
 
 	useEffect(() => {
 		axios
-			.get( `${process.env.REACT_APP_API_URL}/couch/${id}`+ id
+			.get( `${process.env.REACT_APP_API_URL}/couch/${id}`
 			)
 			.then(({ data }) => {
 				console.log(data);
@@ -20,18 +20,25 @@ export default function DetailsCouch(props) {
 	}, [id]);
 
   return (
-    <div>
-     <div className='couch' >
-    
-          <img src={props.image} alt="couchImg" />
-          <p>user: {props.username}</p>
-          <p>Title: {props.title}</p>
-          <p>Description: {props.description}</p>
-          <p>Country: {props.location}</p>
-          <p>Evaluations: {props.evaluations}</p>
-          <p>Calendar: {props.calendar}</p>
-          
-        </div> 
-    </div>
+    <>
+    {couch ? (
+        <>
+      <div className='couch' >
+ 
+ <img src={couch.image} alt="couchImg" />
+ <p>user: {couch.owner}</p>
+ <p>Title: {couch.title}</p>
+ <p>Description: {couch.description}</p>
+ <p>Location: {couch.location.country}</p>
+ <p>Location: {couch.location.city}</p>
+ <p>Evaluations: {couch.evaluations}</p>
+ <p>Calendar: {couch.calendar}</p>
+ 
+</div>
+        </>
+    ) : (
+        <p>No couch</p>
+    )}
+</>
   )
 }

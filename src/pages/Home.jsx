@@ -1,5 +1,6 @@
 import React from "react";
-import { useState, useEffect, Link} from "react";
+import { useState, useEffect} from "react";
+import { Link } from "react-router-dom";
 //import './App.css';
 import CouchItem from '../components/Couch/CouchItem';
 import axios from "axios";
@@ -32,8 +33,8 @@ const Home = () => {
 									<p>{couch.location.country}</p>
 									<p>{couch.location.city}</p>
 									</div>
-								<button>More Info</button>
-								
+							
+								<Link to={couch._id}>More Info</Link>
 									</div>	
 							
 								

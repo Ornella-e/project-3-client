@@ -13,7 +13,7 @@ const PostMyCouch = () => {
   const [city, setCity] = useState("")
 	const navigate = useNavigate()
 	const {currentUser} = useAuth()
-	//console.log(currentUser)
+	console.log(currentUser)
 	
 	const handleSubmit = async (e) => {
 		e.preventDefault()
@@ -22,6 +22,7 @@ const PostMyCouch = () => {
 		//const payload = { currentUser, image, description, country, city}
 		const fd = new FormData()
 
+        fd.append("username", currentUser.username)
 		fd.append("image", image)
 		fd.append("title", title)
 		fd.append("description", description)
@@ -35,7 +36,7 @@ const PostMyCouch = () => {
 	//			},
 	//		})
 			await service.post('/couch', fd)
-			navigate("/home")
+			navigate("/")
 			// exemple of functions useing service   await service.createCouch(payload)
 		} catch (error) {
 			console.error(error)
@@ -46,7 +47,15 @@ const PostMyCouch = () => {
     
 		<form className="FormCouch" onSubmit={handleSubmit}>
        <div>
-       User: {currentUser.username}
+	   <label htmlFor="user">User: </label>
+				<input
+				type="text"
+				id="user"
+				name="user"
+      value={currentUser.username}
+	  readOnly={currentUser.username}
+	  />
+
     </div>
       <div >
         <label htmlFor="image">Image:</label>
