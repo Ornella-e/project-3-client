@@ -12,6 +12,7 @@ import MyFavourites from "./pages/MyFavourites"
 import PostMyCouch from "./pages/PostMyCouch"
 import Footer from "./components/Footer/Footer"
 import DetailsCouch from "./pages/DetailsCouch"
+import EditCouch from "./pages/EditCouch"
 
 function App() {
 	return (
@@ -23,6 +24,7 @@ function App() {
 				<Route path="/signup" element={<Signup />} />
 				<Route element={<PrivateRoute />}>
 					<Route path="/profile" element={<Profile />} />
+					<Route path="/profile/:id" element={<EditCouch />} />
 					<Route path="/reservations" element={<MyReservations />} />
 					<Route path="/favourites" element={<MyFavourites />} />
 					<Route path="/my-couch" element={<PostMyCouch />} />
