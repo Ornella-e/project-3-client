@@ -4,7 +4,7 @@ import service from "../services/apiHandler"
 
 
 const EditCouch = () => {
-	const [detailCouch, setDetailCouch] = useState({})
+
 	const [feedback, setFeedback] = useState("")
 	const [editMode, setEditMode] = useState(false)
 	const [editCouch, setEditCouch] = useState({})
@@ -12,8 +12,8 @@ const EditCouch = () => {
 	const navigate = useNavigate()
 	 console.log(id)
 
-	const handleDelete = async (user) => {
-		const { data } = await service.delete(`/couch/${id}`, user)
+	const handleDelete = async (owner) => {
+		const { data } = await service.delete(`/couch/${id}`, owner)
 		setFeedback(data.message)
 		setTimeout(() => navigate("/"), 1000)
 	}
@@ -24,7 +24,7 @@ const EditCouch = () => {
 		const { data } = await service.put(`/couch/${id}`, editCouch)
 		console.log(data)
 		
-		setDetailCouch(data)
+		
 		setEditMode(false)
 	}
 

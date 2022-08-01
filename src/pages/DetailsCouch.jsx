@@ -26,7 +26,7 @@ export default function DetailsCouch() {
       <div className='couch' >
  
  <img src={couch.image} alt="couchImg" />
- <p>user: {couch.username}</p>
+ <p>user: {couch.owner}</p>
  <p>Title: {couch.title}</p>
  <p>Description: {couch.description}</p>
  <p>Location: {couch.location.country}</p>
