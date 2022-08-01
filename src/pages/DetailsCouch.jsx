@@ -5,7 +5,6 @@ import { useParams, useNavigate  } from "react-router-dom";
 import axios from "axios";
 import service from '../services/apiHandler';
 import useAuth from '../context/auth/useAuth';
-import Ranking from '../components/Ranking/Ranking';
 
 export default function DetailsCouch() {
     const [couch, setCouch] = useState(null);
@@ -28,13 +27,9 @@ export default function DetailsCouch() {
 	}, [id]);
 
  
-	
 	const handleSubmit = async (e) => {
 		e.preventDefault()
-
-	
 		const fd = new FormData()
-
     fd.append("usename", username)
 		fd.append("startingDate", startingDate)
 		fd.append("endingDate", endingDate)
@@ -49,29 +44,21 @@ export default function DetailsCouch() {
 		}
 	}
 
-    
-
-    
-	
-
-	
   return (
     <>
     <h1>Details of the couch</h1>
     {couch ? (
         <>
       <div className='couch' >
- 
  <img src={couch.image} alt="couchImg" />
  <p>user: {couch.username}</p>
- <p>Title: {couch.title}</p>
+ <h2>Title: {couch.title}</h2>
  <p>Description: {couch.description}</p>
  <p>Location: {couch.location.country}</p>
  <p>Location: {couch.location.city}</p>
-
  <p>Calendar: {couch.calendar}</p>
 </div>
-
+<h2>Make your reservation here!</h2>
 <form className="FormCouch" onSubmit={handleSubmit}>
        <div>
 	   <label htmlFor="username">User: </label>
