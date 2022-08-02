@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect} from "react";
 import { Link } from "react-router-dom";
-//import './App.css';
+import '../styles/App.css';
 import CouchItem from '../components/Couch/CouchItem';
 import axios from "axios";
 
@@ -21,14 +21,14 @@ const Home = () => {
 
 			return (
 				<div className="ListCouches">
-					<h2>Here are the couches !</h2>
-					<div className="container">
+					<h2>Filter Area</h2>
+					<div className="container-home">
 						{couches.map((couch) => {
 							console.log(couch)
 							return (
-								<div className="card" key={couch._id}>
+								<div className="card-home" key={couch._id}>
 									<div>
-									<img src={couch.image}  />
+									<img className="image-home" src={couch.image}  />
 									<h1>{couch.title}</h1>
 									<p>{couch.location.country}</p>
 									<p>{couch.location.city}</p>

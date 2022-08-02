@@ -46,9 +46,9 @@ const PostMyCouch = () => {
 	return (
     
 		<form className="FormCouch" onSubmit={handleSubmit}>
-       <div>
+       <div className='field'>
 	   <label htmlFor="user">User: </label>
-				<input
+				<input className='field'
 				type="text"
 				id="user"
 				name="user"
@@ -57,18 +57,18 @@ const PostMyCouch = () => {
 	  />
 
     </div>
-      <div >
+      <div className='field'>
         <label htmlFor="image">Image:</label>
-          <input type="file" 
+          <input type="file" className='field'
           id="image"
           name="image" 
           multiple
 					onChange={(e) => setImage(e.target.files[0])}
           /> 
       </div>
-	  <div>
+	  <div className='field'>
 				<label htmlFor="title">Title: </label>
-				<input
+				<input className='field'
 					type="text"
 					id="title"
 					name="title"
@@ -76,9 +76,9 @@ const PostMyCouch = () => {
 					onChange={(e) => setTitle(e.target.value)}
 				/>
 			</div>
-			<div>
+			<div className='field'>
 				<label htmlFor="description">Description: </label>
-				<textarea
+				<textarea className='field'
 					type="text"
 					id="description"
 					name="description"
@@ -87,9 +87,9 @@ const PostMyCouch = () => {
 					cols={25}
 					onChange={(e) => setDescription(e.target.value)}></textarea>
 			</div>
-      <div>
+      <div className='field'>
 				<label htmlFor="country">Country: </label>
-				<input
+				<input className='field'
 					type="text"
 					id="country"
 					name="country"
@@ -97,9 +97,9 @@ const PostMyCouch = () => {
 					onChange={(e) => setCountry(e.target.value)}
 				/>
 			</div>
-      <div>
+      <div className='field'>
 				<label htmlFor="city">City: </label>
-				<input
+				<input className='field'
 					type="text"
 					id="city"
 					name="city"
@@ -108,7 +108,7 @@ const PostMyCouch = () => {
 				/>
 			</div>
 
-			<button>Create a post</button>
+			<button className='field'>Create a post</button>
 		</form>
     
 	)
