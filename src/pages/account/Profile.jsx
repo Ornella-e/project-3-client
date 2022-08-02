@@ -1,19 +1,27 @@
-import React from "react"
-import EditCouch from "../EditCouch"
-import MyFavourites from "../MyFavourites"
+import React, {useState} from "react"
+import useAuth from "../../context/auth/useAuth"
+import { NavLink } from "react-router-dom"
 
-const Profile = () => {
+
+
+
+
+
+
+export default function Profile  ()  {
+	const { isLoggedIn, currentUser, removeUser } = useAuth()
+	const [editMode, setEditMode] = useState(false)
 	return (
-		<div>
-			
-			 <p>
-				<h1>Profile</h1>
-			</p>
-			<EditCouch/>,
-			<MyFavourites/> 
-		</div>
+
 		
+		<div className="Profile">
+		  <h2>Hi, i'm {currentUser.username}</h2>
+		  	<p>
+		   		<button onClick={()=> setEditMode(!editMode) }> Edit Profile </button>
+		   	</p>
+		 
+		</div>	
 	)
 }
 
-export default Profile
+

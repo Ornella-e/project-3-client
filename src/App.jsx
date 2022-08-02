@@ -14,6 +14,7 @@ import PostMyCouch from "./pages/PostMyCouch"
 import Footer from "./components/Footer/Footer"
 import DetailsCouch from "./pages/DetailsCouch"
 import EditCouch from "./pages/EditCouch"
+import EditProfile from "./pages/account/EditProfile"
 
 function App() {
 	return (
@@ -25,8 +26,9 @@ function App() {
 				<Route path="/signup" element={<Signup />} />
 				<Route element={<PrivateRoute />}>
 					<Route path="/account" element={<Account />} />
-					<Route path="/profile" elemente={<Profile/>} />
-					<Route path="/profile/:id" element={<EditCouch />} />
+					<Route path="/profile" element={<Profile/>} />
+					<Route path="/editcouch/:id" element={<EditCouch />} />
+					<Route path="/editprofile/:id" element={<EditProfile/>} />
 					<Route path="/reservations" element={<MyReservations />} />
 					<Route path="/favourites" element={<MyFavourites />} />
 					<Route path="/my-couch" element={<PostMyCouch />} />

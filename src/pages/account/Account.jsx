@@ -1,7 +1,8 @@
 import React from "react"
 import EditCouch from "../EditCouch"
 import MyFavourites from "../MyFavourites"
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
+
 
 
 const Account = () => {
@@ -13,9 +14,8 @@ const Account = () => {
 			</p>
                 <EditCouch/>,
                 <MyFavourites/>
-            <p>
-                <h2>go to your profile <Link to={"/profile"} >Profile</Link></h2>
-            </p>
+
+				<NavLink className="" to="/profile" >Profile</NavLink>
             
 		</div>
 		

@@ -18,3 +18,13 @@ a {
 ul {
 	list-style-type: none;
 }
+
+/* ---PROFILE--- */
+.Profile{
+background-color: aquamarine;
+display: flex;
+justify-content: center;
+
+
+
+}
