@@ -3,7 +3,8 @@ import Navbar from "./components/Navbar/Navbar"
 import Home from "./pages/Home"
 import Signin from "./pages/Signin"
 import Signup from "./pages/Signup"
-import Profile from "./pages/Profile"
+import Profile from "./pages/account/Profile"
+import Account from "./pages/account/Account"
 import Oops from "./pages/Oops"
 import PrivateRoute from "./components/ProtectedRoute/PrivateRoute"
 import About from "./pages/About"
@@ -13,6 +14,8 @@ import PostMyCouch from "./pages/PostMyCouch"
 import Footer from "./components/Footer/Footer"
 import DetailsCouch from "./pages/DetailsCouch"
 import EditCouch from "./pages/EditCouch"
+import EditProfile from "./pages/account/EditProfile"
+import ProfileCard from "./components/User/ProfileCard"
 
 function App() {
 	return (
@@ -23,11 +26,14 @@ function App() {
 				<Route path="/signin" element={<Signin />} />
 				<Route path="/signup" element={<Signup />} />
 				<Route element={<PrivateRoute />}>
-					<Route path="/profile" element={<Profile />} />
-					<Route path="/profile/:id" element={<EditCouch />} />
+					<Route path="/account" element={<Account />} />
+					<Route path="/profile" element={<Profile/>} />
+					<Route path="/editcouch/:id" element={<EditCouch />} />
+					<Route path="/editprofile" element={<EditProfile/>} />
 					<Route path="/reservations" element={<MyReservations />} />
 					<Route path="/favourites" element={<MyFavourites />} />
 					<Route path="/my-couch" element={<PostMyCouch />} />
+					<Route path ="/profileCard" element={<ProfileCard />} />
 				</Route>
 				<Route path="/about" element={<About />} /> 
 				<Route path="/:id" element={<DetailsCouch />} /> 

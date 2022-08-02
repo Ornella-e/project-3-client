@@ -24,7 +24,7 @@ const Navbar = () => {
 			{isLoggedIn && (
 				<>
 				    
-					<NavLink className="sign" to="/profile" >{currentUser.username}</NavLink>
+					<NavLink className="sign" to="/Account" >{currentUser.username}</NavLink>
 					<NavLink className="sign" to="/reservations" >Reservations</NavLink>
 					<NavLink className="sign" to="/favourites" >Favourites</NavLink>
 					<NavLink className="sign" to="/my-couch" >My Couch</NavLink>

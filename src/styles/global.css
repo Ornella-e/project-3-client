@@ -18,3 +18,34 @@ a {
 ul {
 	list-style-type: none;
 }
+
+/* ---PROFILE--- */
+.ProfilePage{
+	display: flex;
+	justify-self: flex-start;
+	padding: 10px;
+}
+
+.Profile{
+background-color: rgb(113, 216, 182);
+	display: flex;
+	gap: 20px;
+	flex-direction: column;
+	padding: 10px;
+
+margin-left: auto;
+margin-right: auto;
+width: 20em;
+}
+
+.ComponentProfilCard{
+background-color: rgb(197, 175, 219);
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+
+margin-left: auto;
+margin-right: auto;
+width: 20em;
+
+}
