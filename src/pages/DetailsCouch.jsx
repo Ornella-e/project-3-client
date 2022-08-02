@@ -46,7 +46,6 @@ export default function DetailsCouch() {
 
   return (
     <>
-    <h1>Details of the couch</h1>
     {couch ? (
         <>
       <div className='couch' >
