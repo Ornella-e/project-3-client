@@ -15,8 +15,7 @@
 	color: aliceblue;
 	text-decoration: none;
 	padding: 1rem;
-	display: block;
-	
+	display: block;	
 }
 .sign:active{
 	color:  #CCF381;	
@@ -24,7 +23,6 @@
 
 .search{
 	padding: 0.7rem;
-
 	}
 .button-navbar{
 		padding: 0.1rem;
@@ -36,7 +34,6 @@
 	width: 5rem;
 	height: 5rem;
 	margin-top: .75rem;
-	
 }
 .toggle-button{
 	position: absolute;
@@ -59,8 +56,7 @@
 
 @media (max-width:400px) {
 	.toggle-button{
-		display: flex;
-		
+		display: flex;	
 	}
 	
 	.Navbar {
@@ -70,8 +66,7 @@
 	.navbar-links{
 		display: none;
 		width: 100%;
-		flex-direction: column;
-		
+		flex-direction: column;	
 	}
 	.sign{
 		text-align: center;

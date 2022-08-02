@@ -3,7 +3,6 @@ import useAuth from "../../context/auth/useAuth"
 import "./Navbar.css"
 import logo from "./logo-option4.png"
 
-
 const Navbar = () => {
 	const { isLoggedIn, currentUser, removeUser } = useAuth()
 		
