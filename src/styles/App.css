@@ -20,5 +20,14 @@
 
 .image-detail{
     border-radius: 4%;
+}
 
+.FormCouch{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.field{
+    padding: 3px;
+    width: 400px;
 }
