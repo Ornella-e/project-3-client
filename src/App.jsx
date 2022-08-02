@@ -15,6 +15,7 @@ import Footer from "./components/Footer/Footer"
 import DetailsCouch from "./pages/DetailsCouch"
 import EditCouch from "./pages/EditCouch"
 import EditProfile from "./pages/account/EditProfile"
+import ProfileCard from "./components/User/ProfileCard"
 
 function App() {
 	return (
@@ -28,10 +29,11 @@ function App() {
 					<Route path="/account" element={<Account />} />
 					<Route path="/profile" element={<Profile/>} />
 					<Route path="/editcouch/:id" element={<EditCouch />} />
-					<Route path="/editprofile/:id" element={<EditProfile/>} />
+					<Route path="/editprofile" element={<EditProfile/>} />
 					<Route path="/reservations" element={<MyReservations />} />
 					<Route path="/favourites" element={<MyFavourites />} />
 					<Route path="/my-couch" element={<PostMyCouch />} />
+					<Route path ="/profileCard" element={<ProfileCard />} />
 				</Route>
 				<Route path="/about" element={<About />} /> 
 				<Route path="/:id" element={<DetailsCouch />} /> 

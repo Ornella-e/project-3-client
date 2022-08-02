@@ -57,7 +57,7 @@ const EditProfile = () => {
 					type="text"
 					id="name"
 					name="name"
-					value={editProfile.name}
+					value={editProfile.username}
 					onChange={(e) =>
                         setEditProfile({
                             ...editProfile,
