@@ -50,17 +50,19 @@ export default function DetailsCouch() {
     {couch ? (
         <>
       <div className='couch' >
- <img src={couch.image} alt="couchImg" />
- <p>user: {couch.username}</p>
  <h2>Title: {couch.title}</h2>
+ <img className="image-detail" src={couch.image} alt="couchImg" />
+ <p>user: {couch.username}</p>
+ <img src={couch.userImage} alt="userImg"/>
  <p>Description: {couch.description}</p>
+ <p>Space for filters</p>
  <p>Location: {couch.location.country}</p>
  <p>Location: {couch.location.city}</p>
  <p>Calendar: {couch.calendar}</p>
 </div>
-<h2>Make your reservation here!</h2>
+<h2 className='couch'>Make your reservation here!</h2>
 <form className="FormCouch" onSubmit={handleSubmit}>
-       <div>
+       <div className='couch-input'>
 	   <label htmlFor="username">User: </label>
 				<input
 				type="text"
@@ -72,8 +74,8 @@ export default function DetailsCouch() {
 
     </div>
      
-	  <div>
-				<label htmlFor="startingDate">Start-Day: </label>
+	  <div className='couch-input'>
+				<label htmlFor="startingDate">Check-in: </label>
 				<input
 					type="date"
 					id="startingDate"
@@ -82,8 +84,8 @@ export default function DetailsCouch() {
 					onChange={(e) => setStartingDate(e.target.value)}
 				/>
 			</div>
-      <div>
-				<label htmlFor="endingDate">End-Day: </label>
+      <div className='couch-input'>
+				<label htmlFor="endingDate">Check-out: </label>
 				<input
 					type="date"
 					id="endingDate"
@@ -92,7 +94,7 @@ export default function DetailsCouch() {
 					onChange={(e) => setEndingDate(e.target.value)}
 				/>
 			</div>
-			<button>Reserve</button>
+			<button className="button-detail">Reserve</button>
 		</form>
 
         </>
@@ -100,7 +102,7 @@ export default function DetailsCouch() {
     ) : (
         <p>No couch</p>
     )}
- <div>
+ <div className='couch'>
   <h1>Our guest's opinions</h1>
   <p>Guest: </p>
   <p>Grade: </p>

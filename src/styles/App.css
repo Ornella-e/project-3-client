@@ -1,0 +1,24 @@
+.container-home{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-home{
+   padding: 4%;
+
+}
+.image-home{
+    width: 350px;
+    height: 350px;
+}
+
+.couch{
+    display: flex;
+   flex-direction: column;
+   padding: 4%;
+}
+
+.image-detail{
+    border-radius: 4%;
+
+}
