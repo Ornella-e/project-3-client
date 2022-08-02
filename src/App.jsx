@@ -3,7 +3,8 @@ import Navbar from "./components/Navbar/Navbar"
 import Home from "./pages/Home"
 import Signin from "./pages/Signin"
 import Signup from "./pages/Signup"
-import Profile from "./pages/Profile"
+import Profile from "./pages/account/Profile"
+import Account from "./pages/account/Account"
 import Oops from "./pages/Oops"
 import PrivateRoute from "./components/ProtectedRoute/PrivateRoute"
 import About from "./pages/About"
@@ -23,7 +24,8 @@ function App() {
 				<Route path="/signin" element={<Signin />} />
 				<Route path="/signup" element={<Signup />} />
 				<Route element={<PrivateRoute />}>
-					<Route path="/profile" element={<Profile />} />
+					<Route path="/account" element={<Account />} />
+					<Route path="/profile" elemente={<Profile/>} />
 					<Route path="/profile/:id" element={<EditCouch />} />
 					<Route path="/reservations" element={<MyReservations />} />
 					<Route path="/favourites" element={<MyFavourites />} />
