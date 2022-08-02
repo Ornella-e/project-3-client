@@ -102,12 +102,15 @@ export default function DetailsCouch() {
         <p>No couch</p>
     )}
  <div className='couch'>
-  <h1>Our guest's opinions</h1>
+  <h2>Our guest's opinions</h2>
   <p>Guest: </p>
   <p>Grade: </p>
   <p>Comment:</p>
 </div>   
-    
+<div className='couch'>
+  <h3>Cancellation policy</h3>
+  <p>Familiarize yourself with the host's cancellation policy, as it applies if you cancel due to illness or other reasons </p>
+</div>  
 </>
 
   )
