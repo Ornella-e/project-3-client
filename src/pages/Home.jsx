@@ -20,7 +20,8 @@ const Home = () => {
 
 			return (
 				<div className="ListCouches">
-					<h2>Filter Area</h2>
+					<h1>Welcome to ShareCouch</h1>
+					<h3>The platform that connects travelers around the world looking for free accommodation, meet new people and make new friendships.</h3>
 					<div className="container-home">
 						{couches.map((couch) => {
 							console.log(couch)
