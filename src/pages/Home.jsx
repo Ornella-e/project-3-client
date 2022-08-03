@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import '../styles/App.css';
-import CouchItem from '../components/Couch/CouchItem';
 import axios from "axios";
 
 
@@ -28,7 +27,7 @@ const Home = () => {
 							return (
 								<div className="card-home" key={couch._id}>
 									<div>
-									<img className="image-home" src={couch.image}  />
+									<img className="image-home" src={couch.image} alt="home-img"/>
 									<h1>{couch.title}</h1>
 									<p>{couch.location.country}</p>
 									<p>{couch.location.city}</p>

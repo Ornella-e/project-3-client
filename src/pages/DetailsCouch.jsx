@@ -1,18 +1,19 @@
 import React from 'react'
-import CouchItem from '../components/Couch/CouchItem'
 import { useState, useEffect} from "react";
 import { useParams, useNavigate  } from "react-router-dom";
 import axios from "axios";
 import service from '../services/apiHandler';
-import useAuth from '../context/auth/useAuth';
+
 
 export default function DetailsCouch() {
     const [couch, setCouch] = useState(null);
 	const { id } = useParams();
+	const [username, setUsername] = useState("")
   const [startingDate, setStartingDate] = useState("")
   const [endingDate, setEndingDate] = useState("")
 	const navigate = useNavigate()
-	const {username} = useAuth()
+	//const {username} = useAuth()
+	
 	console.log(username)
 
 	useEffect(() => {
@@ -30,13 +31,13 @@ export default function DetailsCouch() {
 	const handleSubmit = async (e) => {
 		e.preventDefault()
 		const fd = new FormData()
-    fd.append("usename", username)
+    fd.append("username", username)
 		fd.append("startingDate", startingDate)
 		fd.append("endingDate", endingDate)
 
 		try {
 
-			await service.post('/couch', fd)
+			await service.put(`/couch/${id}`, fd)
 			navigate("/reservations")
 
 		} catch (error) {
@@ -59,7 +60,12 @@ export default function DetailsCouch() {
  <p>Location: {couch.location.city}</p>
  <p>Calendar: {couch.calendar}</p>
 </div>
-<h2 className='couch'>Make your reservation here!</h2>
+</>
+        
+    ) : (
+        <p>No couch</p>
+    )}
+	<h2 className='couch'>Make your reservation here!</h2>
 <form className="FormCouch" onSubmit={handleSubmit}>
        <div className='couch-input'>
 	   <label htmlFor="username">User: </label>
@@ -68,7 +74,7 @@ export default function DetailsCouch() {
 				id="username"
 				name="username"
       value={username}
-	  readOnly={username}
+	  onChange={(e) => setUsername(e.target.value)}
 	  />
 
     </div>
@@ -96,11 +102,7 @@ export default function DetailsCouch() {
 			<button className="button-detail">Reserve</button>
 		</form>
 
-        </>
         
-    ) : (
-        <p>No couch</p>
-    )}
  <div className='couch'>
   <h2>Our guest's opinions</h2>
   <p>Guest: </p>

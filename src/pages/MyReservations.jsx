@@ -1,8 +1,7 @@
 import React from 'react'
 import Ranking from '../components/Ranking/Ranking'
-import { useState, useEffect} from "react";
+import { useState } from "react";
 import { useParams, useNavigate  } from "react-router-dom";
-import axios from "axios";
 import useAuth from '../context/auth/useAuth';
 import service from '../services/apiHandler';
 
@@ -10,8 +9,8 @@ export default function MyReservations(props) {
 	const { id } = useParams();
   const [evaluations, setEvaluations] = useState("")
 	const navigate = useNavigate()
-	const {username} = useAuth()
-	console.log(username)
+	const {currentUser} = useAuth()
+	console.log(currentUser)
 
 
   const handleSubmit = async (e) => {
@@ -24,7 +23,7 @@ export default function MyReservations(props) {
 
 		try {
 
-			await service.post(`/couch/${id}`, fd)
+			await service.put(`/couch/${id}`, fd)
 			navigate("/reservations")
 
 		} catch (error) {
