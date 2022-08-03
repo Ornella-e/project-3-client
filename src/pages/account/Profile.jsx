@@ -11,6 +11,7 @@ import ProfileCard from "../../components/User/ProfileCard"
 
 
 
+
 export default function Profile  ()  {
 	const { isLoggedIn, currentUser, removeUser } = useAuth()
 	const [editMode, setEditMode] = useState(false)
@@ -23,6 +24,7 @@ export default function Profile  ()  {
 			<p className="Profile">
 				<h2>Hi, i'm {currentUser.username}</h2>
 		  	<p>
+				  
 				  {/* need to fix the link */}
 			  	<NavLink className="" to="/editprofile" >Edit Profile</NavLink> 
 			</p>
