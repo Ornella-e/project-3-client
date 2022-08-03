@@ -20,8 +20,19 @@ const Home = () => {
 
 			return (
 				<div className="ListCouches">
+					<div className="Container-Intro">
+					<div className="text-intro">
 					<h1>Welcome to ShareCouch</h1>
-					<h3>The platform that connects travelers around the world looking for free accommodation, meet new people and make new friendships.</h3>
+					<h3>The platform that connects travelers around the world looking for free accommodation, discover new places and make new friendships.</h3>
+					</div>
+					<div className="text-intro">
+			        <input type="text" className="input-intro" placeholder="Search for free accommodation..."/>
+			        <button className="button-intro">Search</button>
+					</div>
+					<div className="pic-intro">
+						<p>Photo by Bao Menglong</p>
+					</div>
+					</div>
 					<div className="container-home">
 						{couches.map((couch) => {
 							console.log(couch)
