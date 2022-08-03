@@ -2,7 +2,8 @@ import { useState, useMemo } from "react"
 import { useNavigate } from "react-router-dom"
 import service from "../../services/apiHandler"
 import { Link } from "react-router-dom"
-/* import CountrySelector from "./FormCountrySelector" */
+
+
 
 
 
@@ -46,16 +47,7 @@ const UserPictureUploader = () => {
 				/> 
 			 
 					
-			{/* 	<label htmlFor="couch"><p>couch</p></label>
-				<input
-					onChange={(e) =>
-						setUser({ ...user, [e.target.name]: e.target.value })
-					}
-					value={user.couch}
-					type="couch"
-					id="couch"
-					name="couch"
-					/>  */}
+		
 					<p>
 				<button>Upload Picture</button>
 					</p>

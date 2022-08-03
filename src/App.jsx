@@ -16,6 +16,7 @@ import DetailsCouch from "./pages/DetailsCouch"
 import EditCouch from "./pages/EditCouch"
 import EditProfile from "./pages/account/EditProfile"
 import ProfileCard from "./components/User/ProfileCard"
+import ProfileImage from "./components/User/ProfileImage"
 
 function App() {
 	return (
@@ -33,7 +34,8 @@ function App() {
 					<Route path="/reservations" element={<MyReservations />} />
 					<Route path="/favourites" element={<MyFavourites />} />
 					<Route path="/my-couch" element={<PostMyCouch />} />
-					<Route path ="/profileCard" element={<ProfileCard />} />
+					<Route path="/profileCard" element={<ProfileCard />} />
+					<Route path="/profileimage" element={<ProfileImage />} />
 				</Route>
 				<Route path="/about" element={<About />} /> 
 				<Route path="/:id" element={<DetailsCouch />} /> 
