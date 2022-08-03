@@ -44,7 +44,8 @@ const PostMyCouch = () => {
 	}
 
 	return (
-    
+      <>
+	  <p>To post your couch, please fill in the following information.</p>
 		<form className="FormCouch" onSubmit={handleSubmit}>
        <div className='field'>
 	   <label htmlFor="user">User: </label>
@@ -110,7 +111,7 @@ const PostMyCouch = () => {
 
 			<button className='field'>Create a post</button>
 		</form>
-    
+		</>
 	)
 }
 

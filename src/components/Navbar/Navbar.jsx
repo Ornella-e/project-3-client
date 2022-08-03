@@ -12,11 +12,11 @@ const Navbar = () => {
 				<img src={logo} alt="logo"/>
 			</NavLink>
 			
-			<a href="#" className="toggle-button">
+			<button className="toggle-button">
 				<span className="bar"></span>
 				<span className="bar"></span>
 				<span className="bar"></span>
-			</a>
+			</button>
 			
 			<div className="navbar-links">
 			<NavLink className="sign" to="/" >Home</NavLink>
