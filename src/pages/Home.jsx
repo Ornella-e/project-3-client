@@ -3,7 +3,8 @@ import { useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 //import './App.css';
 import CouchItem from '../components/Couch/CouchItem';
-import axios from "axios";
+import axios from "axios"
+import Map from "../components/Map/Map";
 
 
 
@@ -40,6 +41,9 @@ const Home = () => {
 								
 							)
 						})}
+						<section style={{width: 600, height: 400}}>
+							<Map />
+						</section>
 					</div>
 				</div>
 			)
