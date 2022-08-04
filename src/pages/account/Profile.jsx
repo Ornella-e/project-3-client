@@ -4,12 +4,7 @@ import { NavLink } from "react-router-dom"
 import MyFavourites from "../MyFavourites"
 import MyReservations from "../MyReservations"
 import ProfileCard from "../../components/User/ProfileCard"
-
-
-
-
-
-
+import EditProfile from "./EditProfile" 
 
 
 export default function Profile  ()  {
@@ -17,7 +12,6 @@ export default function Profile  ()  {
 	const [editMode, setEditMode] = useState(false)
 	return (
 
-		
 		<div className="ProfilePage">
 				<ProfileCard className="ProfileCard"/>
 
@@ -26,15 +20,12 @@ export default function Profile  ()  {
 		  	<p>
 				  
 				  {/* need to fix the link */}
-			  	<NavLink className="" to="/editprofile" >Edit Profile</NavLink> 
+				  {/* <EditProfile/> */}
+			  	{/* <NavLink className="" to="/editprofile" >Edit Profile</NavLink> */} 
 			</p>
 				<MyFavourites/>
 				<MyReservations/>
-			</p>
-		  
-				
-		   	
-		 
+			</p> 
 		</div>	
 		 
 	)
