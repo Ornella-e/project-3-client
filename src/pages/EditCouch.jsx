@@ -40,9 +40,9 @@ const EditCouch = () => {
 			{/* This form is conditionally rendered */}
 			{editMode && (
 				<form onSubmit={handleEditCouch}>
-					<div>
+					<div className='field'>
 						<label htmlFor="image">Image: </label>
-						<input
+						<input className='field'
 							type="file"
 							id="image"
 							name="image"
@@ -55,9 +55,9 @@ const EditCouch = () => {
 							}
 						/>
 					</div>
-                    <div>
+                    <div className='field'>
 				<label htmlFor="title">Title: </label>
-				<input
+				<input className='field'
 					type="text"
 					id="title"
 					name="title"
@@ -70,9 +70,9 @@ const EditCouch = () => {
                     }
 				/>
 			</div>
-					<div>
+					<div className='field'>
 						<label htmlFor="description">Description: </label>
-						<textarea
+						<textarea className='field'
 							type="text"
 							id="description"
 							name="description"
@@ -87,9 +87,9 @@ const EditCouch = () => {
 							}></textarea>
 					</div>
 
-                    <div>
+                    <div className='field'>
 				<label htmlFor="country">Country: </label>
-				<input
+				<input className='field'
 					type="text"
 					id="country"
 					name="country"
@@ -102,9 +102,9 @@ const EditCouch = () => {
                     }
 				/>
 			</div>
-      <div>
+      <div className='field'>
 				<label htmlFor="city">City: </label>
-				<input
+				<input className='field'
 					type="text"
 					id="city"
 					name="city"
