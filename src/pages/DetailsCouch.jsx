@@ -6,7 +6,7 @@ import axios from "axios";
 import service from "../services/apiHandler";
 
 
-export default function DetailsCouch() {
+export default function DetailsCouch(props) {
   const [couch, setCouch] = useState(null);
   const { id } = useParams();
   const [username, setUsername] = useState("");
@@ -15,9 +15,8 @@ export default function DetailsCouch() {
   const { currentUser } = useAuth();
   console.log(currentUser);
   const navigate = useNavigate();
-  //const {username} = useAuth()
 
-  console.log(username);
+
 
   useEffect(() => {
     axios
@@ -32,7 +31,7 @@ export default function DetailsCouch() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const fd = new FormData();
-    fd.append("username", username);
+    fd.append("username", currentUser.username);
     fd.append("startingDate", startingDate);
     fd.append("endingDate", endingDate);
 
@@ -66,14 +65,16 @@ export default function DetailsCouch() {
       <h2 className="couch">Make your reservation here!</h2>
       <form className="FormCouch" onSubmit={handleSubmit}>
         <div className="couch-input">
-          <label htmlFor="username">User: </label>
+		  <label htmlFor="username">user: </label>
           <input
-            type="text"
-            id="username"
-            name="username"
-            value={currentUser.username}
-            onChange={(e) => setUsername(e.target.value)}
+		             type="text"
+					 className="field"
+					 id="username"
+					 name="username"
+					 value={username}
+					 onChange={(e) => setUsername(e.target.value)}
           />
+         
         </div>
 
         <div className="couch-input">
@@ -101,9 +102,9 @@ export default function DetailsCouch() {
 
       <div className="couch">
         <h2>Our guest's opinions</h2>
-        <p>Guest: </p>
-        <p>Grade: </p>
-        <p>Comment:</p>
+        <p>Guest: {props.username}</p>
+        <p>Grade:{props.grade}</p>
+        <p>Comment:{props.evaluation}</p>
       </div>
       <div className="couch">
         <h3>Cancellation policy</h3>
