@@ -1,6 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import Map from "../components/Map/Map";
+/* import  "../styles/App.css" */
 
 const Home = () => {
   const [couches, setCouches] = useState([]);
@@ -49,11 +52,21 @@ const Home = () => {
               </div>
 
               <Link to={couch._id}>More Info</Link>
+			
+				<section className="HomePageMap"> 
+				<Map/>
+				</section>
+				
+			
             </div>
           );
         })}
+		
       </div>
+	 	
+	  
     </div>
+	
   );
 };
 
