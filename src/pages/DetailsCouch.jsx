@@ -5,7 +5,6 @@ import useAuth from "../context/auth/useAuth";
 import axios from "axios";
 import service from "../services/apiHandler";
 
-
 export default function DetailsCouch(props) {
   const [couch, setCouch] = useState(null);
   const { id } = useParams();
@@ -15,8 +14,6 @@ export default function DetailsCouch(props) {
   const { currentUser } = useAuth();
   console.log(currentUser);
   const navigate = useNavigate();
-
-
 
   useEffect(() => {
     axios
@@ -65,16 +62,15 @@ export default function DetailsCouch(props) {
       <h2 className="couch">Make your reservation here!</h2>
       <form className="FormCouch" onSubmit={handleSubmit}>
         <div className="couch-input">
-		  <label htmlFor="username">user: </label>
+          <label htmlFor="username">user: </label>
           <input
-		             type="text"
-					 className="field"
-					 id="username"
-					 name="username"
-					 value={username}
-					 onChange={(e) => setUsername(e.target.value)}
+            type="text"
+            className="field"
+            id="username"
+            name="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
-         
         </div>
 
         <div className="couch-input">

@@ -14,8 +14,6 @@ const PostMyCouch = () => {
   const { currentUser } = useAuth();
   console.log(currentUser);
 
-  
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -23,7 +21,7 @@ const PostMyCouch = () => {
     //const payload = { currentUser, image, description, country, city}
     const fd = new FormData();
 
-    fd.append("username", currentUser.username)
+    fd.append("username", currentUser.username);
     fd.append("image", image);
     fd.append("title", title);
     fd.append("description", description);
@@ -49,16 +47,15 @@ const PostMyCouch = () => {
       <p>To post your couch, please fill in the following information.</p>
       <form className="FormCouch" onSubmit={handleSubmit}>
         <div className="field">
-		<label htmlFor="username">user: </label>
+          <label htmlFor="username">user: </label>
           <input
-		             type="text"
-					 className="field"
-					 id="username"
-					 name="username"
-					 value={currentUser.username}
-					 onChange={(e) => setUsername(e.target.value)}
+            type="text"
+            className="field"
+            id="username"
+            name="username"
+            value={currentUser.username}
+            onChange={(e) => setUsername(e.target.value)}
           />
-         
         </div>
         <div className="field">
           <label htmlFor="image">Image:</label>

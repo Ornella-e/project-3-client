@@ -5,8 +5,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import useAuth from "../context/auth/useAuth";
 import service from "../services/apiHandler";
 
-
-
 export default function MyReservations() {
   const { id } = useParams();
   const [couches, setCouches] = useState([]);
@@ -34,14 +32,14 @@ export default function MyReservations() {
 
   return (
     <>
-	   <h1>Details of my reservations</h1>
-	   {reservedCouch ? (
+      <h1>Details of my reservations</h1>
+      {reservedCouch ? (
         <>
           <div className="couch">
             <h2>Id: {reservedCouch.id}</h2>
-           <p>user: {reservedCouch.username}</p>
-		   <p>check in: {reservedCouch.startingDate}</p>
-		   <p>check out: {reservedCouch.endingDate}</p>
+            <p>user: {reservedCouch.username}</p>
+            <p>check in: {reservedCouch.startingDate}</p>
+            <p>check out: {reservedCouch.endingDate}</p>
           </div>
         </>
       ) : (
@@ -49,20 +47,19 @@ export default function MyReservations() {
       )}
       <div>
         <h2>Rate your stay at {reservedCouch.username}'s couch </h2>
-       <Ranking />
+        <Ranking />
       </div>
       <form className="FormCouch" onSubmit={handleSubmit}>
-	  <div className="couch-input">
-		  <label htmlFor="username">user: </label>
+        <div className="couch-input">
+          <label htmlFor="username">user: </label>
           <input
-		             type="text"
-					 className="field"
-					 id="username"
-					 name="username"
-					 value={username}
-					 onChange={(e) => setUsername(e.target.value)}
+            type="text"
+            className="field"
+            id="username"
+            name="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
-         
         </div>
         <div>
           <label htmlFor="evaluations">Evaluation: </label>
@@ -80,7 +77,5 @@ export default function MyReservations() {
         <button>Comment your stay</button>
       </form>
     </>
-	
   );
 }
-
