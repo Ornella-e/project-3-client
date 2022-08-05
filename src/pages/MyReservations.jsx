@@ -5,8 +5,11 @@ import { useParams, useNavigate } from "react-router-dom";
 import useAuth from "../context/auth/useAuth";
 import service from "../services/apiHandler";
 
-export default function MyReservations(props) {
+export default function MyReservations() {
   const { id } = useParams();
+  const [couches, setCouches] = useState([]);
+  const [username, setUsername] = useState("");
+  const [reservedCouch, setReservedCouch] = useState([]);
   const [evaluations, setEvaluations] = useState("");
   const navigate = useNavigate();
   const { currentUser } = useAuth();
@@ -29,18 +32,35 @@ export default function MyReservations(props) {
 
   return (
     <>
+      <h1>Details of my reservations</h1>
+      {reservedCouch ? (
+        <>
+          <div className="couch">
+            <h2>Id: {reservedCouch.id}</h2>
+            <p>user: {reservedCouch.username}</p>
+            <p>check in: {reservedCouch.startingDate}</p>
+            <p>check out: {reservedCouch.endingDate}</p>
+          </div>
+        </>
+      ) : (
+        <p>No reservation</p>
+      )}
       <div>
-        <h1>Details of my reservations</h1>
-        <p> Couch: {props._id}</p>
-        <p>Location: {props.location}</p>
-        <p> Start-Date: {props.startingDate}</p>
-        <p> End-Date: {props.endingDate}</p>
-      </div>
-      <div>
-        <h2>Rate your stay at {props.username}'s couch </h2>
+        <h2>Rate your stay at {reservedCouch.username}'s couch </h2>
         <Ranking />
       </div>
       <form className="FormCouch" onSubmit={handleSubmit}>
+        <div className="couch-input">
+          <label htmlFor="username">user: </label>
+          <input
+            type="text"
+            className="field"
+            id="username"
+            name="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
         <div>
           <label htmlFor="evaluations">Evaluation: </label>
           <textarea
