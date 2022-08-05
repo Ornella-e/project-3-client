@@ -1,8 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import useAuth from "../context/auth/useAuth";
 import axios from "axios";
 import service from "../services/apiHandler";
+
 
 export default function DetailsCouch() {
   const [couch, setCouch] = useState(null);
@@ -10,6 +12,8 @@ export default function DetailsCouch() {
   const [username, setUsername] = useState("");
   const [startingDate, setStartingDate] = useState("");
   const [endingDate, setEndingDate] = useState("");
+  const { currentUser } = useAuth();
+  console.log(currentUser);
   const navigate = useNavigate();
   //const {username} = useAuth()
 
@@ -67,7 +71,7 @@ export default function DetailsCouch() {
             type="text"
             id="username"
             name="username"
-            value={username}
+            value={currentUser.username}
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>

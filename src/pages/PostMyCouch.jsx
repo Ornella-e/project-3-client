@@ -4,6 +4,7 @@ import useAuth from "../context/auth/useAuth";
 import service from "../services/apiHandler";
 
 const PostMyCouch = () => {
+  const [owner, setOwner] = useState("");
   const [image, setImage] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -12,6 +13,7 @@ const PostMyCouch = () => {
   const navigate = useNavigate();
   const { currentUser } = useAuth();
   console.log(currentUser);
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,7 +22,7 @@ const PostMyCouch = () => {
     //const payload = { currentUser, image, description, country, city}
     const fd = new FormData();
 
-    fd.append("username", currentUser.username);
+    fd.append("owner", currentUser.username);
     fd.append("image", image);
     fd.append("title", title);
     fd.append("description", description);
@@ -46,14 +48,14 @@ const PostMyCouch = () => {
       <p>To post your couch, please fill in the following information.</p>
       <form className="FormCouch" onSubmit={handleSubmit}>
         <div className="field">
-          <label htmlFor="user">User: </label>
+          <label htmlFor="owner">User: </label>
           <input
             className="field"
             type="text"
-            id="user"
-            name="user"
+            id="owner"
+            name="owner"
             value={currentUser.username}
-            readOnly={currentUser.username}
+            onChange={(e) => setOwner(e.target.value)}
           />
         </div>
         <div className="field">
