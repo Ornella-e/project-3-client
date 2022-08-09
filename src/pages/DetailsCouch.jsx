@@ -28,7 +28,7 @@ export default function DetailsCouch(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const fd = new FormData();
-    fd.append("username", currentUser.username);
+    fd.append("username", currentUser._id);
     fd.append("startingDate", startingDate);
     fd.append("endingDate", endingDate);
 
