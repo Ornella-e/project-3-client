@@ -8,7 +8,7 @@ import service from "../services/apiHandler";
 export default function DetailsCouch(props) {
   const [couch, setCouch] = useState(null);
   const { id } = useParams();
-  const [username, setUsername] = useState("");
+  
   const [startingDate, setStartingDate] = useState("");
   const [endingDate, setEndingDate] = useState("");
   const { currentUser } = useAuth();
@@ -27,13 +27,17 @@ export default function DetailsCouch(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const fd = new FormData();
-    fd.append("username", currentUser._id);
-    fd.append("startingDate", startingDate);
-    fd.append("endingDate", endingDate);
-
+	const data  ={
+		startingDate,
+		endingDate
+	}
+   // const fd = new FormData();
+   // fd.append("user", currentUser._id);
+    //fd.append("startingDate", startingDate);
+    //fd.append("endingDate", endingDate);
+	//fd.append("couch", couch._id);
     try {
-      await service.put(`/couch/${id}`, fd);
+      await service.post(`/couch/${id}`, data);
       navigate("/reservations");
     } catch (error) {
       console.error(error);
@@ -61,18 +65,7 @@ export default function DetailsCouch(props) {
       )}
       <h2 className="couch">Make your reservation here!</h2>
       <form className="FormCouch" onSubmit={handleSubmit}>
-        <div className="couch-input">
-          <label htmlFor="username">user: </label>
-          <input
-            type="text"
-            className="field"
-            id="username"
-            name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-
+        
         <div className="couch-input">
           <label htmlFor="startingDate">Check-in: </label>
           <input

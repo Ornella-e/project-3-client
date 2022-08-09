@@ -36,7 +36,7 @@ export default function MyReservations() {
       {reservedCouch ? (
         <>
           <div className="couch">
-            <h2>Id: {reservedCouch.id}</h2>
+            <h2>Id: {reservedCouch._id}</h2>
             <p>user: {reservedCouch.username}</p>
             <p>check in: {reservedCouch.startingDate}</p>
             <p>check out: {reservedCouch.endingDate}</p>
