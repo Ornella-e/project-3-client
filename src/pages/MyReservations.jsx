@@ -10,7 +10,7 @@ export default function MyReservations() {
   const [couches, setCouches] = useState([]);
   const [username, setUsername] = useState("");
   const [reservedCouch, setReservedCouch] = useState([]);
-  const [evaluations, setEvaluations] = useState("");
+   jconst [evaluations, setEvaluations] = useState("");
   const navigate = useNavigate();
   const { currentUser } = useAuth();
   console.log(currentUser);
