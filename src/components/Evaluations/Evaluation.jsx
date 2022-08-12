@@ -1,13 +1,13 @@
 import React from "react";
-import Ranking from "../components/Ranking/Ranking";
-import { useState, useEffect } from "react";
+import Ranking from "../Ranking/Ranking";
+import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import useAuth from "../context/auth/useAuth";
 import service from "../services/apiHandler";
 
-export default function MyReservations() {
+
+export default function Evaluation() {
   const { id } = useParams();
-  const [reservedCouch, setReservedCouch] = useState([]);
   const [evaluation, setEvaluation] = useState("");
   const [grade, setGrade] = useState();
   const navigate = useNavigate();
@@ -38,7 +38,13 @@ export default function MyReservations() {
         
       </div>
       <form className="FormCouch" onSubmit={handleSubmit}>
-      <Ranking value={grade} />
+      <Ranking 
+      type="number"
+      id="grade"
+      name="grade"
+      value={grade}
+      onChange={(e) => setGrade(e.target.value)}
+       />
         <div>
           <label htmlFor="evaluations">Evaluation: </label>
           <textarea

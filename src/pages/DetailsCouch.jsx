@@ -5,6 +5,8 @@ import useAuth from "../context/auth/useAuth";
 import axios from "axios";
 import service from "../services/apiHandler";
 
+
+
 export default function DetailsCouch(props) {
   const [couch, setCouch] = useState(null);
   const { id } = useParams();
@@ -88,12 +90,10 @@ export default function DetailsCouch(props) {
         </div>
         <button className="button-detail">Reserve</button>
       </form>
-
+      
       <div className="couch">
         <h2>Our guest's opinions</h2>
-        <p>Guest: {props.username}</p>
-        <p>Grade:{props.grade}</p>
-        <p>Comment:{props.evaluation}</p>
+      
       </div>
       <div className="couch">
         <h3>Cancellation policy</h3>
