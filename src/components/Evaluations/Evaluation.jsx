@@ -20,6 +20,7 @@ export default function MyReservations() {
 
     const fd = new FormData();
 
+    fd.append("username", currentUser.username);
     fd.append("evaluations", evaluations);
 
     try {
@@ -33,21 +34,11 @@ export default function MyReservations() {
   return (
     <>
       <div>
-        <h2>Rate your stay at {reservedCouch.username}'s couch </h2>
+        <h2>Rate your stay </h2>
         <Ranking />
       </div>
       <form className="FormCouch" onSubmit={handleSubmit}>
-        <div className="couch-input">
-          <label htmlFor="username">user: </label>
-          <input
-            type="text"
-            className="field"
-            id="username"
-            name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
+        
         <div>
           <label htmlFor="evaluations">Evaluation: </label>
           <textarea
