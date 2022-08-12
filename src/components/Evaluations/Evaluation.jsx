@@ -15,16 +15,12 @@ export default function MyReservations() {
   const { currentUser } = useAuth();
   console.log(currentUser);
 
-
-  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const fd = new FormData();
 
     fd.append("evaluations", evaluations);
-
-   
 
     try {
       await service.put(`/couch/${id}`, fd);
@@ -36,9 +32,7 @@ export default function MyReservations() {
 
   return (
     <>
-      
       <div>
-      
         <h2>Rate your stay at {reservedCouch.username}'s couch </h2>
         <Ranking />
       </div>

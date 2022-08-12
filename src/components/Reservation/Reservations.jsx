@@ -1,18 +1,11 @@
-import React from 'react'
+import React from "react";
 
-
-export default function Reservations({user, startingDate, endingDate}) {
-  
-
+export default function Reservations({ user, startingDate, endingDate }) {
   return (
     <div className="container">
-				
-                     {user}
-                     {startingDate}
-                    {endingDate}
-                    
-					
-			</div>
-  )
-  
+      {user}
+      {startingDate}
+      {endingDate}
+    </div>
+  );
 }
