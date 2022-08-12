@@ -7,10 +7,9 @@ import service from "../services/apiHandler";
 
 export default function MyReservations() {
   const { id } = useParams();
-  const [couches, setCouches] = useState([]);
-  const [username, setUsername] = useState("");
   const [reservedCouch, setReservedCouch] = useState([]);
-  const [evaluations, setEvaluations] = useState("");
+  const [evaluation, setEvaluation] = useState("");
+  const [grade, setGrade] = useState();
   const navigate = useNavigate();
   const { currentUser } = useAuth();
   console.log(currentUser);
@@ -21,11 +20,12 @@ export default function MyReservations() {
     const fd = new FormData();
 
     fd.append("username", currentUser.username);
-    fd.append("evaluations", evaluations);
+    fd.append("grade", grade);
+    fd.append("evaluation", evaluation);
 
     try {
       await service.put(`/couch/${id}`, fd);
-      navigate("/reservations");
+      navigate("/:id");
     } catch (error) {
       console.error(error);
     }
@@ -35,20 +35,20 @@ export default function MyReservations() {
     <>
       <div>
         <h2>Rate your stay </h2>
-        <Ranking />
+        
       </div>
       <form className="FormCouch" onSubmit={handleSubmit}>
-        
+      <Ranking value={grade} />
         <div>
           <label htmlFor="evaluations">Evaluation: </label>
           <textarea
             type="text"
             id="evaluations"
             name="evaluations"
-            value={evaluations}
+            value={evaluation}
             rows={4}
             cols={25}
-            onChange={(e) => setEvaluations(e.target.value)}
+            onChange={(e) => setEvaluation(e.target.value)}
           ></textarea>
         </div>
 
