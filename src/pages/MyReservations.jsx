@@ -4,7 +4,9 @@ import axios from "axios";
 import Reservations from "../components/Reservation/Reservations";
 
 export default function MyReservations() {
+
   const [reservations, setReservations] = useState([]);
+
 
   const getAllReservations = async () => {
     const response = await axios.get(
