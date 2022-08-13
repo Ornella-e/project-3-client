@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import axios from "axios";
 import Reservations from "../components/Reservation/Reservations";
 import service from "../services/apiHandler";
 export default function MyReservations() {
@@ -25,7 +24,7 @@ export default function MyReservations() {
           <Reservations
             key={rent._id}
             id={rent._id}
-            user={rent.user}
+            user={rent.user.username}
             startingDate={rent.startingDate}
             endingDate={rent.endingDate}
             couch={rent.couch}

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Reservations({
   id,
@@ -14,6 +15,7 @@ export default function Reservations({
       {startingDate}
       {endingDate}
       {couch}
+      <Link to={`/${id}/evaluations/${id}`}>Evaluations</Link>
     </div>
   );
 }

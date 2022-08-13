@@ -5,7 +5,6 @@ import service from "../services/apiHandler";
 
 const PostMyCouch = () => {
   const [image, setImage] = useState("");
-  const [username, setUsername] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [country, setCountry] = useState("");
@@ -17,8 +16,6 @@ const PostMyCouch = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    //	const token = localStorage.getItem("authToken")
-    //const payload = { currentUser, image, description, country, city}
     const fd = new FormData();
 
     fd.append("owner", currentUser._id);
@@ -29,14 +26,8 @@ const PostMyCouch = () => {
     fd.append("city", city);
 
     try {
-      //		const response = await axios.post(`${process.env.REACT_APP_API_URL}/couch/`, payload, {
-      //			headers: {
-      //				Authorization: `Bearer ${token}`,
-      //			},
-      //		})
       await service.post("/couch", fd);
       navigate("/");
-      // exemple of functions useing service   await service.createCouch(payload)
     } catch (error) {
       console.error(error);
     }
