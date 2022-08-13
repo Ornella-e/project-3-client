@@ -54,7 +54,7 @@ const Home = () => {
               <Link to={couch._id}>More Info</Link>
 			
 				<section className="HomePageMap"> 
-				<Map/>
+				{/* <Map/> */}
 				</section>
 				
 			
