@@ -6,9 +6,7 @@ import axios from "axios";
 import service from "../services/apiHandler";
 import Evaluation from "../components/Evaluations/Evaluation";
 
-
-
-export default function DetailsCouch(props) {
+export default function DetailsCouch() {
   const [couch, setCouch] = useState(null);
   const { id } = useParams();
   const [evaluations, setEvaluations] = useState([]);
@@ -29,32 +27,18 @@ export default function DetailsCouch(props) {
   }, [id]);
 
   const displayEvaluations = () => {
-    
-    return (
-      evaluations.map((evaluation) => {
-        return (
-          <Evaluation
-            key={evaluation.id}
-            {...evaluation}
-        
-          />
-        )
-      })
-    )
-  }
+    return evaluations.map((evaluation) => {
+      return <Evaluation key={evaluation.id} {...evaluation} />;
+    });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-	const data  ={
-		startingDate,
-		endingDate
-	}
+    const data = {
+      startingDate,
+      endingDate,
+    };
 
-   // const fd = new FormData();
-   // fd.append("user", currentUser._id);
-    //fd.append("startingDate", startingDate);
-    //fd.append("endingDate", endingDate);
-	//fd.append("couch", couch._id);
     try {
       await service.post(`/couch/${id}`, data);
       navigate("/reservations");
@@ -62,7 +46,6 @@ export default function DetailsCouch(props) {
       console.error(error);
     }
   };
-  
 
   return (
     <>
@@ -77,7 +60,6 @@ export default function DetailsCouch(props) {
             <p>Space for filters</p>
             <p>Location: {couch.location.country}</p>
             <p>Location: {couch.location.city}</p>
-           
           </div>
         </>
       ) : (
@@ -85,7 +67,6 @@ export default function DetailsCouch(props) {
       )}
       <h2 className="couch">Make your reservation here!</h2>
       <form className="FormCouch" onSubmit={handleSubmit}>
-        
         <div className="couch-input">
           <label htmlFor="startingDate">Check-in: </label>
           <input
@@ -108,12 +89,9 @@ export default function DetailsCouch(props) {
         </div>
         <button className="button-detail">Reserve</button>
       </form>
-      
-      <div className="couch">
-      
-        {displayEvaluations()}  
-      </div>
-     
+
+      <div className="couch">{displayEvaluations()}</div>
+
       <div className="couch">
         <h3>Cancellation policy</h3>
         <p>
@@ -124,4 +102,3 @@ export default function DetailsCouch(props) {
     </>
   );
 }
-

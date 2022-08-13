@@ -1,11 +1,8 @@
 import React from "react";
-
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-
 import useAuth from "../context/auth/useAuth";
 import service from "../services/apiHandler";
-
 
 export default function MyEvaluations() {
   const { id, couchId } = useParams();
@@ -18,11 +15,7 @@ export default function MyEvaluations() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-  
-    
-
-    const db = { grade, evaluation}
-   
+    const db = { grade, evaluation };
 
     try {
       await service.post(`/couch/${id}/evaluations/${couchId}`, db);
@@ -36,19 +29,24 @@ export default function MyEvaluations() {
     <>
       <div>
         <h2>Rate your stay </h2>
-        
       </div>
       <form className="FormCouch" onSubmit={handleSubmit}>
-      <div>
-        {[...Array(5)].map((star, i) =>{
-            const grade= i + 1;
-            return<label>
-                <input type="radio" name='grade' value={grade} onClick={()=> setGrade(grade)}
+        <div>
+          {[...Array(5)].map((star, i) => {
+            const grade = i + 1;
+            return (
+              <label>
+                <input
+                  type="radio"
+                  name="grade"
+                  value={grade}
+                  onClick={() => setGrade(grade)}
                 />
-            </label>     
-        })}
-        <p>The grade is: {grade}</p>
-     </div>
+              </label>
+            );
+          })}
+          <p>The grade is: {grade}</p>
+        </div>
         <div>
           <label htmlFor="evaluations">Evaluation: </label>
           <textarea

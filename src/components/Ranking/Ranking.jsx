@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-
+//not needed
 const Ranking = () => {
     const [ranking, setRanking]= useState(null);
     return (

@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import axios from "axios";
 import Reservations from "../components/Reservation/Reservations";
 import service from "../services/apiHandler";
 export default function MyReservations() {
