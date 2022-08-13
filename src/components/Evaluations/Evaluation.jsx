@@ -9,11 +9,11 @@ export default function Evaluation({
 }) {
   return (
     <div className="container">
-      {id}
-      {user}
-      {evaluation}
-      {grade}
-      {couch}
+      <p>{id}</p>
+      <p>{user}</p>
+      <p>{evaluation}</p>
+      <p>{grade}</p> 
+      <p>{couch}</p> 
     </div>
   );
 }

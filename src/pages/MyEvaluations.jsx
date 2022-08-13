@@ -7,8 +7,8 @@ import useAuth from "../context/auth/useAuth";
 import service from "../services/apiHandler";
 
 
-export default function MyEvaluations(props) {
-  const { id } = useParams();
+export default function MyEvaluations() {
+  const { id, couchId } = useParams();
   const [evaluation, setEvaluation] = useState("");
   const [grade, setGrade] = useState(null);
   const navigate = useNavigate();
@@ -25,8 +25,8 @@ export default function MyEvaluations(props) {
    
 
     try {
-      await service.post(`/couch/evaluations`, db);
-      navigate("/evaluations");
+      await service.post(`/couch/${id}/evaluations/${couchId}`, db);
+      navigate(`/${id}/evaluations/${couchId}`);
     } catch (error) {
       console.error(error);
     }
@@ -36,7 +36,7 @@ export default function MyEvaluations(props) {
     <>
       <div>
         <h2>Rate your stay </h2>
-        {props.couch}
+        
       </div>
       <form className="FormCouch" onSubmit={handleSubmit}>
       <div>

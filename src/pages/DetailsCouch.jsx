@@ -4,13 +4,14 @@ import { useParams, useNavigate } from "react-router-dom";
 import useAuth from "../context/auth/useAuth";
 import axios from "axios";
 import service from "../services/apiHandler";
+import Evaluation from "../components/Evaluations/Evaluation";
 
 
 
 export default function DetailsCouch(props) {
   const [couch, setCouch] = useState(null);
   const { id } = useParams();
-  
+  const [evaluations, setEvaluations] = useState([]);
   const [startingDate, setStartingDate] = useState("");
   const [endingDate, setEndingDate] = useState("");
   const { currentUser } = useAuth();
@@ -26,6 +27,21 @@ export default function DetailsCouch(props) {
       })
       .catch((e) => console.log(e));
   }, [id]);
+
+  const displayEvaluations = () => {
+    
+    return (
+      evaluations.map((evaluation) => {
+        return (
+          <Evaluation
+            key={evaluation.id}
+            {...evaluation}
+        
+          />
+        )
+      })
+    )
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -61,7 +77,7 @@ export default function DetailsCouch(props) {
             <p>Space for filters</p>
             <p>Location: {couch.location.country}</p>
             <p>Location: {couch.location.city}</p>
-            
+           
           </div>
         </>
       ) : (
@@ -94,10 +110,8 @@ export default function DetailsCouch(props) {
       </form>
       
       <div className="couch">
-        <h2>Our guest's opinions</h2>
-  
-
-  
+      
+        {displayEvaluations()}  
       </div>
      
       <div className="couch">

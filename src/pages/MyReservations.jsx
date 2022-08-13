@@ -23,7 +23,7 @@ export default function MyReservations() {
           <Reservations
             key={rent._id}
             id={rent._id}
-            user={rent.user}
+            user={rent.user.username}
             startingDate={rent.startingDate}
             endingDate={rent.endingDate}
             couch={rent.couch}
