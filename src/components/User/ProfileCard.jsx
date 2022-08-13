@@ -15,8 +15,6 @@ export default class ProfileCard extends Component {
           {/* <h4>Update/Change Image</h4> */}
 
           <NavLink className="" to="/my-couch"><h4>Become a Host</h4></NavLink>
-          
-          
       </div>
     )
   }

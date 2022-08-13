@@ -33,6 +33,9 @@ const Navbar = () => {
             <NavLink className="sign" to="/reservations">
               Reservations
             </NavLink>
+            <NavLink className="sign" to="/evaluations">
+              Evaluations
+            </NavLink>
             <NavLink className="sign" to="/favourites">
               Favourites
             </NavLink>
