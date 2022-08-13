@@ -5,6 +5,8 @@ import useAuth from "../context/auth/useAuth";
 import axios from "axios";
 import service from "../services/apiHandler";
 
+
+
 export default function DetailsCouch(props) {
   const [couch, setCouch] = useState(null);
   const { id } = useParams();
@@ -31,6 +33,7 @@ export default function DetailsCouch(props) {
 		startingDate,
 		endingDate
 	}
+
    // const fd = new FormData();
    // fd.append("user", currentUser._id);
     //fd.append("startingDate", startingDate);
@@ -43,6 +46,7 @@ export default function DetailsCouch(props) {
       console.error(error);
     }
   };
+  
 
   return (
     <>
@@ -57,7 +61,7 @@ export default function DetailsCouch(props) {
             <p>Space for filters</p>
             <p>Location: {couch.location.country}</p>
             <p>Location: {couch.location.city}</p>
-            <p>Calendar: {couch.calendar}</p>
+            
           </div>
         </>
       ) : (
@@ -88,13 +92,14 @@ export default function DetailsCouch(props) {
         </div>
         <button className="button-detail">Reserve</button>
       </form>
-
+      
       <div className="couch">
         <h2>Our guest's opinions</h2>
-        <p>Guest: {props.username}</p>
-        <p>Grade:{props.grade}</p>
-        <p>Comment:{props.evaluation}</p>
+  
+
+  
       </div>
+     
       <div className="couch">
         <h3>Cancellation policy</h3>
         <p>
@@ -105,3 +110,4 @@ export default function DetailsCouch(props) {
     </>
   );
 }
+

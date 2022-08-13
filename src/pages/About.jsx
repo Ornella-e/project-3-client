@@ -1,4 +1,5 @@
 import React from 'react'
+
 /* import TeamDesc from '../components/Team/TeamDesc'
 import TeamCard from '../components/Team/TeamCard'
  */
@@ -48,6 +49,7 @@ export default function About() {
           </div>
 
         </div>
+
     </div>
   )
 }
