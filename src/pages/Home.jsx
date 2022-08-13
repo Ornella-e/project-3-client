@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import axios from "axios";
 import Map from "../components/Map/Map";
-/* import  "../styles/App.css" */
+import  "../styles/App.css"
 
 
 const Home = () => {
