@@ -18,6 +18,7 @@ import EditProfile from "./pages/account/EditProfile"
 import ProfileCard from "./components/User/ProfileCard"
 import ProfileImage from "./components/User/ProfileImage"
 import Map from "./components/Map/Map"
+import MyEvaluations from "./pages/MyEvaluations"
 
 function App() {
 	return (
@@ -33,6 +34,7 @@ function App() {
 					<Route path="/:id/editcouch" element={<EditCouch />} />
 					<Route path="/editprofile" element={<EditProfile/>} />
 					<Route path="/reservations" element={<MyReservations />} />
+					<Route path="/evaluations" element={<MyEvaluations />} />
 					<Route path="/favourites" element={<MyFavourites />} />
 					<Route path="/my-couch" element={<PostMyCouch />} />
 					<Route path="/profileCard" element={<ProfileCard />} />

@@ -2,14 +2,12 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Reservations from "../components/Reservation/Reservations";
-
+import service from "../services/apiHandler";
 export default function MyReservations() {
   const [reservations, setReservations] = useState([]);
 
   const getAllReservations = async () => {
-    const response = await axios.get(
-      `${process.env.REACT_APP_API_URL}/couch/reservations`
-    );
+    const response = await service.get(`/couch/reservations`);
     console.log(response);
     setReservations(response.data);
   };
@@ -25,9 +23,10 @@ export default function MyReservations() {
           <Reservations
             key={rent._id}
             id={rent._id}
-            user={rent.username}
-            check-in={rent.startingDate}
-            check-out={rent.endingDate}
+            user={rent.user}
+            startingDate={rent.startingDate}
+            endingDate={rent.endingDate}
+            couch={rent.couch}
           />
         );
       })}
