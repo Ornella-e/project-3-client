@@ -1,8 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "../styles/App.css";
+
 import axios from "axios";
+import Map from "../components/Map/Map";
+import  "../styles/App.css"
+
 
 const Home = () => {
   const [couches, setCouches] = useState([]);
@@ -46,16 +49,28 @@ const Home = () => {
               <div>
                 <img className="image-home" src={couch.image} alt="home-img" />
                 <h1>{couch.title}</h1>
-                <p>{couch.location.country}</p>
-                <p>{couch.location.city}</p>
+{/*                 <p>{couch.location.country}</p>
+                <p>{couch.location.city}</p> */}
+
               </div>
 
               <Link to={couch._id}>More Info</Link>
+			
+				<section className="HomePageMap"> 
+				{/* <Map/> */}
+				</section>
+				
+			
             </div>
           );
+          
         })}
+		
       </div>
+	 	
+	  
     </div>
+	
   );
 };
 
