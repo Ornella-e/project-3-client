@@ -5,6 +5,7 @@ import useAuth from "../context/auth/useAuth";
 import axios from "axios";
 import service from "../services/apiHandler";
 import Evaluation from "../components/Evaluations/Evaluation";
+import EditCouch from "./EditCouch";
 
 export default function DetailsCouch() {
   const [couch, setCouch] = useState(null);
@@ -65,6 +66,10 @@ export default function DetailsCouch() {
       ) : (
         <p>No couch</p>
       )}
+  
+        <EditCouch/>
+      
+      
       <h2 className="couch">Make your reservation here!</h2>
       <form className="FormCouch" onSubmit={handleSubmit}>
         <div className="couch-input">
@@ -90,7 +95,9 @@ export default function DetailsCouch() {
         <button className="button-detail">Reserve</button>
       </form>
 
-      <div className="couch">{displayEvaluations()}</div>
+      <div className="couch">
+        {displayEvaluations()}
+      </div>
 
       <div className="couch">
         <h3>Cancellation policy</h3>

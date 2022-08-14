@@ -10,8 +10,8 @@ const EditCouch = () => {
   const navigate = useNavigate();
   console.log(id);
 
-  const handleDelete = async (id) => {
-    const { data } = await service.delete(`/couch/${id}`, id);
+  const handleDelete = async (couchId) => {
+    const { data } = await service.delete(`/couch/${id}`, couchId);
     setFeedback(data.message);
     setTimeout(() => navigate("/"), 1000);
   };
@@ -27,14 +27,14 @@ const EditCouch = () => {
 
   return (
     <>
-      <div className="EditDeleteCouch">
+      <div className="couch">
         <button onClick={handleDelete}>Delete the post</button>
         <button onClick={() => setEditMode(!editMode)}>Edit the post</button>
       </div>
 
       {/* This form is conditionally rendered */}
       {editMode && (
-        <form onSubmit={handleEditCouch}>
+        <form className="FormCouch" onSubmit={handleEditCouch}>
           <div className="field">
             <label htmlFor="image">Image: </label>
             <input

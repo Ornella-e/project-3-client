@@ -22,7 +22,7 @@ footer {
 .footer-left {
   /* width: 50%; */
   margin: auto;
-  border: 3px solid green;
+  /*border: 3px solid green;*/
   padding: 5px;
   display: flex;
   align-self: center;
@@ -31,7 +31,7 @@ footer {
 .footer-right {
   /* width: 50%; */
   margin: auto;
-  border: 3px solid green;
+  /*border: 3px solid green;*/
   padding: 5px;
 }
 

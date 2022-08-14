@@ -27,11 +27,11 @@ export default function MyEvaluations() {
 
   return (
     <>
-      <div>
+      <div className="FormCouch">
         <h2>Rate your stay </h2>
       </div>
       <form className="FormCouch" onSubmit={handleSubmit}>
-        <div>
+        <div className="Input-Ranking">
           {[...Array(5)].map((star, i) => {
             const grade = i + 1;
             return (
@@ -47,7 +47,7 @@ export default function MyEvaluations() {
           })}
           <p>The grade is: {grade}</p>
         </div>
-        <div>
+        <div className="Input-Ranking">
           <label htmlFor="evaluations">Evaluation: </label>
           <textarea
             type="text"
@@ -60,7 +60,7 @@ export default function MyEvaluations() {
           ></textarea>
         </div>
 
-        <button>Evaluate your stay</button>
+        <button >Evaluate your stay</button>
       </form>
     </>
   );
