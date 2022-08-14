@@ -27,14 +27,14 @@ const EditCouch = () => {
 
   return (
     <>
-      <div className="EditDeleteCouch">
+      <div className="couch">
         <button onClick={handleDelete}>Delete the post</button>
         <button onClick={() => setEditMode(!editMode)}>Edit the post</button>
       </div>
 
       {/* This form is conditionally rendered */}
       {editMode && (
-        <form onSubmit={handleEditCouch}>
+        <form className="FormCouch" onSubmit={handleEditCouch}>
           <div className="field">
             <label htmlFor="image">Image: </label>
             <input
