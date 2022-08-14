@@ -10,8 +10,8 @@ const EditCouch = () => {
   const navigate = useNavigate();
   console.log(id);
 
-  const handleDelete = async (id) => {
-    const { data } = await service.delete(`/couch/${id}`, id);
+  const handleDelete = async (couchId) => {
+    const { data } = await service.delete(`/couch/${id}`, couchId);
     setFeedback(data.message);
     setTimeout(() => navigate("/"), 1000);
   };
