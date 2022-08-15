@@ -8,6 +8,7 @@ export default function Reservations({
   endingDate,
   couch,
 }) {
+   
   return (
     <div className="container">
      <p>{id}</p> 
