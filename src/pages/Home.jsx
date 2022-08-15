@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import axios from "axios";
-import Map from "../components/Map/Map";
+import MapPage from "../components/Map/MapPage";
 /* import  "../styles/App.css" */
 
 
@@ -57,7 +57,7 @@ const Home = () => {
               <Link to={couch._id}>More Info</Link>
 			
 				<section className="HomePageMap"> 
-				<Map/>
+			  <MapPage/>
 				</section>
 				
 			
