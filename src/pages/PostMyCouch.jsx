@@ -5,6 +5,7 @@ import service from "../services/apiHandler";
 
 const PostMyCouch = () => {
   const [image, setImage] = useState("");
+  const [username, setUsername] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [country, setCountry] = useState("");
@@ -20,7 +21,7 @@ const PostMyCouch = () => {
     //const payload = { currentUser, image, description, country, city}
     const fd = new FormData();
 
-    fd.append("username", currentUser.username);
+    fd.append("owner", currentUser._id);
     fd.append("image", image);
     fd.append("title", title);
     fd.append("description", description);
@@ -45,17 +46,6 @@ const PostMyCouch = () => {
     <>
       <p>To post your couch, please fill in the following information.</p>
       <form className="FormCouch" onSubmit={handleSubmit}>
-        <div className="field">
-          <label htmlFor="user">User: </label>
-          <input
-            className="field"
-            type="text"
-            id="user"
-            name="user"
-            value={currentUser.username}
-            readOnly={currentUser.username}
-          />
-        </div>
         <div className="field">
           <label htmlFor="image">Image:</label>
           <input
