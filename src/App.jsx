@@ -17,7 +17,7 @@ import EditCouch from "./pages/EditCouch"
 import EditProfile from "./pages/account/EditProfile"
 import ProfileCard from "./components/User/ProfileCard"
 import ProfileImage from "./components/User/ProfileImage"
-import MapPage from "./components/Map/MapPage"
+import Map from "./components/Map/Map"
 import MyEvaluations from "./pages/MyEvaluations"
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
 					<Route path="/my-couch" element={<PostMyCouch />} />
 					<Route path="/profileCard" element={<ProfileCard />} />
 					<Route path="/profileimage" element={<ProfileImage />} />
-					<Route path="/map" element={<MapPage/>} />
+					<Route path="/map" element={<Map/>} />
 				</Route>
 				<Route path="/about" element={<About />} /> 
 				<Route path="/:id" element={<DetailsCouch />} /> 

@@ -2,7 +2,7 @@ import React from 'react'
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 import "./Map.css"
 
-function MapPage() {
+function Map() {
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: "AIzaSyBAOLd6yXR--lNpR3z73Pvf5S0EXu_fIg4"
@@ -27,4 +27,4 @@ function MapPage() {
   )
 }
 
-export default MapPage
+export default Map
