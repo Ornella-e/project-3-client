@@ -27,7 +27,7 @@ const EditCouch = () => {
 
   return (
     <>
-      <div className="couch">
+      <div className="EditDeleteCouch">
         <button onClick={handleDelete}>Delete the post</button>
         <button onClick={() => setEditMode(!editMode)}>Edit the post</button>
       </div>

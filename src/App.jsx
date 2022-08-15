@@ -34,7 +34,7 @@ function App() {
 					<Route path="/:id/editcouch" element={<EditCouch />} />
 					<Route path="/editprofile" element={<EditProfile/>} />
 					<Route path="/reservations" element={<MyReservations />} />
-					<Route path="/:id/evaluations/:couchId" element={<MyEvaluations />} />
+					<Route path="/:reservationId/evaluations/:couchId" element={<MyEvaluations />} />
 					<Route path="/favourites" element={<MyFavourites />} />
 					<Route path="/my-couch" element={<PostMyCouch />} />
 					<Route path="/profileCard" element={<ProfileCard />} />

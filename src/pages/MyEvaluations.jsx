@@ -5,7 +5,7 @@ import useAuth from "../context/auth/useAuth";
 import service from "../services/apiHandler";
 
 export default function MyEvaluations() {
-  const { id, couchId } = useParams();
+  const { reservationId, couchId } = useParams();
   const [evaluation, setEvaluation] = useState("");
   const [grade, setGrade] = useState(null);
   const navigate = useNavigate();
@@ -18,8 +18,8 @@ export default function MyEvaluations() {
     const db = { grade, evaluation };
 
     try {
-      await service.post(`/couch/${id}/evaluations/${couchId}`, db);
-      navigate(`/${id}/evaluations/${couchId}`);
+      await service.post(`/couch/${reservationId}/evaluations/${couchId}`, db);
+      navigate(`/${reservationId}/evaluations/${couchId}`);
     } catch (error) {
       console.error(error);
     }
@@ -38,9 +38,10 @@ export default function MyEvaluations() {
               <label>
                 <input
                   type="radio"
+                  id="grade"
                   name="grade"
                   value={grade}
-                  onClick={() => setGrade(grade)}
+                  onClick={(e) => setGrade(e.target.value)}
                 />
               </label>
             );
