@@ -56,11 +56,7 @@ const Home = () => {
 
               <Link to={couch._id}>More Info</Link>
 			
-				<section className="HomePageMap"> 
-				{/* <Map/> */}
-				</section>
-				
-			
+		
             </div>
           );
           
@@ -68,7 +64,9 @@ const Home = () => {
 		
       </div>
 	 	
-	  
+	  	<section className="HomePageMap"> 
+			  <Map/>
+				</section>
     </div>
 	
   );
