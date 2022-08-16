@@ -67,7 +67,7 @@ export default function DetailsCouch() {
       ) : (
         <p>No couch</p>
       )}
-  
+  <hr />
         <EditCouch/>
       
       
@@ -95,11 +95,11 @@ export default function DetailsCouch() {
         </div>
         <button className="button-detail">Reserve</button>
       </form>
-
+      <hr />
       <div className="couch">
         {displayEvaluations()}
       </div>
-
+      <hr />
       <div className="couch">
         <h3>Cancellation policy</h3>
         <p>
