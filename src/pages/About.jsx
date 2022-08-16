@@ -18,9 +18,7 @@ export default function About() {
           <div className="teammate-desc">
             <h3>Ornella Escalada Corsi</h3>
             <p>Full-stack development</p>
-            <a href="mailto:orneescaladacorsi@gmail.com">
-              orneescaladacorsi@gmail.com
-            </a>
+           
             <div className="team-media">
               <a
                 title="Github"
@@ -49,7 +47,7 @@ export default function About() {
           <div className="teammate-desc">
             <h3>Joao Beyer</h3>
             <p>Full-stack development</p>
-            <a href="mailto:dantasbeyer@hotmail.com">dantasbeyer@hotmail.com</a>
+           
             <div className="team-media">
               <a
                 title="Github"
@@ -88,7 +86,7 @@ export default function About() {
           <div className="teammate-desc">
             <h3>Laia Markixa</h3>
             <p>Full-stack development</p>
-            <a href="mailto:laiamr77@gmail.com">laiamr77@gmail.com</a>
+           
             <div className="team-media">
               <a
                 title="Github"
