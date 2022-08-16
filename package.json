@@ -3,12 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@chakra-ui/react": "^2.2.6",
+    "@react-google-maps/api": "^2.12.1",
     "axios": "^0.27.2",
+<<<<<<< HEAD
     "bootstrap": "^5.2.0",
+=======
+    "jquery": "^3.6.0",
+    "mapbox-gl": "^2.9.2",
+>>>>>>> e8b358c7c41c8e41cc036315487e0c9a33d529ca
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
+    "react-map-gl": "^7.0.18",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
+    "react-select": "^5.4.0",
+    "react-select-country-list": "^2.2.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
