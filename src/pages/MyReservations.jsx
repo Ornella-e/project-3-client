@@ -3,7 +3,9 @@ import { useState, useEffect } from "react";
 import Reservations from "../components/Reservation/Reservations";
 import service from "../services/apiHandler";
 export default function MyReservations() {
+
   const [reservations, setReservations] = useState([]);
+
 
   const getAllReservations = async () => {
     const response = await service.get(`/couch/reservations`);

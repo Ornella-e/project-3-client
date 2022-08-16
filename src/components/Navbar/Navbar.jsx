@@ -7,7 +7,9 @@ import { useState } from "react";
 
 const Navbar = () => {
   const { isLoggedIn, currentUser, removeUser } = useAuth();
+
   const [searchedString, setSearchedString] = useState("")
+
   return (
     <nav className="Navbar">
       <NavLink className="logoImg" to="/">

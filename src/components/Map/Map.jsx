@@ -1,25 +1,30 @@
- /* rfce */
-import React, { useState } from 'react'
-import MapGL from 'react-map-gl';
-
+import React from 'react'
+import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+import "./Map.css"
 
 function Map() {
-    const [viewport,setViewport] = useState({
-        width: '100%',
-        height: '100%',
-        longitude: -100,
-        latitude: 40,
-        zoom: 3.1,
-
+    const { isLoaded } = useJsApiLoader({
+        id: 'google-map-script',
+        googleMapsApiKey: "AIzaSyBAOLd6yXR--lNpR3z73Pvf5S0EXu_fIg4"
     })
+    const position ={
+        lat:52.520008,
+        lng:13.404954
+    } 
   return (
-    <MapGL 
-        mapStyle='mapbox://styles/joaobeyer/cl6fepghe001u14paeihopsho'
-        mapboxAccessToken="pk.eyJ1Ijoiam9hb2JleWVyIiwiYSI6ImNsNmZlZDN2bjAxbWkzY283ZDR4bml2eWEifQ.7dQxq-ZtcXASmpNvdh-z0A"
-        {...viewport}
-
-    ></MapGL>
+    <div className='map'>
+        {isLoaded ? (
+            <GoogleMap
+              mapContainerStyle={{widht: '100%', height: '100%'}}
+              center={position}
+              zoom={10}
+            >
+            <Marker position={position}/>
+             
+            </GoogleMap>
+        ) : <></>}
+        </div>
   )
 }
 
-export default Map 
+export default Map
