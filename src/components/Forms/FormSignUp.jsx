@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react"
+import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import service from "../../services/apiHandler"
 import { Link } from "react-router-dom"
@@ -36,7 +36,7 @@ const FormSignUp = () => {
 	return (
 	<div className="Auth-form-container">
 		{error && <h3 classusername="error">{error.message}</h3>}
-		<form className="Auth-form" >
+		<form onSubmit={handleSubmit} className="Auth-form" >
 			<div className="Auth-form-content">
 				<h2 className="Auth-form-title">Signup</h2>
 				<div className="text-center">
@@ -46,7 +46,7 @@ const FormSignUp = () => {
 					</span>
 				</div>
 				<div className="form-group mt-3">
-					<label htmlFor="username"><p>Username</p></label>
+					<label htmlFor="username"><p>User Name</p></label>
 					<input
 						onChange={(e) =>
 							setUser({ ...user, [e.target.name]: e.target.value })
@@ -118,7 +118,7 @@ const FormSignUp = () => {
 					/>  
 				 </div>
 				 <div className="form-group mt-3">
-					<label htmlFor="userImage"><p>userImage</p></label>
+					<label htmlFor="userImage"><p>Profile Picture</p></label>
 					<input
 						
 						onChange={(e) =>
@@ -131,7 +131,8 @@ const FormSignUp = () => {
 					/> 
 				</div>
 				<div className="d-grid gap-2 mt-3">
-				<Link to={"/signin"} className="btn btn-primary">Submit</Link>
+					<button className="btn btn-primary" > Submit</button>
+				{/* <Link to={"/signin"} className="btn btn-primary">Submit</Link> */}
 				
 				</div>
 			 
