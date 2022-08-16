@@ -61,7 +61,7 @@ export default function DetailsCouch() {
             <p>Space for filters</p>
             <p>Location: {couch.location.country}</p>
             <p>Location: {couch.location.city}</p>
-            <p>Evaluations: {couch.evaluations}</p>
+           
           </div>
         </>
       ) : (
