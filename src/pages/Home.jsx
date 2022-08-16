@@ -3,12 +3,17 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import axios from "axios";
+
+import Search from "../components/Search/Search";
+
 import Map from "../components/Map/Map";
 import  "../styles/App.css"
 
 
+
 const Home = () => {
   const [couches, setCouches] = useState([]);
+  const [searchedString, setSearchedString] = useState("")
 
   const getAllCouches = async () => {
     const response = await axios.get(`${process.env.REACT_APP_API_URL}/couch`);
@@ -18,6 +23,12 @@ const Home = () => {
   useEffect(() => {
     getAllCouches();
   }, []);
+
+  let searchedCouches = null
+	searchedString !== "" ? (searchedCouches = couches.filter((couch) => {
+				return couch.title.toLowerCase().includes(searchedString.toLowerCase())
+		  }))
+		: (searchedCouches = couches)
 
   return (
     <div className="ListCouches">
@@ -30,11 +41,12 @@ const Home = () => {
           </h3>
         </div>
         <div className="text-intro">
-          <input
-            type="text"
-            className="input-intro"
-            placeholder="Search for free accommodation..."
-          />
+
+          
+        <Search
+					searchedString={searchedString}
+					setSearchedString={setSearchedString}
+				/>
           <button className="button-intro">Search</button>
         </div>
         <div className="pic-intro">

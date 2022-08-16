@@ -2,10 +2,13 @@ import { NavLink } from "react-router-dom";
 import useAuth from "../../context/auth/useAuth";
 import "./Navbar.css";
 import logo from "./logo-option4.png";
+import Search from "../Search/Search";
+import { useState } from "react";
 
 const Navbar = () => {
   const { isLoggedIn, currentUser, removeUser } = useAuth();
 
+  const [searchedString, setSearchedString] = useState("")
 
   return (
     <nav className="Navbar">
@@ -57,9 +60,11 @@ const Navbar = () => {
             </NavLink>
           </>
         )}
-        <div className="search">
-          <input type="text" placeholder="Search..." />
-          <button className="button-navbar">Search</button>
+       <div className="search">
+       <Search
+       searchedString={searchedString}
+       setSearchedString={setSearchedString}/>
+         <button className="button-navbar">Search</button>
         </div>
       </div>
     </nav>
