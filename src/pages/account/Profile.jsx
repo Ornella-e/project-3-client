@@ -19,9 +19,8 @@ export default function Profile  ()  {
 				<h2>Hi, i'm {currentUser.username}</h2>
 		  	<p>
 				  
-				  {/* need to fix the link */}
-				  {/* <EditProfile/> */}
-			  	{/* <NavLink className="" to="/editprofile" >Edit Profile</NavLink> */} 
+				  
+				 
 			</p>
 				<MyFavourites/>
 				<MyReservations/>
@@ -32,3 +31,7 @@ export default function Profile  ()  {
 }
 
 
+
+{/* need to fix the link */}
+ {/* <EditProfile/> */}
+			  	{/* <NavLink className="" to="/editprofile" >Edit Profile</NavLink> */} 
