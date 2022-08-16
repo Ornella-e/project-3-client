@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Evaluation({
-  id,
+  _id,
   user,
  evaluation,
  grade,
@@ -9,7 +9,7 @@ export default function Evaluation({
 }) {
   return (
     <div className="container">
-      <p>{id}</p>
+      <p>{_id}</p>
       <p>{user}</p>
       <p>{evaluation}</p>
       <p>{grade}</p> 

@@ -23,13 +23,15 @@ export default function DetailsCouch() {
       .then(({ data }) => {
         console.log(data);
         setCouch(data);
+        setEvaluations(data.evaluations);
       })
       .catch((e) => console.log(e));
   }, [id]);
 
   const displayEvaluations = () => {
     return evaluations.map((evaluation) => {
-      return <Evaluation key={evaluation.id} {...evaluation} />;
+      console.log(evaluation)
+      return <Evaluation key={evaluation._id} {...evaluation} />;
     });
   };
 
@@ -61,7 +63,7 @@ export default function DetailsCouch() {
             <p>Space for filters</p>
             <p>Location: {couch.location.country}</p>
             <p>Location: {couch.location.city}</p>
-            <p>Evaluations: {couch.evaluations}</p>
+           
           </div>
         </>
       ) : (
@@ -98,6 +100,7 @@ export default function DetailsCouch() {
       <hr />
       <div className="couch">
         {displayEvaluations()}
+
       </div>
       <hr />
       <div className="couch">
