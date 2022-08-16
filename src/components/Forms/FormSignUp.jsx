@@ -46,7 +46,7 @@ const FormSignUp = () => {
 					</span>
 				</div>
 				<div className="form-group mt-3">
-					<label htmlFor="username"><p>Username</p></label>
+					<label htmlFor="username"><p>User Name</p></label>
 					<input
 						onChange={(e) =>
 							setUser({ ...user, [e.target.name]: e.target.value })
@@ -118,7 +118,7 @@ const FormSignUp = () => {
 					/>  
 				 </div>
 				 <div className="form-group mt-3">
-					<label htmlFor="userImage"><p>userImage</p></label>
+					<label htmlFor="userImage"><p>Profile Picture</p></label>
 					<input
 						
 						onChange={(e) =>
