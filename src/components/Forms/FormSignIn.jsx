@@ -3,7 +3,7 @@ import service from "../../services/apiHandler"
 import useAuth from "../../context/auth/useAuth"
 import { useNavigate } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
-import "../Forms/Signin.css"
+import "../Forms/SignStyle.css"
 
 const FormSignIn = () => {
 	const [user, setUser] = useState({

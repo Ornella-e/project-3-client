@@ -45,10 +45,7 @@ function App() {
 				<Route path="/:id" element={<DetailsCouch />} /> 
 				<Route path="*" element={<Oops />} /> 
 			</Routes>
-<<<<<<< HEAD
-=======
 			<Footer/>
->>>>>>> e8b358c7c41c8e41cc036315487e0c9a33d529ca
 		</div>
 	)	
 }

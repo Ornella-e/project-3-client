@@ -2,12 +2,9 @@ import { useState, useMemo } from "react"
 import { useNavigate } from "react-router-dom"
 import service from "../../services/apiHandler"
 import { Link } from "react-router-dom"
-<<<<<<< HEAD
-=======
 /* import CountrySelector from "./FormCountrySelector" */
 
 
->>>>>>> e8b358c7c41c8e41cc036315487e0c9a33d529ca
 
 
 
