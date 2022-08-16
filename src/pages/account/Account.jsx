@@ -2,6 +2,7 @@ import React from "react"
 import EditCouch from "../EditCouch"
 import MyFavourites from "../MyFavourites"
 import { NavLink } from "react-router-dom"
+import ProfileCard from "../../components/User/ProfileCard"
 
 
 
@@ -16,6 +17,8 @@ const Account = () => {
                 <MyFavourites/>
 
 				<NavLink className="" to="/profile" >Profile</NavLink>
+
+				<ProfileCard/>
             
 		</div>
 		

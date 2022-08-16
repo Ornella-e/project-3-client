@@ -20,6 +20,7 @@ import ProfileImage from "./components/User/ProfileImage"
 import Map from "./components/Map/Map"
 import MyEvaluations from "./pages/MyEvaluations"
 
+
 function App() {
 	return (
 		<div className="App">
