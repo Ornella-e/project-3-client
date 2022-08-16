@@ -3,22 +3,23 @@ import EditCouch from "../EditCouch"
 import MyFavourites from "../MyFavourites"
 import { NavLink } from "react-router-dom"
 import ProfileCard from "../../components/User/ProfileCard"
+import "./Account.css"
+
 
 
 
 const Account = () => {
 	return (
-		<div>
-			<p>
-				This is a protected Account, If you can see this, it means you are
-				logged in
-			</p>
-                <EditCouch/>,
-                <MyFavourites/>
-
-				<NavLink className="" to="/profile" >Profile</NavLink>
-
+		<div className="acc">
+			<div className="conteinerLeft">
 				<ProfileCard/>
+			</div>
+
+			<div className="conteinerRight">
+				<MyFavourites/>
+			</div>
+
+
             
 		</div>
 		

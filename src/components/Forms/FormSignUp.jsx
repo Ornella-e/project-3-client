@@ -26,7 +26,7 @@ const FormSignUp = () => {
 			try {
 			const res =  await  service.signup(data)
 			console.log(res)
-			navigate("/signin") 
+			//navigate("/signin") 
 
 		} catch (error) {
 			setError(e.message)
@@ -36,7 +36,7 @@ const FormSignUp = () => {
 	return (
 	<div className="Auth-form-container">
 		{error && <h3 classusername="error">{error.message}</h3>}
-		<form className="Auth-form" >
+		<form  onSubmit={handleSubmit} className="Auth-form" >
 			<div className="Auth-form-content">
 				<h2 className="Auth-form-title">Signup</h2>
 				<div className="text-center">
@@ -131,7 +131,9 @@ const FormSignUp = () => {
 					/> 
 				</div>
 				<div className="d-grid gap-2 mt-3">
-				<Link to={"/signin"} className="btn btn-primary">Submit</Link>
+				<button type="submit" className="btn btn-primary">
+							Submit
+						</button>
 				
 				</div>
 			 
