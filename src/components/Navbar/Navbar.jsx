@@ -6,6 +6,7 @@ import logo from "./logo-option4.png";
 const Navbar = () => {
   const { isLoggedIn, currentUser, removeUser } = useAuth();
 
+
   return (
     <nav className="Navbar">
       <NavLink className="logoImg" to="/">
