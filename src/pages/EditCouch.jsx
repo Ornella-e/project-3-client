@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import service from "../services/apiHandler";
+import axios from "axios"
 
 const EditCouch = () => {
   const [feedback, setFeedback] = useState("");
   const [editMode, setEditMode] = useState(false);
   const [editCouch, setEditCouch] = useState({});
+  const [couch, setCouch] = useState(null);
+  const [owner, setOwner] = useState("");
   const { id } = useParams();
   const navigate = useNavigate();
   console.log(id);
@@ -21,36 +24,34 @@ const EditCouch = () => {
     console.log(editCouch);
     const { data } = await service.put(`/couch/${id}`, editCouch);
     console.log(data);
-
+    setCouch(data);
     setEditMode(false);
   };
 
+  const getOneCouch = async () => {
+		const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/couch/${id}`)
+		 console.log(data)
+		setEditCouch(data)
+    setCouch(data)
+	}
+	useEffect(() => {
+		getOneCouch()
+	}, [])
+
   return (
     <>
+ {  /* { owner? ( */}
       <div className="EditDeleteCouch">
+      {feedback && <h2>{feedback}</h2>}
         <button onClick={handleDelete}>Delete the post</button>
         <button onClick={() => setEditMode(!editMode)}>Edit the post</button>
       </div>
+   {/* ):("")*/}
 
       {/* This form is conditionally rendered */}
       {editMode && (
         <form className="FormCouch" onSubmit={handleEditCouch}>
-          <div className="field">
-            <label htmlFor="image">Image: </label>
-            <input
-              className="field"
-              type="file"
-              id="image"
-              name="image"
-              multiple
-              onChange={(e) =>
-                setEditCouch({
-                  ...editCouch,
-                  [e.target.name]: e.target.files[0],
-                })
-              }
-            />
-          </div>
+        
           <div className="field">
             <label htmlFor="title">Title: </label>
             <input
@@ -86,39 +87,7 @@ const EditCouch = () => {
             ></textarea>
           </div>
 
-          <div className="field">
-            <label htmlFor="country">Country: </label>
-            <input
-              className="field"
-              type="text"
-              id="country"
-              name="country"
-              value={editCouch.country}
-              onChange={(e) =>
-                setEditCouch({
-                  ...editCouch,
-                  [e.target.name]: e.target.value,
-                })
-              }
-            />
-          </div>
-          <div className="field">
-            <label htmlFor="city">City: </label>
-            <input
-              className="field"
-              type="text"
-              id="city"
-              name="city"
-              value={editCouch.city}
-              onChange={(e) =>
-                setEditCouch({
-                  ...editCouch,
-                  [e.target.name]: e.target.value,
-                })
-              }
-            />
-          </div>
-
+          
           <button>Edit the post</button>
         </form>
       )}
