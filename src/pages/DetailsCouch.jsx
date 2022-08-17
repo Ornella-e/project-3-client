@@ -58,16 +58,15 @@ export default function DetailsCouch() {
             <h2>Title: {couch.title}</h2>
             <img className="image-detail" src={couch.image} alt="couchImg" />
             <p>user: {couch.owner.username}</p>
-            <img src={couch.userImage} alt="userImg" />
+            <img src={couch.owner.userImage} alt="userImg" />
             <p>Description: {couch.description}</p>
-            <p>Space for filters</p>
             <p>Location: {couch.location.country}</p>
             <p>Location: {couch.location.city}</p>
            
           </div>
         </>
       ) : (
-        <p>No couch</p>
+        <p>Loading</p>
       )}
   <hr className="hr"/>
         <EditCouch/>
