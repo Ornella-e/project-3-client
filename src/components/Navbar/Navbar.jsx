@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+
 import useAuth from "../../context/auth/useAuth";
 import "./Navbar.css";
 import logo from "./logo-option4.png";
@@ -45,9 +45,8 @@ import bootstrap from 'bootstrap';
             <>
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="/Account">Logged in as  {currentUser.username} </a>
+                  <a class="nav-link active" aria-current="page" href="/account">Logged in as  {currentUser.username} </a>
                 </li>
-               
                 <li class="nav-item">
                   <a class="nav-link" href="/my-couch">Be a Host</a>
                 </li>
@@ -58,6 +57,7 @@ import bootstrap from 'bootstrap';
                   <a class="nav-link" href="/account">Settings</a>
                 </li>
                 <li class="nav-item">
+                  
                   {/* <a class="nav-link" href="/about">logout</a> */}
                   {/*  logout button css red */}
                   <a className="btn btn-success" onClick={removeUser}>
