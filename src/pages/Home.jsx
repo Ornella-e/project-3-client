@@ -49,7 +49,7 @@ const Home = () => {
 					setSearchedString={setSearchedString}
           couches={searchedCouches}
 				/>
-          <button className="button-intro">Search</button>
+      
         </div>
         <div className="pic-intro">
           <p>Photo by Bao Menglong</p>
