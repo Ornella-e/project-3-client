@@ -2,6 +2,7 @@ import React from "react"
 import "./Account.css"
 import { NavLink } from "react-router-dom"
 import ProfileCard from "../../components/User/ProfileCard"
+import "./Account.css"
 
 
 
