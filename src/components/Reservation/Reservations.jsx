@@ -11,11 +11,11 @@ export default function Reservations({
    
   return (
     <div className="container">
-     <p>{id}</p> 
-      <p>{user}</p>
+ 
+      <p>{user.username}</p>
       <p>{startingDate}</p>
       <p>{endingDate}</p>
-      <p>{couch}</p>
+      <p>{couch.title}</p>
       <Link to={`/${id}/evaluations/${id}`}>Evaluations</Link>
     </div>
   );

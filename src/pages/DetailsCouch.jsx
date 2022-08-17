@@ -57,7 +57,7 @@ export default function DetailsCouch() {
           <div className="couch">
             <h2>Title: {couch.title}</h2>
             <img className="image-detail" src={couch.image} alt="couchImg" />
-            <p>user: {couch.username}</p>
+            <p>user: {couch.owner.username}</p>
             <img src={couch.userImage} alt="userImg" />
             <p>Description: {couch.description}</p>
             <p>Space for filters</p>
@@ -69,7 +69,7 @@ export default function DetailsCouch() {
       ) : (
         <p>No couch</p>
       )}
-  <hr />
+  <hr className="hr"/>
         <EditCouch/>
       
       
@@ -97,12 +97,12 @@ export default function DetailsCouch() {
         </div>
         <button className="button-detail">Reserve</button>
       </form>
-      <hr />
+      <hr className="hr" />
       <div className="couch">
         {displayEvaluations()}
 
       </div>
-      <hr />
+      <hr className="hr"/>
       <div className="couch">
         <h3>Cancellation policy</h3>
         <p>

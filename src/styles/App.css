@@ -88,4 +88,14 @@
 		height: 600px; 
 }
 
+.hr{
+  background-color:rgb(199, 202, 201) ;
+}
 
+.Title-Rate{
+  margin-top: 70px;
+}
+
+.Button-Ranking{
+  margin-bottom: 70px;
+}
