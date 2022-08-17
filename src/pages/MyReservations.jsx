@@ -5,6 +5,7 @@ import service from "../services/apiHandler";
 export default function MyReservations() {
 
   const [reservations, setReservations] = useState([]);
+  
 
 
   const getAllReservations = async () => {
@@ -18,7 +19,10 @@ export default function MyReservations() {
   
 
   return (
+    <>
+    <h2>My Reservations</h2>
     <div className="container-reservations">
+    
       {reservations.map((rent) => {
         console.log(rent);
         return (
@@ -30,5 +34,6 @@ export default function MyReservations() {
         );
       })}
     </div>
+    </>
   );
 }

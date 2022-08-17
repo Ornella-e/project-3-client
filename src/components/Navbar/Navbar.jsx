@@ -81,11 +81,6 @@ import bootstrap from 'bootstrap';
             </>
           )}
 
-
-
-
-
-
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
               <button class="btn btn-success" type="submit">Search</button>
@@ -99,15 +94,3 @@ import bootstrap from 'bootstrap';
   )
   }
 export default Navbar;
-
-
-
-
-{/*----------
-<li class="nav-item dropdown">
-<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-Dropdown
-</a>
-                 
-</li> */}
-

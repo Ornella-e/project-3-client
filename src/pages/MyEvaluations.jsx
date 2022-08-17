@@ -54,6 +54,7 @@ export default function MyEvaluations() {
             type="text"
             id="evaluations"
             name="evaluations"
+            placeholder="Please comment here your experience!"
             value={evaluation}
             rows={4}
             cols={25}
@@ -61,7 +62,7 @@ export default function MyEvaluations() {
           ></textarea>
         </div>
 
-        <button className="Button-Ranking" >Evaluate your stay</button>
+        <button className="Button-Ranking" >Send </button>
       </form>
     </>
   );
