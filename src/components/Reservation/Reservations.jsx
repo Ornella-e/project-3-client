@@ -16,7 +16,7 @@ export default function Reservations({
       <p>{couch.title}</p>
       <p>{startingDate}</p>
       <p>{endingDate}</p>
-      <Link to={`/${id}/evaluations/${id}`}>Evaluations</Link>
+      <Link to={`/${id}/evaluations/${couch._id}`}>Evaluations</Link>
     </div>
   );
 }
