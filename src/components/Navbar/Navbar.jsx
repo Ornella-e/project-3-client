@@ -5,10 +5,17 @@ import logo from "./logo-option4.png";
 import Search from "../Search/Search";
 import { useState } from "react";
 
+
 const Navbar = () => {
   const { isLoggedIn, currentUser, removeUser } = useAuth();
-
+  const [couches, setCouches] = useState([]);
   const [searchedString, setSearchedString] = useState("")
+  let searchedCouches = null
+	searchedString !== "" 
+  ? (searchedCouches = couches.filter((couch) => {
+				return couch.title.toLowerCase().includes(searchedString.toLowerCase())
+		  }))
+		: (searchedCouches = couches)
 
   return (
     <nav className="Navbar">
@@ -60,8 +67,10 @@ const Navbar = () => {
        <div className="search">
        <Search
        searchedString={searchedString}
-       setSearchedString={setSearchedString}/>
-         <button className="button-navbar">Search</button>
+       setSearchedString={setSearchedString}
+      couches={searchedCouches} 
+       />
+        
         </div>
       </div>
     </nav>

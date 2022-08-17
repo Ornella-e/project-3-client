@@ -25,7 +25,8 @@ const Home = () => {
   }, []);
 
   let searchedCouches = null
-	searchedString !== "" ? (searchedCouches = couches.filter((couch) => {
+	searchedString !== "" 
+  ? (searchedCouches = couches.filter((couch) => {
 				return couch.title.toLowerCase().includes(searchedString.toLowerCase())
 		  }))
 		: (searchedCouches = couches)
@@ -46,6 +47,7 @@ const Home = () => {
         <Search
 					searchedString={searchedString}
 					setSearchedString={setSearchedString}
+          couches={searchedCouches}
 				/>
           <button className="button-intro">Search</button>
         </div>
@@ -65,6 +67,7 @@ const Home = () => {
                 <p>{couch.location.city}</p> */}
 
               </div>
+              
 
               <Link to={couch._id}>More Info</Link>
 			
