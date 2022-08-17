@@ -41,7 +41,7 @@ function App() {
 					<Route path="/map" element={<Map/>} />
 				</Route>
 				<Route path="/about" element={<About />} /> 
-				<Route path="/:id" element={<DetailsCouch />} /> 
+				<Route path="/:id" element={<DetailsCouch />} />
 				<Route path="*" element={<Oops />} /> 
 			</Routes>
 			<Footer/>
