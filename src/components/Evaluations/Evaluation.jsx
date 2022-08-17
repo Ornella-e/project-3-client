@@ -1,19 +1,12 @@
 import React from "react";
 
-export default function Evaluation({
-  id,
-  user,
- evaluation,
- grade,
-  couch,
-}) {
+export default function Evaluation({ _id, user, couch, evaluation, grade }) {
   return (
     <div className="container">
-      <p>{id}</p>
-      <p>{user}</p>
+      <p>{user.username}</p>
+      <p>{couch.title}</p>
       <p>{evaluation}</p>
-      <p>{grade}</p> 
-      <p>{couch}</p> 
+      <p>{grade}</p>
     </div>
   );
 }

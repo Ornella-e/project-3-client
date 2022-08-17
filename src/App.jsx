@@ -9,7 +9,6 @@ import Oops from "./pages/Oops"
 import PrivateRoute from "./components/ProtectedRoute/PrivateRoute"
 import About from "./pages/About"
 import MyReservations from "./pages/MyReservations"
-import MyFavourites from "./pages/MyFavourites"
 import PostMyCouch from "./pages/PostMyCouch"
 import Footer from "./components/Footer/Footer"
 import DetailsCouch from "./pages/DetailsCouch"
@@ -36,14 +35,13 @@ function App() {
 					<Route path="/editprofile" element={<EditProfile/>} />
 					<Route path="/reservations" element={<MyReservations />} />
 					<Route path="/:reservationId/evaluations/:couchId" element={<MyEvaluations />} />
-					<Route path="/favourites" element={<MyFavourites />} />
 					<Route path="/my-couch" element={<PostMyCouch />} />
 					<Route path="/profileCard" element={<ProfileCard />} />
 					<Route path="/profileimage" element={<ProfileImage />} />
 					<Route path="/map" element={<Map/>} />
 				</Route>
 				<Route path="/about" element={<About />} /> 
-				<Route path="/:id" element={<DetailsCouch />} /> 
+				<Route path="/:id" element={<DetailsCouch />} />
 				<Route path="*" element={<Oops />} /> 
 			</Routes>
 			<Footer/>

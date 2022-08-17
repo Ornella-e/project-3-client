@@ -23,13 +23,15 @@ export default function DetailsCouch() {
       .then(({ data }) => {
         console.log(data);
         setCouch(data);
+        setEvaluations(data.evaluations);
       })
       .catch((e) => console.log(e));
   }, [id]);
 
   const displayEvaluations = () => {
     return evaluations.map((evaluation) => {
-      return <Evaluation key={evaluation.id} {...evaluation} />;
+      console.log(evaluation)
+      return <Evaluation key={evaluation._id} {...evaluation} />;
     });
   };
 
@@ -55,19 +57,18 @@ export default function DetailsCouch() {
           <div className="couch">
             <h2>Title: {couch.title}</h2>
             <img className="image-detail" src={couch.image} alt="couchImg" />
-            <p>user: {couch.username}</p>
-            <img src={couch.userImage} alt="userImg" />
+            <p>user: {couch.owner.username}</p>
+            <img src={couch.owner.userImage} alt="userImg" />
             <p>Description: {couch.description}</p>
-            <p>Space for filters</p>
             <p>Location: {couch.location.country}</p>
             <p>Location: {couch.location.city}</p>
-            <p>Evaluations: {couch.evaluations}</p>
+           
           </div>
         </>
       ) : (
-        <p>No couch</p>
+        <p>Loading</p>
       )}
-  
+  <hr className="hr"/>
         <EditCouch/>
       
       
@@ -95,11 +96,12 @@ export default function DetailsCouch() {
         </div>
         <button className="button-detail">Reserve</button>
       </form>
-
+      <hr className="hr" />
       <div className="couch">
         {displayEvaluations()}
-      </div>
 
+      </div>
+      <hr className="hr"/>
       <div className="couch">
         <h3>Cancellation policy</h3>
         <p>

@@ -28,7 +28,7 @@ export default function MyEvaluations() {
   return (
     <>
       <div className="FormCouch">
-        <h2>Rate your stay </h2>
+        <h2 className="Title-Rate">Rate your stay </h2>
       </div>
       <form className="FormCouch" onSubmit={handleSubmit}>
         <div className="Input-Ranking">
@@ -54,6 +54,7 @@ export default function MyEvaluations() {
             type="text"
             id="evaluations"
             name="evaluations"
+            placeholder="Please comment here your experience!"
             value={evaluation}
             rows={4}
             cols={25}
@@ -61,7 +62,7 @@ export default function MyEvaluations() {
           ></textarea>
         </div>
 
-        <button >Evaluate your stay</button>
+        <button className="Button-Ranking" >Send </button>
       </form>
     </>
   );
