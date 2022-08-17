@@ -1,7 +1,6 @@
 import React, {useState} from "react"
 import useAuth from "../../context/auth/useAuth"
 import { NavLink } from "react-router-dom"
-import MyFavourites from "../MyFavourites"
 import MyReservations from "../MyReservations"
 import ProfileCard from "../../components/User/ProfileCard"
 import EditProfile from "./EditProfile" 
@@ -23,7 +22,6 @@ export default function Profile  ()  {
 				  {/* <EditProfile/> */}
 			  	{/* <NavLink className="" to="/editprofile" >Edit Profile</NavLink> */} 
 			</p>
-				<MyFavourites/>
 				<MyReservations/>
 			</p> 
 		</div>	
