@@ -1,10 +1,110 @@
-.acc{
+.Acc{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(255, 255, 255);
+   
+}
+.ConteinerLeft{
+    padding: 100px;
+}
+
+.ConteinerRight{
+    display: flex;
+    padding: 0 100px;
+}
+
+.Cards{
+    margin: 10;
+    padding: 10;
+    min-height: 50vh;
     display: flex;
     justify-content: center;
+    align-items: center;
+    font-family: consolas;
+}
+.card{
+    border: 0px solid;
+    padding: 5px;
+    margin: auto;
+    
 
 }
 
-.conteinerLeft{
+.container{
+    position: relative;
     display: flex;
     
+}
+
+.container .card{
+    position: relative;
+    cursor: pointer;
+}
+
+.container .card .face{
+    width: 150px;
+    height: 150px;
+    transition: 0.5s;
+}
+
+.container .card .face.face1{
+    position: relative;
+    background: rgb(136, 120, 120);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+
+.container .card:hover .face.face1{
+    background: #aea1a6;
+    transform: translateY(0);
+}
+
+.container .card .face.face1 .content{
+    opacity: 0.2;
+    transition: 0.5s;
+}
+
+.container .card:hover .face.face1 .content{
+    opacity: 1;
+}
+
+.container .card .face.face1 .content img{
+    max-width: 100px;
+}
+
+.container .card .face.face1 .content h3{
+    margin: 10px 0 0;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+
+
+.container .card:hover .face.face2{
+    transform: translateY(0);
+}
+
+.container .card .face.face2 .content p{
+    margin: 0;
+    padding: 0;
+}
+
+.container .card .face.face2 .content a{
+    margin: 15px 0 0;
+    display:  inline-block;
+    text-decoration: none;
+    font-weight: 900;
+    color: rgb(114, 110, 110);
+    padding: 5px;
+    border: 1px solid #333;
+}
+
+.container .card .face.face2 .content a:hover{
+    background: rgb(139, 141, 147);
+    color: #fff;
 }
