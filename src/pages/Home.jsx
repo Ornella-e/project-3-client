@@ -29,6 +29,8 @@ const Home = () => {
 		  }))
 		: (searchedCouches = couches)
 
+    console.log(searchedString)
+
   return (
     <div className="ListCouches">
       <div className="Container-Intro">

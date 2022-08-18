@@ -73,14 +73,15 @@ export default function DetailsCouch() {
         <p>Loading</p>
       )}
   <hr className="hr"/>
-  {owner? (
-        <EditCouch/>
-  ):( <p>Loading</p>)}
+  {!owner? (
+    <p>Loading</p>
+       
+  ):( <EditCouch/> )}
       
       <hr className="hr"/> 
      
       <form className="FormCouch" onSubmit={handleSubmit}>
-      <h2 className="couch">Make your reservation here!</h2>
+      <h2 className="couch-title">Make your reservation here!</h2>
         <div className="couch-input">
           <label htmlFor="startingDate">Check-in: </label>
           <input
@@ -104,9 +105,9 @@ export default function DetailsCouch() {
         <button className="button-detail">Reserve</button>
       </form>
       <hr className="hr" />
-      <div className="couch">
+      <h2 className="couch-title">Couch Evaluations</h2>
+      <div className="couch-evaluations">
         {displayEvaluations()}
-
       </div>
       <hr className="hr"/>
       <div className="couch">
