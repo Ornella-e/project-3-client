@@ -27,7 +27,7 @@ const Home = () => {
   ? (searchedCouches = couches.filter((couch) => {
 				return couch.title.toLowerCase().includes(searchedString.toLowerCase())
 		  }))
-		: (searchedCouches = couches)
+		: (searchedCouches = [])
 
     console.log(searchedString)
 
@@ -46,7 +46,38 @@ const Home = () => {
             searchedString={searchedString}
             setSearchedString={setSearchedString}
             couches={searchedCouches}/>
+           {searchedCouches.map((couch) => {
+          console.log(couch);
+        return (
+          <Link to={couch._id}>
+            <ul class="cards">
+                <li>
+                    <a href="" class="card">
+                        <img  src={couch.image} class="card__image" />
+                        <div class="card__overlay">
+                        <div class="card__header">
+                            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg> 
+
+                            {/* user img */}
+                            {/* <img class="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />  */}                   
+                            <div class="card__header-text">
+                                  <h3 class="card__title">{couch.title}</h3>
+                                  {/* <span class="card__status"> "Text"</span> */}   
+                            </div>
+                        </div>
+                        {/* <img className="image-home" src="{currentUser.userImage}" alt="home-img" /> */}
+                            <p class="card__description">{couch.location.country}</p>
+                            <p class="card__description">{couch.location.city}</p>
+                        </div>
+                    </a>      
+                </li>
+            </ul>  
+            </Link>
+        );
+        })}  
+   
         </div>
+
         <div className="pic-intro">
           <p>Photo by Bao Menglong</p>
         </div>
