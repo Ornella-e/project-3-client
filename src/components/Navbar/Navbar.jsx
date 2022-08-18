@@ -60,7 +60,7 @@ import bootstrap from 'bootstrap';
                   
                   {/* <a class="nav-link" href="/about">logout</a> */}
                   {/*  logout button css red */}
-                  <a className="btn btn-success" onClick={removeUser}>
+                  <a className="btn btn-danger" onClick={removeUser}>
                     Log out
                   </a>
                 </li>
