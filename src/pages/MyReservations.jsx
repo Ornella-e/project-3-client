@@ -21,7 +21,7 @@ export default function MyReservations() {
   return (
     <>
     <h2>My Reservations</h2>
-    <div className="container-reservations">
+    <div className="container-reservationList">
     
       {reservations.map((rent) => {
         console.log(rent);

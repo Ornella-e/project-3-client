@@ -11,9 +11,9 @@ export default function Reservations({
 }) {
     const [done, setDone]= useState(false);
   return (
-    <div className="container">
+    <div className="container-reservations">
  <div className="Input-Ranking">
-              <label htmlFor="done"> If you already stayed at the couch, please click here.</label>
+              <label htmlFor="done"> If you already stayed at the accomodation, please click here to evaluate your experience.</label>
                 <input
                   type="checkbox"
                   id="done"

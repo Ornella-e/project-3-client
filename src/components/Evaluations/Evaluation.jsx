@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Evaluation({ _id, user, couch, evaluation, grade }) {
+export default function Evaluation({ user, couch, evaluation, grade }) {
   return (
     <div className="container">
       <p>{user.username}</p>
