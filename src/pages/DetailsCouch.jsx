@@ -32,11 +32,10 @@ export default function DetailsCouch() {
 
   const displayEvaluations = () => {
     return evaluations.map((evaluation) => {
-      console.log(evaluation)
+      console.log(evaluation);
       return <Evaluation key={evaluation._id} {...evaluation} />;
     });
   };
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -61,10 +60,16 @@ export default function DetailsCouch() {
             <h2>Title: {couch.title}</h2>
             <img className="image-detail" src={couch.image} alt="couchImg" />
             <div className="detail-user-and-image">
-            <p className="detail-user"> {couch.owner.username}</p>
-            <img className="image-detail-user" src={couch.owner.userImage} alt="userImg" />
+              <p className="detail-user"> {couch.owner.username}</p>
+              <img
+                className="image-detail-user"
+                src={couch.owner.userImage}
+                alt="userImg"
+              />
             </div>
-            <p className="detail-description">Description: {couch.description}</p>
+            <p className="detail-description">
+              Description: {couch.description}
+            </p>
             <p>Location: {couch.location.country}</p>
             <p>Location: {couch.location.city}</p>
           </div>
@@ -72,16 +77,13 @@ export default function DetailsCouch() {
       ) : (
         <p>Loading</p>
       )}
-  <hr className="hr"/>
-  {!owner? (
-    <p></p>
-       
-  ):( <EditCouch/> )}
-      
-      <hr className="hr"/> 
-     
+      <hr className="hr" />
+      {!owner ? <p></p> : <EditCouch />}
+
+      <hr className="hr" />
+
       <form className="FormCouch" onSubmit={handleSubmit}>
-      <h2 className="couch-title">Make your reservation here!</h2>
+        <h2 className="couch-title">Make your reservation here!</h2>
         <div className="couch-input">
           <label htmlFor="startingDate">Check-in: </label>
           <input
@@ -106,10 +108,8 @@ export default function DetailsCouch() {
       </form>
       <hr className="hr" />
       <h2 className="couch-title">Couch Evaluations</h2>
-      <div className="couch-evaluations">
-        {displayEvaluations()}
-      </div>
-      <hr className="hr"/>
+      <div className="couch-evaluations">{displayEvaluations()}</div>
+      <hr className="hr" />
       <div className="couch">
         <h3>Cancellation policy</h3>
         <p>

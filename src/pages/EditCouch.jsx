@@ -1,7 +1,7 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import service from "../services/apiHandler";
-import axios from "axios"
+import axios from "axios";
 
 const EditCouch = () => {
   const [feedback, setFeedback] = useState("");
@@ -29,29 +29,30 @@ const EditCouch = () => {
   };
 
   const getOneCouch = async () => {
-		const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/couch/${id}`)
-		 console.log(data)
-		setEditCouch(data)
-    setCouch(data)
-	}
-	useEffect(() => {
-		getOneCouch()
-	}, [])
+    const { data } = await axios.get(
+      `${process.env.REACT_APP_API_URL}/couch/${id}`
+    );
+    console.log(data);
+    setEditCouch(data);
+    setCouch(data);
+  };
+  useEffect(() => {
+    getOneCouch();
+  }, []);
 
   return (
     <>
- {  /* { owner? ( */}
+      {/* { owner? ( */}
       <div className="EditDeleteCouch">
-      {feedback && <h2>{feedback}</h2>}
+        {feedback && <h2>{feedback}</h2>}
         <button onClick={handleDelete}>Delete the post</button>
         <button onClick={() => setEditMode(!editMode)}>Edit the post</button>
       </div>
-   {/* ):("")*/}
+      {/* ):("")*/}
 
       {/* This form is conditionally rendered */}
       {editMode && (
         <form className="FormCouch" onSubmit={handleEditCouch}>
-        
           <div className="field">
             <label htmlFor="title">Title: </label>
             <input
@@ -87,7 +88,6 @@ const EditCouch = () => {
             ></textarea>
           </div>
 
-          
           <button>Edit the post</button>
         </form>
       )}
