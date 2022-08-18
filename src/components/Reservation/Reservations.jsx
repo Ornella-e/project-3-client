@@ -13,7 +13,7 @@ export default function Reservations({
   return (
     <div className="container-reservations">
  <div className="Input-Ranking">
-              <label htmlFor="done"> If you already stayed at the couch, please click here to evaluate your experience.</label>
+              <label htmlFor="done"> If you already stayed at the accomodation, please click here to evaluate your experience.</label>
                 <input
                   type="checkbox"
                   id="done"
