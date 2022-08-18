@@ -48,6 +48,11 @@
   gap: 10px;
 }
 
+.detail-user-and-image{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
 .image-detail {
   border-radius: 4%;
 
@@ -55,8 +60,8 @@
 
 .image-detail-user {
   border-radius: 100px;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
 }
 
 .FormCouch {
@@ -73,16 +78,29 @@
 
 
 .couch-input{
-  padding: 3px;
-  width: 100px;
+  width: 200px;
+  border: 1px solid rgb(175, 188, 203);
+  background-color: rgb(155, 171, 188);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  gap: 5px;
 }
 
+.container-reservationList{
+  display: flex;
+  flex-wrap: wrap;
+}
 .container-reservations{
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  gap: 15px;
-  background-color:rgb(199, 202, 201) ;
+  padding: 30px;
+  gap: 5px;
+  background-color: rgb(155, 171, 188);
+  border: 3px solid  rgb(175, 188, 203);
+  border-radius: 20px;
+  margin: 50px;
 }
 
 .Input-Ranking{
@@ -106,4 +124,15 @@
 
 .Button-Ranking{
   margin-bottom: 70px;
+}
+
+.detail-user{
+  margin-top: 10px;
+  font-size: large;
+}
+.detail-description{
+border: 1px solid white;
+padding: 10px;
+border-radius: 10px;
+
 }

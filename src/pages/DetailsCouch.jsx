@@ -59,9 +59,11 @@ export default function DetailsCouch() {
           <div className="couch">
             <h2>Title: {couch.title}</h2>
             <img className="image-detail" src={couch.image} alt="couchImg" />
-            <p className="image-detail">user: {couch.owner.username}</p>
+            <div className="detail-user-and-image">
+            <p className="detail-user"> {couch.owner.username}</p>
             <img className="image-detail-user" src={couch.owner.userImage} alt="userImg" />
-            <p>Description: {couch.description}</p>
+            </div>
+            <p className="detail-description">Description: {couch.description}</p>
             <p>Location: {couch.location.country}</p>
             <p>Location: {couch.location.city}</p>
            
@@ -76,8 +78,9 @@ export default function DetailsCouch() {
   ):( <p>Loading</p>)}
       
       
-      <h2 className="couch">Make your reservation here!</h2>
+     
       <form className="FormCouch" onSubmit={handleSubmit}>
+      <h2 className="couch">Make your reservation here!</h2>
         <div className="couch-input">
           <label htmlFor="startingDate">Check-in: </label>
           <input
