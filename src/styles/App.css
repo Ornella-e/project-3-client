@@ -147,3 +147,29 @@ gap: 10px;
 margin-left: 100px;
 }
 
+.container-evaluations{
+  display: flex;
+  flex-direction: column;
+  padding: 7px;
+  gap: 5px;
+  background-color: rgb(155, 171, 188);
+  border: 3px solid  rgb(175, 188, 203);
+  border-radius: 5px;
+  margin: 10px;
+  color: rgb(242, 237, 237);
+  width: 250px;
+  height: 250px;
+}
+
+.couch-evaluations{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.couch-title{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+

@@ -7,6 +7,7 @@ const EditProfile = () => {
 	const [feedback, setFeedback] = useState("")
 	const [editMode, setEditMode] = useState(false)
 	const [editProfile, setEditProfile] = useState({})
+	const [owner, setOwner] = useState("");
 	const { id } = useParams()
 	const navigate = useNavigate()
 	/*  console.log(id) */
@@ -19,8 +20,10 @@ const EditProfile = () => {
 	const handleEditProfile = async (e) => {
 		e.preventDefault()
 		console.log(editProfile)
-		const { data } = await service.put(`/profile/${id}`, editProfile)
+		const { data } = await service.put(`/auth/profile/${id}`, editProfile)
 		console.log(data)
+		navigate(`/editprofile`)
+		setOwner(data)
 		setEditMode(false)
 	}
 	return (

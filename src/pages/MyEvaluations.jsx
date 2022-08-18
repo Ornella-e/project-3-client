@@ -7,6 +7,7 @@ import service from "../services/apiHandler";
 export default function MyEvaluations() {
   const { reservationId, couchId } = useParams();
   const [evaluation, setEvaluation] = useState("");
+  const [user, setUser] = useState("");
   const [grade, setGrade] = useState(null);
   const navigate = useNavigate();
   const { currentUser } = useAuth();
