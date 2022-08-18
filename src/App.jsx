@@ -18,6 +18,7 @@ import ProfileCard from "./components/User/ProfileCard"
 import ProfileImage from "./components/User/ProfileImage"
 import Map from "./components/Map/Map"
 import MyEvaluations from "./pages/MyEvaluations"
+import CouchCard from "./components/CouchCards/CouchCard"
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
 					<Route path="/my-couch" element={<PostMyCouch />} />
 					<Route path="/profileCard" element={<ProfileCard />} />
 					<Route path="/profileimage" element={<ProfileImage />} />
+					<Route path="/couchcard" element={<CouchCard />} />
 					<Route path="/map" element={<Map/>} />
 				</Route>
 				<Route path="/about" element={<About />} /> 

@@ -67,7 +67,6 @@ export default function DetailsCouch() {
             <p className="detail-description">Description: {couch.description}</p>
             <p>Location: {couch.location.country}</p>
             <p>Location: {couch.location.city}</p>
-           
           </div>
         </>
       ) : (
