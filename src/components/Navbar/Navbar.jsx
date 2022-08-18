@@ -24,7 +24,9 @@ import bootstrap from 'bootstrap';
     <nav class="navbar navbar-dark bg-dark fixed-top">
 
   <div class="container-fluid">
-      <img  src={logo} className="logoImg" alt="logo" />
+      <a href="/">
+        <img  src={logo} className="logoImg" alt="logo" />
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -32,7 +34,7 @@ import bootstrap from 'bootstrap';
 
       <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Share  Couch</h5>
+          {/* <a href="/" class="link-light" id="offcanvasDarkNavbarLabel">Share  Couch</a> */}
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
                {/*  <li class="nav-item">
@@ -60,7 +62,7 @@ import bootstrap from 'bootstrap';
                   
                   {/* <a class="nav-link" href="/about">logout</a> */}
                   {/*  logout button css red */}
-                  <a className="btn btn-success" onClick={removeUser}>
+                  <a className="btn btn-outline-danger" onClick={removeUser}>
                     Log out
                   </a>
                 </li>
@@ -72,10 +74,10 @@ import bootstrap from 'bootstrap';
           {!isLoggedIn && (
             <>
               <li class="nav-item">
-                  <a class="nav-link" href="/signin">Signin</a>
+                  <a class="btn btn-outline-light" href="/signin">Signin</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="/signup">Signup</a>
+                  <a class="btn btn-outline-light" href="/signup">Signup</a>
               </li>
 
             </>
