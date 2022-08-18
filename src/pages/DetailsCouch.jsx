@@ -9,7 +9,7 @@ import EditCouch from "./EditCouch";
 
 export default function DetailsCouch() {
   const [couch, setCouch] = useState(null);
-  const [owner, setOwner] = useState([]);
+  const [owner, setOwner] = useState(false);
   const { id } = useParams();
   const [evaluations, setEvaluations] = useState([]);
   const [startingDate, setStartingDate] = useState("");
@@ -24,7 +24,7 @@ export default function DetailsCouch() {
       .then(({ data }) => {
         console.log(data);
         setCouch(data);
-        setOwner(data);
+        setOwner(currentUser._id === data?.owner?._id);
         setEvaluations(data.evaluations);
       })
       .catch((e) => console.log(e));
@@ -74,7 +74,7 @@ export default function DetailsCouch() {
       )}
   <hr className="hr"/>
   {!owner? (
-    <p>Loading</p>
+    <p></p>
        
   ):( <EditCouch/> )}
       
