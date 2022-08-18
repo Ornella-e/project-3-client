@@ -43,12 +43,20 @@
 .couch {
   display: flex;
   flex-direction: column;
-  padding: 4%;
+  padding: 100px;
   background-color: rgb(199, 202, 201);
+  gap: 10px;
 }
 
 .image-detail {
   border-radius: 4%;
+
+}
+
+.image-detail-user {
+  border-radius: 100px;
+  width: 60px;
+  height: 60px;
 }
 
 .FormCouch {
