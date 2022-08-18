@@ -1,17 +1,41 @@
 import React from "react"
+import useAuth from "../../context/auth/useAuth"
 import "./Account.css"
-import { NavLink } from "react-router-dom"
-import ProfileCard from "../../components/User/ProfileCard"
-import "./Account.css"
-
-
-
+import ProfileImage from '/Users/jobcenter/Ironhack/project-3/project-3-client/src/components/User/ProfileImage.jsx';
+import bootstrap from "bootstrap"
 
 
 const Account = () => {
+	const { isLoggedIn, currentUser, removeUser } = useAuth()
+
 	return (
+		<div class="card" className="cardA">
+				<ProfileImage alt="Avatar" className="my-5" style={{ width: '80px' }} fluid/>
+			<div>
+				<h5 className="nameA"> {currentUser.username}</h5>
+				
+			</div>
+			<ul class="list-group list-group-flush">
+				<a class="btn btn-outline-secondary" href="/reservations">Reservations</a>
+				<a class="btn btn-outline-secondary" href="/my-couch">Be a Host</a>
+				<a class="btn btn-outline-secondary" href="/:reservationId/evaluations/:couchId">Evaluations</a>
+			</ul>
+			<div className="End">
+				<a class="btn btn-outline-dark" href="/editprofile">Edit Profile</a>
+				<a className="btn btn-outline-danger" onClick={removeUser}>Log out</a>
+			</div>
+		</div>
 		
-		<div className="Acc">
+		
+	)
+}
+
+export default Account
+
+
+
+
+{/* <div className="Acc">
 			<div className="ConteinerLeft">
 				<ProfileCard/>
 			</div>
@@ -37,7 +61,7 @@ const Account = () => {
 				<div className="card">
 					<div className="face face1">
 						<div className="content">
-							{/* <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/design_128.png?raw=true"/>*/}
+							
 							<h3>My Couches</h3> 
 						</div>
 					</div>
@@ -51,7 +75,7 @@ const Account = () => {
 				<div className="card">
 					<div className="face face1">
 						<div className="content">
-							{/* <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/design_128.png?raw=true"/>*/}
+							
 							<h3>My Evaluations</h3> 
 						</div>
 					</div>
@@ -65,7 +89,7 @@ const Account = () => {
 				<div className="card">
 					<div className="face face1">
 						<div className="content">
-							{/* <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/design_128.png?raw=true"/>*/}
+							
 							<h3>My Favorites</h3> 
 						</div>
 					</div>
@@ -80,7 +104,7 @@ const Account = () => {
 				<div className="card">
 					<div className="face face1">
 						<div className="content">
-							{/* <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/design_128.png?raw=true"/>*/}
+							
 							<h3>Become a Host</h3> 
 						</div>
 					</div>
@@ -100,8 +124,4 @@ const Account = () => {
 
 
 			</div>
-		</div>
-	)
-}
-
-export default Account
+		</div> */}

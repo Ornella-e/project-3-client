@@ -10,17 +10,8 @@ export default function ProfileImage  ()  {
 
 	return (
 
-		
-		<div className="">
-			
-
-			<p className="">
+		<div className="Img">
             <img src={currentUser.userImage} />
-			</p>
-		  
-				
-		   	
-		 
 		</div>	
 		 
 	)
