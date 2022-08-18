@@ -36,6 +36,7 @@ export default function DetailsCouch() {
       return <Evaluation key={evaluation._id} {...evaluation} />;
     });
   };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -77,7 +78,7 @@ export default function DetailsCouch() {
         <EditCouch/>
   ):( <p>Loading</p>)}
       
-      
+      <hr className="hr"/> 
      
       <form className="FormCouch" onSubmit={handleSubmit}>
       <h2 className="couch">Make your reservation here!</h2>

@@ -35,8 +35,9 @@ const PostMyCouch = () => {
 
   return (
     <>
-      <p className="FormCouch">To post your couch, please fill in the following information.</p>
+     
       <form className="FormCouch" onSubmit={handleSubmit}>
+      <h3 className="field">To post your couch, please fill in the following information.</h3>
         <div className="field">
           <label htmlFor="image">Image:</label>
           <input
