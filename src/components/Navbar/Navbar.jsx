@@ -32,7 +32,7 @@ import bootstrap from 'bootstrap';
 
       <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Shere  Couch</h5>
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Share  Couch</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
                {/*  <li class="nav-item">
@@ -51,7 +51,7 @@ import bootstrap from 'bootstrap';
                   <a class="nav-link" href="/my-couch">Be a Host</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/reservation">Reservations</a>
+                  <a class="nav-link" href="/reservations">Reservations</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/account">Settings</a>

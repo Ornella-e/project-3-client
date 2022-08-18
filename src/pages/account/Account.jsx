@@ -1,7 +1,7 @@
 import React from "react"
 import useAuth from "../../context/auth/useAuth"
 import "./Account.css"
-import ProfileImage from '/Users/jobcenter/Ironhack/project-3/project-3-client/src/components/User/ProfileImage.jsx';
+import ProfileImage from '../../components/User/ProfileImage';
 import bootstrap from "bootstrap"
 
 
