@@ -20,7 +20,7 @@ export default function MyEvaluations() {
 
     try {
       await service.post(`/couch/${reservationId}/evaluations/${couchId}`, db);
-      navigate(`/${reservationId}/evaluations/${couchId}`);
+      navigate(`/reservations`);
     } catch (error) {
       console.error(error);
     }

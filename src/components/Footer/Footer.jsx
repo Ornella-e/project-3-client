@@ -120,7 +120,7 @@ export default function App() {
              
               <p>
                 <MDBIcon icon="envelope" className="me-3" />
-                info@sherecouch.com
+                info@sharecouch.com
               </p>
               
               

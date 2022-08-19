@@ -1,5 +1,6 @@
 import React from "react";
-
+import linkedin from "../components/Team/linkedin-icon.png"
+import github from "../components/Team/git-icon.png"
 /* import TeamDesc from '../components/Team/TeamDesc'
 import TeamCard from '../components/Team/TeamCard'
  */
@@ -26,7 +27,7 @@ export default function About() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="../components/Team/git-icon.png" alt="Github icon" />
+                <img className="icon-img-git" src={github} alt="Github icon" />
               </a>
               <a
                 title="Linkedin"
@@ -34,8 +35,8 @@ export default function About() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
-                  src="../components/Team/linkedin-icon.png"
+                <img className="icon-img"
+                  src={linkedin}
                   alt="Linkedin icon"
                 />
               </a>
@@ -55,7 +56,7 @@ export default function About() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="../components/Team/git-icon.png" alt="Github icon" />
+                <img className="icon-img-git" src={github} alt="Github icon" />
               </a>
               <a
                 title="Linkedin"
@@ -63,8 +64,8 @@ export default function About() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
-                  src="../components/Team/linkedin-icon.png"
+                <img className="icon-img"
+                  src={linkedin}
                   alt="Linkedin icon"
                 />
               </a>
@@ -94,16 +95,16 @@ export default function About() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="../components/Team/git-icon.png" alt="Github icon" />
+                <img className="icon-img-git" src={github} alt="Github icon" />
               </a>
-              <a
+              <a 
                 title="Linkedin"
                 href="https://www.linkedin.com/feed/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
-                  src="../components/Team/linkedin-icon.png"
+                <img className="icon-img"
+                  src={linkedin}
                   alt="Linkedin icon"
                 />
               </a>
