@@ -9,7 +9,7 @@ const Search = ({ searchedString, setSearchedString }) => {
 			value={searchedString}
 			onChange={(e) => setSearchedString(e.target.value)}
 		/>
-        <button type="button" class="btn btn-dark">Search</button>
+        <button type="button" class="btn btn-secondary">Search</button>
         </>
 	)
 }

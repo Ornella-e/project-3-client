@@ -1,36 +1,82 @@
 import React from 'react';
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
+import useAuth from "../../context/auth/useAuth";
+import Search from "../Search/Search";
+import { useState,useEffect } from "react";
+import bootstrap from 'bootstrap';
+import { Link } from "react-router-dom";
+import axios from "axios";
+import "./Footer.css"
+
 
 export default function App() {
+  const [couches, setCouches] = useState([]);
+    const [searchedString, setSearchedString] = useState("")
+
+    const getAllCouches = async () => {
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/couch`);
+      console.log(response);
+      setCouches(response.data);
+    };
+    useEffect(() => {
+      getAllCouches();
+    }, []);
+
+    let searchedCouches = null
+	searchedString !== "" 
+  ? (searchedCouches = couches.filter((couch) => {
+				return couch.title.toLowerCase().includes(searchedString.toLowerCase())
+		  }))
+		: (searchedCouches = [])
   
   return (
     <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
-      <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
-      {/*   <div className='me-5 d-none d-lg-block'>
-          <span>Get connected with us on social networks:</span>
-        </div>
+    <div >
+    <section className='d-flex justify-content-center  p-4 border-bottom'>
 
-        <div>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="facebook-f" />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="twitter" />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="google" />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="instagram" />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="linkedin" />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="github" />
-          </a>
-        </div> */}
-      </section>
+{/* ------ SEARCH BUTTON ----- */}
+      <div  className="Search">
+          <div> 
+              <Search
+                searchedString={searchedString}
+                setSearchedString={setSearchedString}
+                couches={searchedCouches}/>
+              {searchedCouches.map((couch) => {
+            return (
+            
+              <Link to={couch._id}>
+                <ul class="cards">
+                    <li>
+                        <a href="" class="card">
+                            <img  src={couch.image} class="card__image" />
+                            <div class="card__overlay">
+                            <div class="card__header">
+                                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg> 
+
+                                {/* user img */}
+                                {/* <img class="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />  */}                   
+                                <div class="card__header-text">
+                                      <h3 class="card__title">{couch.title}</h3>
+                                      {/* <span class="card__status"> "Text"</span> */}   
+                                </div>
+                            </div>
+                            {/* <img className="image-home" src="{currentUser.userImage}" alt="home-img" /> */}
+                                <p class="card__description">{couch.location.country}</p>
+                                <p class="card__description">{couch.location.city}</p>
+                            </div>
+                        </a>      
+                    </li>
+                </ul>  
+                </Link>
+                
+            );
+            })}  
+              
+          </div>
+      </div>
+{/* ------- SEARCH BUTTON ------ */}
+    </section>
+    </div>
 
       <section className=''>
         <MDBContainer className='text-center text-md-start mt-5'>

@@ -40,7 +40,7 @@ import axios from "axios";
       <a href="/">
         <img  src={logo} className="logoImg" alt="logo" />
       </a>
-      <div className=""> 
+      {/* <div className=""> 
           <Search
             searchedString={searchedString}
             setSearchedString={setSearchedString}
@@ -58,14 +58,14 @@ import axios from "axios";
                         <div class="card__header">
                             <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg> 
 
-                            {/* user img */}
-                            {/* <img class="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />  */}                   
+                             user img 
+                            <img class="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />                    
                             <div class="card__header-text">
                                   <h3 class="card__title">{couch.title}</h3>
-                                  {/* <span class="card__status"> "Text"</span> */}   
+                                   <span class="card__status"> "Text"</span> 
                             </div>
                         </div>
-                        {/* <img className="image-home" src="{currentUser.userImage}" alt="home-img" /> */}
+                        <img className="image-home" src="{currentUser.userImage}" alt="home-img" /> 
                             <p class="card__description">{couch.location.country}</p>
                             <p class="card__description">{couch.location.city}</p>
                         </div>
@@ -77,7 +77,7 @@ import axios from "axios";
         );
         })}  
    
-        </div>
+        </div> */}
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
