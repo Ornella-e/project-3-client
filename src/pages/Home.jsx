@@ -43,7 +43,7 @@ const Home = () => {
           <div style={{fontFamily: 'Lobster'}}>
           <h1 className="Title">ShareCouch</h1>
           </div>
-          <h5 >
+          <h5 className="Slogan">
             The platform that connects travelers around the world looking for
             free accommodation, discover new places and make new friendships.
           </h5>

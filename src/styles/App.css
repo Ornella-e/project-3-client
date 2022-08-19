@@ -1,17 +1,23 @@
-.ListCouches{
+/* .ListCouches{
   background-color: rgb(199, 202, 201);
-}
-.font-loader {
-  font-family: 'Lobster';
-}
-.Title{
-  font-size: 200px;
-}
+} */
 
+.Title{
+  font-size: 100px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.Slogan{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
 
 .Container-Intro {
   display: flex;
   align-content: center;
+  justify-content: center;
   flex-direction: column;
   background-image: url("https://images.unsplash.com/photo-1658887240445-f03ce58917b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
   padding: 400px;
@@ -20,10 +26,7 @@
   background-repeat: no-repeat;
   /* position: relative; */
   color: white;
-  margin-left: auto;
 
-    margin-right: auto;
-  
 }
 
 
