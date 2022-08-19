@@ -11,7 +11,7 @@ const EditCouch = () => {
   const [owner, setOwner] = useState("");
   const { id } = useParams();
   const navigate = useNavigate();
-  console.log(id);
+  
 
   const handleDelete = async (couchId) => {
     const { data } = await service.delete(`/couch/${id}`, couchId);
@@ -23,7 +23,7 @@ const EditCouch = () => {
     e.preventDefault();
     console.log(editCouch);
     const { data } = await service.put(`/couch/${id}`, editCouch);
-    console.log(data);
+    
     setCouch(data);
     setEditMode(false);
   };
@@ -32,7 +32,7 @@ const EditCouch = () => {
     const { data } = await axios.get(
       `${process.env.REACT_APP_API_URL}/couch/${id}`
     );
-    console.log(data);
+   
     setEditCouch(data);
     setCouch(data);
   };

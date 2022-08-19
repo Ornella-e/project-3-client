@@ -6,14 +6,13 @@
 
 ##ShareCouch
 
-Share Couch is a couch exchange app, where couch owners can share their couch with other registered users for free, anywhere in the world.
+Share Couch is a platform, where the owners of couches can offer their couch for free to other registered users, anywhere in Europe.
 
-- A version of the app is visible to non logged users, but with limited options, like search.
-- When users log in, they can access their profile, edit it, and leave ratings and comments, also edit password.
+- A version of the app is visible to non logged users, but with limited options, like homepage and the details of the couches.
+- When users create an account and log in, they can access their profile, make a post, edit it or delete it and leave ratings and comments.
 
-Deployment: ""
-Trello: https://trello.com/b/suDXWMvC
-Presentation slides: ""
+Deployment Netlify: "https://sharecouch.netlify.app/"
+Trello: "https://trello.com/b/suDXWMvC"
 
 ---
 
@@ -25,9 +24,9 @@ HOME
 └───
 │   │   displays
 │   │
-│   └───SINGLE COUCH
-│          displays single couch
-│          (when logged in: user can create review or favorite others)
+│   └───SINGLE COUCH - DETAILS
+│          displays the details of a single couch
+│          (when host: user can make a post, edit it and delete it| when logged in: user can make a reservation, evaluate accomodation.)
 │
 └───SIGNUP
 │      displays signup form (only to logged out)
@@ -36,11 +35,17 @@ HOME
 │      displays login form (only to logged out)
 │
 └───PROFILE
-    │   shows own couch with option to edit + delete, also adding, editing profile info or deleting it.
-    │
-    └───FAVORITE COUCHES
-        displays favorited couches
-
+│   │   shows own couch with option to edit + delete, also adding, editing profile info or deleting it.
+│   │
+│   └───FAVORITE COUCHES
+│        displays favorited couches
+└───RESERVATIONS
+│   │   user can pick a check-in and check-out date. 
+│   │
+│   └───EVALUATIONS
+│        displays an evaluation form (only when stayed at the accomodation)
+└───ABOUT
+       shows team members
 
 ```
 
@@ -50,64 +55,71 @@ HOME
 
 ### 1. User model
 
-{
-username: {
-type: String,
-unique: true,
-required: true
-},
-email: {
-type: String,
-unique: true,
-required: true
-},
-password: {
-type: String,
-required: true
-},
+  {
+    username: {
+      type: String,
+      unique: true,
+      required: true,
+    },
+    email: {
+      type: String,
+      unique: true,
+      required: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
 
     userImage: {
       type: String,
     },
-
-couch: [{
-type: Schema.Types.ObjectId,
-ref: "Couch"
-}],
-location: {
-city: String,
-country: String
-},
-},
+    couch: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Couch",
+      },
+    ],
+    location: {
+      city: String,
+      country: String,
+    },
+    renting: [{ type: Schema.Types.ObjectId, ref: "RentingTime",  default:[] }],
+    evaluations: [{ type: Schema.Types.ObjectId, ref: "Ranking",  default:[] }],
+  },
 
 ### 2. Couch model
 
 {
-owner: {
-type : Schema.Types.ObjectId,
-ref: 'User'
-},
-
+    owner: {
+      type : Schema.Types.ObjectId,
+      ref: 'User'
+    },
+    title:{
+      type:String
+    },
     description:{
       type:String
     },
-
+  
     image:{
       type:String
     },
-
-location:{
-city :String,
-country: String
-},
-evaluations:{
-type: Schema.Types.ObjectId,
-ref: "Evaluations"
-},
-calendar:{
-type: Schema.Types.ObjectId,
-ref: "Calendar"
-},
+  
+   location:{
+      city :String,
+      country: String
+   },
+    evaluations:[{
+      type: Schema.Types.ObjectId,
+      ref: "Ranking",
+      default:[]
+    }],
+    calendar: [{
+      type: Schema.Types.ObjectId,
+      ref: "RentingTime",
+      default:[]
+    }],
 },
 
 ### 3. Ranking model
@@ -149,14 +161,24 @@ couch: { type: Schema.Types.ObjectId, ref: "Couch", required:true},
 | /auth/logout | POST      | logout user                   | redirect to index                      |
 
 
-**REVIEWS**
-Ingredientreviews > create-review |
-| /reviews/:id/review | POST | save review to db | redirect to recipes-details |
-
 **USERS**
 
-| Route    | HTTP Verb | Description       | View                 |
-| -------- | --------- | ----------------- | -------------------- |
-| /profile | GET       | show user profile | users > user-profile |
+| Route      | HTTP Verb | Description       | View                 |
+| ---------- | --------- | ----------------- | -------------------- |
+| /myaccount | GET       | show user profile | users > user account |
+
+
+**RESERVATIONS**
+| Route         | HTTP Verb | Description                       | View                 |
+| ------------- | --------- | --------------------------------- | -------------------- |
+| /reservations | GET       | find all reservations             | users > reservations |
+| /:id          | POST      | create reservations, update couch | users > reservations |
+
+**EVALUATIONS**
+| Route                                | HTTP Verb | Description                       | View                 |
+| ------------------------------------ | --------- | --------------------------------- | -------------------- |
+| /evaluations                         | GET       | find all evaluations              | users > evaluations  |
+| /:reservationId/evaluations/:couchId | POST      | create reservations, update couch | users > evaluations  |
+
 
 © 2022 Ornella & Joao & Laia

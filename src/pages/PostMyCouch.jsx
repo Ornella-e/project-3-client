@@ -11,7 +11,7 @@ const PostMyCouch = () => {
   const [city, setCity] = useState("");
   const navigate = useNavigate();
   const { currentUser } = useAuth();
-  console.log(currentUser);
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,11 +29,11 @@ const PostMyCouch = () => {
       await service.post("/couch", fd);
       navigate("/");
     } catch (error) {
-      console.error(error);
+      
     }
   };
 
-  
+
   return (
     <>
      

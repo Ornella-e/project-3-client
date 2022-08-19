@@ -15,14 +15,14 @@ export default function DetailsCouch() {
   const [startingDate, setStartingDate] = useState("");
   const [endingDate, setEndingDate] = useState("");
   const { currentUser } = useAuth();
-  console.log(currentUser);
+  
   const navigate = useNavigate();
 
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_API_URL}/couch/${id}`)
       .then(({ data }) => {
-        console.log(data);
+        
         setCouch(data);
         setOwner(currentUser._id === data?.owner?._id);
         setEvaluations(data.evaluations);
@@ -32,7 +32,7 @@ export default function DetailsCouch() {
 
   const displayEvaluations = () => {
     return evaluations.map((evaluation) => {
-      console.log(evaluation);
+      
       return <Evaluation key={evaluation._id} {...evaluation} />;
     });
   };
@@ -48,7 +48,7 @@ export default function DetailsCouch() {
       await service.post(`/couch/${id}`, data);
       navigate("/reservations");
     } catch (error) {
-      console.error(error);
+      
     }
   };
 

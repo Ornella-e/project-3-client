@@ -10,7 +10,7 @@ export default function MyReservations() {
 
   const getAllReservations = async () => {
     const response = await service.get(`/couch/reservations`);
-    console.log(response);
+   
     setReservations(response.data);
   };
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function MyReservations() {
     <div className="container-reservationList">
     
       {reservations.map((rent) => {
-        console.log(rent);
+       
         return (
           <Reservations
             key={rent._id}

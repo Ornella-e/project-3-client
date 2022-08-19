@@ -15,7 +15,7 @@ const Home = () => {
 
   const getAllCouches = async () => {
     const response = await axios.get(`${process.env.REACT_APP_API_URL}/couch`);
-    console.log(response);
+   
     setCouches(response.data);
   };
   useEffect(() => {
@@ -29,7 +29,7 @@ const Home = () => {
 		  }))
 		: (searchedCouches = [])
 
-    console.log(searchedString)
+    
 
   return (
     <div className="ListCouches">
@@ -47,7 +47,7 @@ const Home = () => {
             setSearchedString={setSearchedString}
             couches={searchedCouches}/>
            {searchedCouches.map((couch) => {
-          console.log(couch);
+          
         return (
           <Link to={couch._id}>
             <ul class="cards">
@@ -87,7 +87,7 @@ const Home = () => {
         
       <div className='body'>
         {couches.map((couch) => {
-          console.log(couch);
+          
         return (
           <Link to={couch._id}>
             <ul class="cards">

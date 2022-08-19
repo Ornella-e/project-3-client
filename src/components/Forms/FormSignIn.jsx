@@ -18,12 +18,12 @@ const FormSignIn = () => {
 		e.preventDefault()
 		try {
 			const res = await service.signin(user)
-			console.log(res)
+			
 			storeToken(res.authToken)
 			await authenticateUser()
 			navigate("/")
 		} catch (error) {
-			console.log(error)
+			
 			setError(error)
 		}
 	}

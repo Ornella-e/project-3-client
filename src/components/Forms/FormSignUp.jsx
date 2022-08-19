@@ -25,7 +25,7 @@ const FormSignUp = () => {
 
 			try {
 			const res =  await  service.signup(data)
-			console.log(res)
+			
 			//navigate("/signin") 
 
 		} catch (error) {

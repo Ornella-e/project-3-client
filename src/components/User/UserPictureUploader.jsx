@@ -15,7 +15,7 @@ const UserPictureUploader = () => {
 				data.append("userImage", user.userImage);
 		try {
 			const res =  await  service.signup(data)
-			console.log(res)
+			
 			navigate("/profile")
 		} catch (error) {
 			setError(e.message)
