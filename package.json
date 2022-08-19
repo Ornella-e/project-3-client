@@ -19,7 +19,8 @@
     "react-scripts": "^5.0.1",
     "react-select": "^5.4.0",
     "react-select-country-list": "^2.2.3",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",
