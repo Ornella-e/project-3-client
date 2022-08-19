@@ -1,24 +1,32 @@
 .ListCouches{
   background-color: rgb(199, 202, 201);
 }
+.font-loader {
+  font-family: 'Lobster';
+}
+.Title{
+  font-size: 200px;
+}
+
+
 .Container-Intro {
   display: flex;
+  align-content: center;
   flex-direction: column;
   background-image: url("https://images.unsplash.com/photo-1658887240445-f03ce58917b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
-  padding: 23%;
-  background-position: 0 0;
+  padding: 400px;
+  /* background-position: 0 0; */
   background-size: cover;
   background-repeat: no-repeat;
-  position: relative;
+  /* position: relative; */
   color: white;
-  gap: 15px;
+  margin-left: auto;
+
+    margin-right: auto;
+  
 }
-.text-intro {
-  align-items: center;
-}
-.input-intro {
-  width: 400px;
-}
+
+
 .pic-intro {
   display: flex;
   flex-direction: column;

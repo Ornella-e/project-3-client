@@ -3,8 +3,10 @@ import useAuth from "../../context/auth/useAuth";
 import "./Navbar.css";
 import logo from "./logo-option4.png";
 import Search from "../Search/Search";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import bootstrap from 'bootstrap';
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 
 
@@ -12,21 +14,70 @@ import bootstrap from 'bootstrap';
     const { isLoggedIn, currentUser, removeUser } = useAuth();
     const [couches, setCouches] = useState([]);
     const [searchedString, setSearchedString] = useState("")
+
+    const getAllCouches = async () => {
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/couch`);
+      console.log(response);
+      setCouches(response.data);
+    };
+    useEffect(() => {
+      getAllCouches();
+    }, []);
+
     let searchedCouches = null
-    searchedString !== "" 
-    ? (searchedCouches = couches.filter((couch) => {
-          return couch.title.toLowerCase().includes(searchedString.toLowerCase())
-        }))
-      : (searchedCouches = couches)
+	searchedString !== "" 
+  ? (searchedCouches = couches.filter((couch) => {
+				return couch.title.toLowerCase().includes(searchedString.toLowerCase())
+		  }))
+		: (searchedCouches = [])
   
 
   return (
     <nav class="navbar navbar-dark bg-dark fixed-top">
 
   <div class="container-fluid">
+  
       <a href="/">
         <img  src={logo} className="logoImg" alt="logo" />
       </a>
+      <div className=""> 
+          <Search
+            searchedString={searchedString}
+            setSearchedString={setSearchedString}
+            couches={searchedCouches}/>
+           {searchedCouches.map((couch) => {
+          console.log(couch);
+        return (
+        
+          <Link to={couch._id}>
+            <ul class="cards">
+                <li>
+                    <a href="" class="card">
+                        <img  src={couch.image} class="card__image" />
+                        <div class="card__overlay">
+                        <div class="card__header">
+                            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg> 
+
+                            {/* user img */}
+                            {/* <img class="card__thumb" src="https://i.imgur.com/sjLMNDM.png" alt="" />  */}                   
+                            <div class="card__header-text">
+                                  <h3 class="card__title">{couch.title}</h3>
+                                  {/* <span class="card__status"> "Text"</span> */}   
+                            </div>
+                        </div>
+                        {/* <img className="image-home" src="{currentUser.userImage}" alt="home-img" /> */}
+                            <p class="card__description">{couch.location.country}</p>
+                            <p class="card__description">{couch.location.city}</p>
+                        </div>
+                    </a>      
+                </li>
+            </ul>  
+            </Link>
+            
+        );
+        })}  
+   
+        </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
