@@ -49,6 +49,7 @@ const Home = () => {
            {searchedCouches.map((couch) => {
           console.log(couch);
         return (
+        
           <Link to={couch._id}>
             <ul class="cards">
                 <li>
@@ -73,6 +74,7 @@ const Home = () => {
                 </li>
             </ul>  
             </Link>
+            
         );
         })}  
    
