@@ -50,9 +50,7 @@ const Home = () => {
         </div>
        
 
-        <div className="pic-intro">
-          <p>Photo by Bao Menglong</p>
-        </div>
+       
       </div>
        
       <div className="couchCards">
