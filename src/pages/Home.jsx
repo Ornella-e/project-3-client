@@ -49,24 +49,6 @@ const Home = () => {
           </h5>
         </div>
 
-        <div className="text-intro"> 
-          <Search
-            searchedString={searchedString}
-            setSearchedString={setSearchedString}
-            couches={searchedCouches}/>
-           {searchedCouches.map((couch) => {
-          
-        return (
-          <Link to={couch._id}>
-            <ul class="cards">
-                <li>
-                    <a href="" class="card">
-                        <img  src={couch.image} class="card__image" />
-                        <div class="card__overlay">
-                        <div class="card__header">
-                            <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg> 
-
-
        
       </div>
        
@@ -112,35 +94,3 @@ const Home = () => {
 
 export default Home;
 
-
-	{/* <section className="HomePageMap"> 
-			  <Map/>
-				</section> */}
-
-
-{/*    <div className="container-home">
-        {couches.map((couch) => {
-          console.log(couch);
-          return (
-            <div className="card-home" key={couch._id}>
-        
-              
-
-              <Link to={couch._id}>More Info</Link>
-			
-		
-            </div>
-          );
-          
-        })}
-		
-      </div> */}
-
-
-{/* <div>
-<img className="image-home" src={couch.image} alt="home-img" />
-<h1>{couch.title}</h1> */}
-{/*                 <p>{couch.location.country}</p>
-<p>{couch.location.city}</p> */}
-
-/* </div> */
