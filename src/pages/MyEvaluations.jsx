@@ -11,7 +11,7 @@ export default function MyEvaluations() {
   const [grade, setGrade] = useState(null);
   const navigate = useNavigate();
   const { currentUser } = useAuth();
-  console.log(currentUser);
+ 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,9 +20,9 @@ export default function MyEvaluations() {
 
     try {
       await service.post(`/couch/${reservationId}/evaluations/${couchId}`, db);
-      navigate(`/${reservationId}/evaluations/${couchId}`);
+      navigate(`/couch/reservations`);
     } catch (error) {
-      console.error(error);
+     
     }
   };
 
