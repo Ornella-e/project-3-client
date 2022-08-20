@@ -57,7 +57,7 @@ export default function DetailsCouch() {
       {couch ? (
         <>
           <div className="couch">
-            <h2>Title: {couch.title}</h2>
+            <h2>{couch.title}</h2>
             <img className="image-detail" src={couch.image} alt="couchImg" />
             <div className="detail-user-and-image">
               <p className="detail-user"> {couch.owner.username}</p>
