@@ -21,7 +21,7 @@ const Account = () => {
 				<a class="btn btn-outline-secondary" href="/:reservationId/evaluations/:couchId">Evaluations</a>
 			</ul>
 			<div className="End">
-				<a className="btn btn-outline-dark" href="/:id/editprofile">Edit Profile</a>
+				{/* <a className="btn btn-outline-dark" href="/:id/editprofile">Edit Profile</a> */}
 				<a className="btn btn-outline-danger" onClick={removeUser}>Log out</a>
 			</div>
 		</div>

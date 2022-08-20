@@ -1,24 +1,36 @@
-.ListCouches{
+/* .ListCouches{
   background-color: rgb(199, 202, 201);
+} */
+
+.Title{
+  font-size: 100px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
+.Slogan{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
 .Container-Intro {
   display: flex;
+  align-content: center;
+  justify-content: center;
   flex-direction: column;
   background-image: url("https://images.unsplash.com/photo-1658887240445-f03ce58917b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
-  padding: 23%;
-  background-position: 0 0;
+  padding: 300px 10px 300px; 
+  /* background-position: 0 0; */
   background-size: cover;
   background-repeat: no-repeat;
-  position: relative;
+  /* position: relative; */
   color: white;
-  gap: 15px;
+  
+ 
 }
-.text-intro {
-  align-items: center;
-}
-.input-intro {
-  width: 400px;
-}
+
+
 .pic-intro {
   display: flex;
   flex-direction: column;
@@ -174,7 +186,7 @@ margin-left: 100px;
   padding: 10px;
 }
 
-
+/* ------- Couches Cards ------ */
 
 :root {
   --surface-color: rgb(255, 255, 255);
@@ -274,31 +286,19 @@ margin-left: 100px;
 
 .card__title {
   font-size: 1em;
-  margin: 0 0 .3em;
-  color: #6A515E;
+  margin: 0 0 .4m;
+  color: #383838;
 }
 
-.card__tagline {
-  display: block;
-  margin: 1em 0;
-  font-family: "MockFlowFont";  
-  font-size: .8em; 
-  color: #D7BDCA;  
-}
-
-.card__status {
-  font-size: .8em;
-  color: #D7BDCA;
-}
 
 .card__description {
-  padding: 0 2em 2em;
+  padding: 0 1em 2em;
   margin: 0;
-  color: #D7BDCA;
+  color: #070707;
   font-family: "MockFlowFont";   
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   overflow: hidden;
 }  
 

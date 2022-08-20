@@ -1,4 +1,13 @@
-footer {
+.Search{
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+
+
+
+/*  footer {
   background-color: #000;
   height: 250px;
   display: flex;
@@ -16,24 +25,25 @@ footer {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  /* justify-content: space-evenly; */
+justify-content: space-evenly; 
 }
 
 .footer-left {
-  /* width: 50%; */
+  width: 50%; 
   margin: auto;
-  /*border: 3px solid green;*/
+  border: 3px solid green;
   padding: 5px;
   display: flex;
   align-self: center;
 }
 
 .footer-right {
-  /* width: 50%; */
+   width: 50%; 
   margin: auto;
-  /*border: 3px solid green;*/
+  border: 3px solid green;
   padding: 5px;
 }
 
 @media screen and (min-width: 720px) {
 }
+  */
