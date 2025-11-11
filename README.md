@@ -12,7 +12,7 @@ Share Couch is a platform, where the owners of couches can offer their couch for
 - When users create an account and log in, they can access their profile, make a post, edit it or delete it and leave ratings and comments.
 
 Deployment Netlify: "https://sharecouch.netlify.app/"
-Trello: "https://trello.com/b/suDXWMvC"
+
 
 ---
 
